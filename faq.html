@@ -45,7 +45,19 @@
       {"@type": "Question", "name": "How do I get started?",
        "acceptedAnswer": {"@type": "Answer", "text": "Fill in the booking form on our Book page, or request a free in-person estimate. No pressure, no obligation."}},
       {"@type": "Question", "name": "What's included in a fall cleanup?",
-       "acceptedAnswer": {"@type": "Answer", "text": "Leaf cleanup plus pickup of all plant and tree droppings and any garbage in the yard, from $50. Please note: we don't pick up pet waste."}}
+       "acceptedAnswer": {"@type": "Answer", "text": "Leaf cleanup plus pickup of all plant and tree droppings and any garbage in the yard, from $50. Please note: we don't pick up pet waste."}},
+      {"@type": "Question", "name": "Do you offer one-time snow clearing?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Yes — $45 per visit, with the same 12-hour clearing standard. No plan required."}},
+      {"@type": "Question", "name": "What is a windrow, and do you clear it?",
+       "acceptedAnswer": {"@type": "Answer", "text": "The windrow is the ridge of snow the city plow leaves across the end of your driveway. It’s included with Complete and Premium plans, or add it to Essential for $25 per visit."}},
+      {"@type": "Question", "name": "What happens if my payment is late?",
+       "acceptedAnswer": {"@type": "Answer", "text": "Invoices are due within 15 days. If an invoice goes 30 days unpaid, service pauses until it’s settled."}},
+      {"@type": "Question", "name": "Do you do commercial work?",
+       "acceptedAnswer": {"@type": "Answer", "text": "We clear walkways for small storefronts in Transcona — free custom quote per property."}},
+      {"@type": "Question", "name": "What services do you offer besides snow clearing?",
+       "acceptedAnswer": {"@type": "Answer", "text": "We’re year-round: spring cleanup and aeration, summer mowing and landscaping, fall leaf cleanup. See our Services page for details."}},
+      {"@type": "Question", "name": "How does the referral program work?",
+       "acceptedAnswer": {"@type": "Answer", "text": "New customers get $25 off their first invoice and you get a $25 credit once it’s paid — with unlimited referrals. See our Referral page for details."}}
     ]
   }
   </script>
@@ -73,6 +85,8 @@
     <div class="page">
       <div class="page-head"><div class="wrap"><h1 id="faq-title">QUESTIONS, ANSWERED.</h1><p>The stuff Transcona neighbours ask us most.</p></div></div>
       <div class="section"><div class="wrap">
+        <div class="field" style="margin-bottom:6px"><label for="faq-search">Search questions</label><input id="faq-search" type="search" placeholder="Try ‘windrow’ or ‘payment’…" autocomplete="off"></div>
+        <p class="map-note" id="faq-none" hidden>No questions match your search.</p>
         <div class="faq">
           <details><summary>How do the snowfall triggers work?</summary><p>We watch the forecast. When snowfall reaches your plan's trigger — 6 cm for Essential, 4 cm for Complete, 2 cm for Premium — we come out and clear within 12 hours of the snow stopping.</p></details>
           <details><summary>What exactly gets cleared each visit?</summary><p>Your driveway, your walkway, and snow brushed off up to two vehicles parked in the driveway. Windrow clearing (the ridge the city plow leaves) is included with Complete and Premium; Essential can add it for $25 per visit.</p></details>
@@ -83,6 +97,12 @@
           <details><summary>Which areas do you serve?</summary><p>Transcona, Winnipeg — see the service area map on our <a href="contact.html">Contact page</a>. Just outside it? Ask us; we'll give you a straight answer.</p></details>
           <details><summary>How do I get started?</summary><p>Fill in the booking form on our <a href="book.html">Book page</a>, or request a free in-person estimate. No pressure, no obligation.</p></details>
           <details><summary>What's included in a fall cleanup?</summary><p>Leaf cleanup plus pickup of all plant and tree droppings and any garbage in the yard - from $50. Please note: we don't pick up pet waste.</p></details>
+          <details><summary>Do you offer one-time snow clearing?</summary><p>Yes — $45 per visit, with the same 12-hour clearing standard. No plan required.</p></details>
+          <details><summary>What is a windrow, and do you clear it?</summary><p>The windrow is the ridge of snow the city plow leaves across the end of your driveway. It’s included with Complete and Premium plans, or add it to Essential for $25 per visit.</p></details>
+          <details><summary>What happens if my payment is late?</summary><p>Invoices are due within 15 days. If an invoice goes 30 days unpaid, service pauses until it’s settled.</p></details>
+          <details><summary>Do you do commercial work?</summary><p>We clear walkways for small storefronts in Transcona — free custom quote per property.</p></details>
+          <details><summary>What services do you offer besides snow clearing?</summary><p>We’re year-round: spring cleanup and aeration, summer mowing and landscaping, fall leaf cleanup. See our Services page for details.</p></details>
+          <details><summary>How does the referral program work?</summary><p>New customers get $25 off their first invoice and you get a $25 credit once it’s paid — with unlimited referrals. See our Referral page for details.</p></details>
         </div>
       
       </div></div>
@@ -105,7 +125,17 @@
 </div>
 <script>
 (function(){
-})();
+  var fqS=document.getElementById('faq-search'),fqN=document.getElementById('faq-none');
+  if(fqS){fqS.addEventListener('input',function(){
+    var q=fqS.value.trim().toLowerCase(),shown=0;
+    document.querySelectorAll('.faq details').forEach(function(d){
+      var hit=!q||d.textContent.toLowerCase().indexOf(q)!==-1;
+      d.style.display=hit?'':'none';
+      if(q&&hit){d.open=true;}
+      if(hit){shown++;}
+    });
+    fqN.hidden=shown>0;
+  });}})();
 </script>
 </body>
 </html>
