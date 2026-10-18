@@ -154,6 +154,10 @@
     .addr-suggest button:last-child { border-bottom:0; }
     .attrib { font-size:12px; color:var(--muted); margin-top:6px; }
     .call-fab { display:none; }
+    .faq { display:grid; gap:12px; margin-top:28px; max-width:860px; }
+    .faq details { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
+    .faq summary { font-weight:800; font-size:19px; cursor:pointer; }
+    .faq details p { color:var(--muted); margin:10px 0 0; font-size:17px; }
     .mobile-nav { display:none; }
     @media (max-width:820px) {
       .topbar { display:none; }
@@ -248,6 +252,7 @@
               <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
               <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
               <p class="map-note">This opens your email app with everything filled in — just hit send.</p>
+              <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
             </form>
           </article>
           <div>
@@ -305,6 +310,13 @@
         </div>
       </section>
 
+      <section class="section tint"><div class="wrap">
+        <h2 class="section-title">PROUDLY TRANSCONA.</h2>
+        <p class="section-intro">We're based right here in Transcona and serve homes across the neighbourhood.</p>
+        <div class="map-wrap"><iframe title="Map of Transcona, Winnipeg" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <p class="map-note">Just outside Transcona? Send your address through the booking form above — we'll tell you straight whether we can cover you.</p>
+      </div></section>
+
       <section class="section">
         <div class="wrap offer">
           <img src="embedded-2.jpg" alt="Early-bird seasonal prepay offer from Shields Property Services" />
@@ -312,6 +324,21 @@
           <a class="button primary" href="#contact" data-route="contact">Claim a spot</a>
         </div>
       </section>
+
+      <section class="section"><div class="wrap">
+        <h2 class="section-title">QUESTIONS, ANSWERED.</h2>
+        <p class="section-intro">The stuff Transcona neighbours ask us most.</p>
+        <div class="faq">
+          <details><summary>How do the snowfall triggers work?</summary><p>We watch the forecast. When snowfall reaches your plan's trigger — 6 cm for Essential, 4 cm for Complete, 2 cm for Premium — we come out and clear within 12 hours of the snow stopping.</p></details>
+          <details><summary>What exactly gets cleared each visit?</summary><p>Your driveway, your walkway, and snow brushed off up to two vehicles parked in the driveway. Windrow clearing (the ridge the city plow leaves) is included with Complete and Premium; Essential can add it for $25 per visit.</p></details>
+          <details><summary>What if I'm not home when it snows?</summary><p>No problem — we clear whether you're home or not. That's the whole point: wake up or come home to a clear driveway.</p></details>
+          <details><summary>Will your equipment damage my driveway or lawn?</summary><p>We work damage-conscious on every visit. Professional, reliable, damage-free isn't a slogan — it's the standard.</p></details>
+          <details><summary>How and when do I pay?</summary><p>E-transfer, debit, or credit. Invoices go out monthly and are due within 15 days.</p></details>
+          <details><summary>When does the season run?</summary><p>November through March, every winter.</p></details>
+          <details><summary>Which areas do you serve?</summary><p>Transcona, Winnipeg — see our service area map above. Just outside it? Ask us; we'll give you a straight answer.</p></details>
+          <details><summary>How do I get started?</summary><p>Fill in the booking form at the top of this page, or request a free in-person estimate. No pressure, no obligation.</p></details>
+        </div>
+      </div></section>
     </section>
 
     <section class="view" id="pricing" aria-labelledby="pricing-title">
@@ -338,6 +365,7 @@
           <div class="note"><strong>Per visit: $45</strong><span>Prefer pay-as-you-go? Book individual visits.</span></div>
           <div class="note"><strong>Windrow add-on: $25/visit</strong><span>Add end-of-driveway windrow clearing to Essential.</span></div>
           <div class="note"><strong>No tax added</strong><span>Payment accepted by e-transfer, debit or credit.</span></div>
+          <div class="note"><strong>Invoices due in 15 days</strong><span>Service pauses if an invoice goes 30 days unpaid.</span></div>
         </div>
       </div></div>
       <section class="section tint"><div class="wrap offer">
