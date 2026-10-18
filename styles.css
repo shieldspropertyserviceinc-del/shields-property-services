@@ -500,5 +500,5 @@
 .season ul{margin:6px 0 10px;padding-left:18px;font-size:14px}
 .season li{margin:3px 0}
 .season .actions{margin:0}
-@media (max-width:420px){.season-img{width:84px;height:84px}}
+@media (max-width:640px){.season-img{width:64px;height:64px;border-radius:8px}.season{gap:12px;padding:12px}.season h3{font-size:16px}}
 
