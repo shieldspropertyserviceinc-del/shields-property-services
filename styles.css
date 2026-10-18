@@ -189,7 +189,7 @@
       .wrap { width:min(100% - 30px, 1180px); }
       .section-title { font-size:43px; }
       .offer { grid-template-columns:1fr; }
-      .offer img { width:100%; max-height:220px; object-position:center 28%; }
+      .offer img { width:100%; max-height:none; aspect-ratio:auto; object-fit:contain; border-radius:12px; }
       .offer .button { grid-column:auto; }
       .contact-card { padding:25px; }
       .book-card { padding:25px; }
@@ -385,7 +385,7 @@
       .wrap { width:min(100% - 30px, 1180px); }
       .section-title { font-size:43px; }
       .offer { grid-template-columns:1fr; }
-      .offer img { width:100%; max-height:220px; object-position:center 28%; }
+      .offer img { width:100%; max-height:none; aspect-ratio:auto; object-fit:contain; border-radius:12px; }
       .offer .button { grid-column:auto; }
       .contact-card { padding:25px; }
       .book-card { padding:25px; }
