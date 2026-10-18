@@ -176,7 +176,7 @@
       .book-cta { flex-direction:column; align-items:stretch; text-align:center; padding:36px 26px; }
       .book-cta .button { width:100%; }
       footer { padding-bottom:132px; }
-      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(4,1fr); gap:6px; padding:8px; left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; }
+      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(3,1fr); gap:6px; padding:8px; left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; }
       .mobile-nav .nav-link { border-radius:10px; padding:12px 4px; font-size:13px; text-align:center; }
       .collapse-toggle { cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--surface); border:2px solid var(--line); border-radius:14px; padding:16px 16px 16px 20px; box-shadow:var(--shadow); }
       .collapse-toggle .chev { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--orange); color:#102b3d; font-size:26px; line-height:1; flex:none; transition:transform .2s; font-family:"Source Sans 3",sans-serif; font-weight:400; }
@@ -372,7 +372,7 @@
       .book-cta { flex-direction:column; align-items:stretch; text-align:center; padding:36px 26px; }
       .book-cta .button { width:100%; }
       footer { padding-bottom:132px; }
-      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(4,1fr); gap:6px; padding:8px; left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; }
+      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(3,1fr); gap:6px; padding:8px; left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; }
       .mobile-nav .nav-link { border-radius:10px; padding:12px 4px; font-size:13px; text-align:center; }
       .collapse-toggle { cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--surface); border:2px solid var(--line); border-radius:14px; padding:16px 16px 16px 20px; box-shadow:var(--shadow); }
       .collapse-toggle .chev { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--orange); color:#102b3d; font-size:26px; line-height:1; flex:none; transition:transform .2s; font-family:"Source Sans 3",sans-serif; font-weight:400; }
@@ -519,12 +519,17 @@
 .excluded-note{display:inline-block;background:#fff3cd;padding:4px 10px;border-radius:6px;text-decoration:underline;text-underline-offset:3px;font-weight:700}
 .link-button{background:none;border:none;color:var(--blue);font:inherit;font-weight:700;cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:3px}
 .link-button:disabled{opacity:.6;cursor:default}
+.guide{margin-bottom:44px;padding-bottom:36px;border-bottom:1px solid var(--line)}
+.guide:last-of-type{border-bottom:none}
+.guide h2{margin-bottom:12px}
+.guide ul{margin:12px 0 12px 20px}
+.guide li{margin-bottom:8px}
 .bounds{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0;list-style:none;padding:0}
 .bounds li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow);font-size:16px}
 .bounds li strong{color:var(--navy)}
 @media (max-width:820px){
   .footer-row{flex-direction:column;align-items:stretch;gap:16px}
-  .footer-nav{flex:none;margin:0;padding-bottom:18px;border-bottom:1px solid #507184;display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px}
+  .footer-nav{flex:none;margin:0;padding-bottom:18px;border-bottom:1px solid #507184;display:grid;grid-template-columns:repeat(3,1fr);gap:12px 8px}
   .footer-socials{margin:0}
 }
 
