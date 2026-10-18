@@ -512,6 +512,7 @@
 .faq-cat:last-child{margin-bottom:0}
 .faq-cat-title{font-size:clamp(30px,4vw,40px);letter-spacing:-.015em;margin:0 0 14px;color:var(--navy)}
 .map-wrap img{width:100%;height:auto;display:block}
+.first-deal{margin-top:12px;padding:14px 18px;background:var(--surface);border:2px solid var(--orange);border-radius:12px}
 .bounds{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0;list-style:none;padding:0}
 .bounds li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow);font-size:16px}
 .bounds li strong{color:var(--navy)}
