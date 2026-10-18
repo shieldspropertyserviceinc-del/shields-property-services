@@ -366,6 +366,52 @@
     <section class="view" id="pricing" aria-labelledby="pricing-title">
       <div class="page-head"><div class="wrap"><h1 id="pricing-title">SIMPLE WINTER PRICING.</h1><p>Three seasonal plans, one dependable standard of care. Service runs November through March.</p></div></div>
       <div class="section"><div class="wrap">
+        <style>
+          .estimator{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:36px}
+          .estimator h2{margin:0 0 6px}
+          .estimator .q{margin:18px 0}
+          .estimator .q p{font-weight:700;margin:0 0 10px}
+          .qpills{display:flex;flex-wrap:wrap;gap:10px}
+          .qpill{border:2px solid var(--line);background:var(--surface-soft);border-radius:999px;padding:10px 18px;font-weight:600;cursor:pointer;transition:all .15s}
+          .qpill[aria-pressed="true"]{border-color:var(--orange);background:var(--orange);color:#102b3d}
+          .est-result{margin-top:20px;border-top:1px solid var(--line);padding-top:20px}
+          .est-plan{font-size:15px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:1px}
+          .est-price{font-size:44px;font-weight:800;margin:4px 0}
+          .est-price small{font-size:18px;font-weight:600}
+        </style>
+        <div class="estimator" id="estimator">
+          <h2>Not sure which plan fits?</h2>
+          <p style="margin:0;color:var(--muted)">Answer three quick questions — we'll point you to the right one.</p>
+          <div class="q" data-q="speed">
+            <p>1. How fast do you need clearing after it snows?</p>
+            <div class="qpills">
+              <button type="button" class="qpill" data-val="essential" aria-pressed="false">No rush — a couple days is fine</button>
+              <button type="button" class="qpill" data-val="complete" aria-pressed="false">Same day would be great</button>
+              <button type="button" class="qpill" data-val="premium" aria-pressed="false">ASAP — I need out early</button>
+            </div>
+          </div>
+          <div class="q" data-q="windrow">
+            <p>2. Want the windrow (the ridge the city plow leaves) cleared too?</p>
+            <div class="qpills">
+              <button type="button" class="qpill" data-val="yes" aria-pressed="false">Yes, clear it</button>
+              <button type="button" class="qpill" data-val="no" aria-pressed="false">No, skip it</button>
+            </div>
+          </div>
+          <div class="q" data-q="cars">
+            <p>3. How many vehicles park in your driveway?</p>
+            <div class="qpills">
+              <button type="button" class="qpill" data-val="two" aria-pressed="false">1 – 2</button>
+              <button type="button" class="qpill" data-val="more" aria-pressed="false">3 or more</button>
+            </div>
+          </div>
+          <div class="actions"><button class="button primary" type="button" id="est-go">See my recommendation</button></div>
+          <div class="est-result" id="est-result" hidden>
+            <div class="est-plan" id="est-plan-name"></div>
+            <div class="est-price" id="est-price"></div>
+            <p id="est-detail" style="color:var(--muted)"></p>
+            <div class="actions"><button class="button dark" type="button" id="est-book">Book this plan</button></div>
+          </div>
+        </div>
         <div class="plans">
           <article class="plan">
             <span class="label">For lighter snowfall</span><h2>ESSENTIAL</h2><div class="price">$150<small>/month</small></div><span class="trigger">6 cm trigger</span>
@@ -649,6 +695,50 @@
       var toggle=function(){body.hidden=!body.hidden;title.classList.toggle('open',!body.hidden);};
       title.addEventListener('click',toggle);
       title.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+    });
+  }
+  /* Quote estimator */
+  var estBox=document.getElementById('estimator');
+  if(estBox){
+    var estAnswers={};
+    estBox.querySelectorAll('.q').forEach(function(q){
+      var key=q.getAttribute('data-q');
+      q.querySelectorAll('.qpill').forEach(function(pill){
+        pill.addEventListener('click',function(){
+          q.querySelectorAll('.qpill').forEach(function(p){p.setAttribute('aria-pressed','false');});
+          pill.setAttribute('aria-pressed','true');
+          estAnswers[key]=pill.getAttribute('data-val');
+        });
+      });
+    });
+    var plans={
+      essential:{name:'Essential',price:'$150',per:'/month',trigger:'6 cm trigger',opt:'Essential — $150/mo'},
+      complete:{name:'Complete',price:'$200',per:'/month',trigger:'4 cm trigger',opt:'Complete — $200/mo'},
+      premium:{name:'Premium',price:'$300',per:'/month',trigger:'2 cm trigger',opt:'Premium — $300/mo'}
+    };
+    document.getElementById('est-go').addEventListener('click',function(){
+      if(!estAnswers.speed){estBox.querySelector('[data-q="speed"]').scrollIntoView({behavior:'smooth',block:'center'});return;}
+      var plan=plans[estAnswers.speed]||plans.complete;
+      var detail='Cleared within 12 hours of snowfall · '+plan.trigger+' · Driveway, walkway and snow off up to two vehicles.';
+      if(estAnswers.windrow==='yes'){
+        detail+= (estAnswers.speed==='essential') ? ' Add windrow clearing for $25/visit.' : ' Windrow clearing included.';
+      }
+      if(estAnswers.cars==='more'){detail+=' Note: we brush snow off up to two vehicles per visit.';}
+      document.getElementById('est-plan-name').textContent='We recommend '+plan.name;
+      document.getElementById('est-price').innerHTML=plan.price+'<small>'+plan.per+'</small>';
+      document.getElementById('est-detail').textContent=detail;
+      var res=document.getElementById('est-result');
+      res.hidden=false;
+      document.getElementById('est-book').onclick=function(){
+        location.hash='#book';
+        setTimeout(function(){
+          var sel=document.getElementById('bk-plan');
+          if(sel){sel.value=plan.opt;}
+          var f=document.getElementById('book-form');
+          if(f){f.scrollIntoView({behavior:'smooth',block:'start'});}
+        },300);
+      };
+      res.scrollIntoView({behavior:'smooth',block:'center'});
     });
   }
   var bookForm=document.getElementById('book-form');
