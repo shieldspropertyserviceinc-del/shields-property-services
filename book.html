@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#3A9ACD" />
-  <meta name="description" content="Book your winter snow clearing in Transcona, Winnipeg. Pick a plan, pin your address, choose a consultation time." />
+  <meta name="description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time." />
   <link rel="icon" href="data:," />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shields Property Services" />
   <meta property="og:title" content="Book | Shields Property Services" />
-  <meta property="og:description" content="Book your winter snow clearing in Transcona, Winnipeg. Pick a plan, pin your address, choose a consultation time." />
+  <meta property="og:description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time." />
   <meta property="og:url" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/book.html" />
   <meta property="og:image" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Book | Shields Property Services" />
-  <meta name="twitter:description" content="Book your winter snow clearing in Transcona, Winnipeg. Pick a plan, pin your address, choose a consultation time." />
+  <meta name="twitter:description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time." />
   <meta name="twitter:image" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png" />
   <link rel="canonical" href="https://shieldspropertyserviceinc-del.github.io/shields-property-services/book.html" />
   <meta name="robots" content="index, follow" />
@@ -24,7 +24,7 @@
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
   <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebPage", "name": "Book | Shields Property Services", "description": "Book your winter snow clearing in Transcona, Winnipeg. Pick a plan, pin your address, choose a consultation time.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/book.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "Book | Shields Property Services", "description": "Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/book.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
   <title>Book | Shields Property Services</title>
 </head>
@@ -45,7 +45,7 @@
 
   <main>
     <div class="page">
-      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR SERVICE.</h1><p>Pick a snow plan or fall cleanup, pin your address on the map, and send your booking request.</p></div></div>
+      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR SERVICE.</h1><p>Pick a service for any season, pin your address on the map, and send your booking request.</p></div></div>
       <div class="section"><div class="wrap">
 <div class="book-grid">
           <article class="book-card">
@@ -63,6 +63,8 @@
                   <optgroup label="Spring &amp; summer">
                   <option>Spring cleanup — from $50</option>
                   <option>Lawn mowing — from $40</option>
+                  <option>Lawn aeration — free quote</option>
+                  <option>Landscaping — free quote</option>
                   </optgroup>
                   <optgroup label="Fall services">
                   <option>Fall cleanup — from $50</option>
@@ -108,6 +110,7 @@
           <div>
             <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
             <div class="actions" style="margin-top:14px"><button class="button dark" type="button" id="bk-locate">Locate my address on the map</button></div>
+            <div class="actions" style="margin-top:10px"><button class="button" type="button" id="bk-gps">📍 Use my current location</button></div>
             <p class="map-note">Type your address, then tap the button to pin it on the map.</p>
           </div>
         </div>
@@ -191,6 +194,24 @@
     if(bkInZone(lat,lon)){el.className='zone-status in';el.textContent='\u2713 You\u2019re inside our guaranteed service zone.';}
     else{el.className='zone-status out';el.textContent='Outside the guaranteed zone \u2014 but we accept bookings on request.';}
   }
+  // GPS: use current location for map + zone check + reverse-geocode address
+  var bkGpsBtn=document.getElementById('bk-gps');
+  if(bkGpsBtn){bkGpsBtn.addEventListener('click',function(){
+    if(!navigator.geolocation){bkGpsBtn.textContent='Location not supported on this device';return;}
+    bkGpsBtn.disabled=true;bkGpsBtn.textContent='Locating\u2026';
+    navigator.geolocation.getCurrentPosition(function(pos){
+      var lat=pos.coords.latitude,lon=pos.coords.longitude;
+      setMap(lat+','+lon);
+      bkShowZone(lat,lon);
+      fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&addressdetails=1&lat='+lat+'&lon='+lon)
+        .then(function(r){return r.json();})
+        .then(function(p){if(p&&p.display_name){var ai=document.getElementById('bk-address');if(ai)ai.value=p.display_name;}})
+        .catch(function(){});
+      bkGpsBtn.disabled=false;bkGpsBtn.textContent='📍 Use my current location';
+    },function(){
+      bkGpsBtn.disabled=false;bkGpsBtn.textContent='📍 Use my current location';
+    },{enableHighAccuracy:true,timeout:12000});
+  });}
 
   var bookForm=document.getElementById('book-form');
   if(bookForm){
