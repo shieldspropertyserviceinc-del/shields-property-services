@@ -78,6 +78,7 @@
                 <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off" required>
                 <div class="addr-suggest" id="bk-suggest" hidden></div></div>
                 <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
+                <p class="zone-status" id="bk-zone" hidden></p>
               </div>
               <h3 style="margin:18px 0 4px">Free in-person consultation</h3>
               <p class="map-note" style="margin-top:0">Pick when you'd like us to stop by — we'll confirm by phone.</p>
@@ -91,6 +92,9 @@
                   </select></div>
               </div>
               <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
+              <div class="field"><label for="bk-source">How did you hear about us? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+                <select id="bk-source" name="source"><option value="">—</option><option>Google search</option><option>Facebook</option><option>Instagram</option><option>Neighbour / word of mouth</option><option>Saw our truck or flyer</option><option>Other</option></select></div>
+              <input type="text" id="bk-honey" name="_honey" style="display:none!important" tabindex="-1" autocomplete="off">
               <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
               <p class="map-note">Hit send and you're done — we'll confirm your spot, and you'll get an instant email confirmation.</p>
               <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
@@ -132,6 +136,7 @@
   if(locateBtn){locateBtn.addEventListener('click',function(){
     var addr=document.getElementById('bk-address').value.trim();
     setMap(addr?addr+', Winnipeg, MB':'Transcona, Winnipeg, MB');
+    if(addr){fetch('https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&countrycodes=ca&q='+encodeURIComponent(addr+', Winnipeg, Manitoba')).then(function(r){return r.json();}).then(function(list){if(list&&list.length){bkShowZone(parseFloat(list[0].lat),parseFloat(list[0].lon));}}).catch(function(){});}
   });}
   var addrInput=document.getElementById('bk-address'),suggestBox=document.getElementById('bk-suggest'),addrTimer=null;
   if(addrInput&&suggestBox){
@@ -152,7 +157,7 @@
               b.addEventListener('click',function(){
                 addrInput.value=p.display_name;
                 suggestBox.hidden=true;suggestBox.innerHTML='';
-                setMap(p.display_name);
+                setMap(p.display_name);bkShowZone(parseFloat(p.lat),parseFloat(p.lon));
               });
               suggestBox.appendChild(b);
             });
@@ -169,6 +174,23 @@
       if(plan){var sel=document.getElementById('bk-plan');if(sel){sel.value=plan;}}
     }catch(e){}
   })();
+
+  var BK_ZONE=[[49.9155,-97.025],[49.9155,-96.959],[49.888,-96.959],[49.888,-97.025]];
+  function bkInZone(lat,lon){
+    var inside=false;
+    for(var i=0,j=BK_ZONE.length-1;i<BK_ZONE.length;j=i++){
+      var xi=BK_ZONE[i][1],yi=BK_ZONE[i][0],xj=BK_ZONE[j][1],yj=BK_ZONE[j][0];
+      if(((yi>lat)!==(yj>lat))&&(lon<(xj-xi)*(lat-yi)/(yj-yi)+xi))inside=!inside;
+    }
+    return inside;
+  }
+  function bkShowZone(lat,lon){
+    var el=document.getElementById('bk-zone');
+    if(!el||isNaN(lat)||isNaN(lon))return;
+    el.hidden=false;
+    if(bkInZone(lat,lon)){el.className='zone-status in';el.textContent='\u2713 You\u2019re inside our guaranteed service zone.';}
+    else{el.className='zone-status out';el.textContent='Outside the guaranteed zone \u2014 but we accept bookings on request.';}
+  }
 
   var bookForm=document.getElementById('book-form');
   if(bookForm){
@@ -188,7 +210,7 @@
       name:v('bk-name'),email:v('bk-email'),phone:v('bk-phone'),
       plan:v('bk-plan'),address:v('bk-address'),
       preferred_date:v('bk-date'),preferred_time:v('bk-time'),
-      notes:v('bk-notes')
+      notes:v('bk-notes'),source:v('bk-source'),_honey:v('bk-honey')
     };
     fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
       method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
