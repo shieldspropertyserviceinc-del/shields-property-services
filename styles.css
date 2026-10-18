@@ -519,18 +519,18 @@
 .excluded-note{display:inline-block;background:#fff3cd;padding:4px 10px;border-radius:6px;text-decoration:underline;text-underline-offset:3px;font-weight:700}
 .link-button{background:none;border:none;color:var(--blue);font:inherit;font-weight:700;cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:3px}
 .link-button:disabled{opacity:.6;cursor:default}
-.guide{margin-bottom:12px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.guide summary{padding:16px 18px;font-weight:700;cursor:pointer;list-style:none}
-.guide summary::-webkit-details-marker{display:none}
-.guide summary::after{content:'+';float:right;font-size:1.3em;color:var(--orange)}
-.guide[open] summary::after{content:'−'}
-.guide[open] summary{border-bottom:1px solid var(--line)}
-.guide > :not(summary){padding:0 18px}
-.guide > :last-child{padding-bottom:18px}
-.guide ul{margin:12px 0 12px 20px}
-.guide li{margin-bottom:8px}
 .guide-cat{margin-bottom:36px}
-.guide-cat-title{font-size:1.4em;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid var(--orange)}
+.guide-cat:last-child{margin-bottom:0}
+.guide-cat-title{font-size:clamp(30px,4vw,40px);letter-spacing:-.015em;margin:0 0 14px;color:var(--navy)}
+.guide-wrap{display:grid;gap:12px;margin-top:14px;max-width:860px}
+.guide{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.guide summary{font-weight:800;font-size:19px;cursor:pointer;list-style:none}
+.guide summary::-webkit-details-marker{display:none}
+.guide summary::after{content:'+';float:right;color:var(--orange)}
+.guide[open] summary::after{content:'−'}
+.guide p,.guide ul{color:var(--muted);margin:10px 0 0;font-size:17px}
+.guide ul{margin-left:20px}
+.guide li{margin-bottom:8px}
 .bounds{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0;list-style:none;padding:0}
 .bounds li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow);font-size:16px}
 .bounds li strong{color:var(--navy)}
