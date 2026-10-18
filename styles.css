@@ -489,3 +489,11 @@
           .est-plan{font-size:15px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:1px}
           .est-price{font-size:44px;font-weight:800;margin:4px 0}
           .est-price small{font-size:18px;font-weight:600}
+
+.seasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:8px}
+.season{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--season,#3A9ACD);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+.season .s-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--season,#3A9ACD);margin-bottom:6px}
+.season h3{margin:0 0 4px;font-size:22px}
+.season ul{margin:10px 0 18px;padding-left:20px}
+.season li{margin:6px 0}
+
