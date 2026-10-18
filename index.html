@@ -75,6 +75,11 @@
     .section-intro { color:var(--muted); font-size:20px; max-width:670px; margin:18px 0 38px; }
     .services { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
     .service { padding:28px; border-top:6px solid var(--sky); background:var(--surface); box-shadow:var(--shadow); }
+    a.service.link-card { text-decoration:none; color:inherit; display:block; transition:transform .15s, box-shadow .15s; }
+    a.service.link-card:hover { transform:translateY(-4px); box-shadow:0 22px 50px rgba(13,45,67,.18); }
+    a.service.link-card .num { color:var(--orange); font-weight:900; font-size:26px; }
+    a.service.link-card h3 { font-size:24px; margin:10px 0 8px; }
+    a.service.link-card p { color:var(--muted); margin:0; }
     .service:nth-child(2) { border-top-color:var(--orange); }
     .service h3 { font-family:"Barlow Condensed",sans-serif; font-size:30px; margin:4px 0 9px; }
     .service p { color:var(--muted); margin:0; }
@@ -232,7 +237,20 @@
         </div>
       </div>
 
-            <section class="section"><div class="wrap">
+                  <section class="section"><div class="wrap">
+        <h2 class="section-title">FIND WHAT YOU NEED.</h2>
+        <p class="section-intro">Everything's one tap away.</p>
+        <div class="services">
+          <a class="service link-card" href="#book" data-route="book"><span class="num">&rarr;</span><h3>Book Now</h3><p>Pick your plan, pin your address, lock in winter.</p></a>
+          <a class="service link-card" href="#pricing" data-route="pricing"><span class="num">&rarr;</span><h3>Plans &amp; Pricing</h3><p>Three simple plans from $150/mo.</p></a>
+          <a class="service link-card" href="#about" data-route="about"><span class="num">&rarr;</span><h3>Meet the Owners</h3><p>The family behind Shields Property Services.</p></a>
+          <a class="service link-card" href="#faq" data-route="faq"><span class="num">&rarr;</span><h3>FAQ</h3><p>Triggers, billing, and what&apos;s included.</p></a>
+          <a class="service link-card" href="#pricing" data-route="pricing"><span class="num">&rarr;</span><h3>Referral Program</h3><p>$25 for you, $25 for your neighbour.</p></a>
+          <a class="service link-card" href="#contact" data-route="contact"><span class="num">&rarr;</span><h3>Contact</h3><p>Free in-person estimates in Transcona.</p></a>
+        </div>
+      </div></section>
+
+<section class="section"><div class="wrap">
         <div class="book-cta">
           <div><h2>READY WHEN THE SNOW FLIES?</h2>
           <p>Pick your plan, pin your address on the map, and lock in your winter in under two minutes.</p></div>
@@ -242,36 +260,9 @@
 
 
 
-      <section class="section collapsible"><div class="wrap">
-        <h2 class="section-title">NEIGHBOURS HELPING NEIGHBOURS.</h2>
-        <p class="section-intro">Love the service? Send a neighbour our way and you both save.</p>
-        <div class="plans">
-          <article class="plan">
-            <span class="label">For your neighbour</span><h2>$25 OFF</h2>
-            <ul><li>New customers take $25 off their first invoice</li><li>Just mention your name when they book</li></ul>
-          </article>
-          <article class="plan featured">
-            <span class="label">For you</span><h2>$25 CREDIT</h2>
-            <ul><li>$25 credit on your next invoice</li><li>Paid out once their first invoice is settled</li></ul>
-          </article>
-          <article class="plan">
-            <span class="label">The fine print</span><h2>SIMPLE</h2>
-            <ul><li>One credit per monthly invoice — extras roll forward</li><li>Credits expire March 31, 2027</li></ul>
-          </article>
-        </div>
-      </div></section>
+      
 
-      <section class="section collapsible">
-        <div class="wrap">
-          <h2 class="section-title">Snow clearing that covers the details.</h2>
-          <p class="section-intro">Every visit is built around a clean, safe route from your driveway to your door.</p>
-          <div class="services">
-            <article class="service"><span class="num">1</span><h3>Driveway</h3><p>Clear access for your household with dependable service matched to your plan's snowfall trigger.</p></article>
-            <article class="service"><span class="num">2</span><h3>Walkway</h3><p>A safer, cleaner path to your entrance—handled as part of every visit.</p></article>
-            <article class="service"><span class="num">3</span><h3>Two vehicles</h3><p>Snow brushed off up to two vehicles parked in your driveway, included with every visit.</p></article>
-          </div>
-        </div>
-      </section>
+      
 
       <section class="section tint collapsible">
         <div class="wrap promise">
@@ -288,34 +279,12 @@
         </div>
       </section>
 
-      <section class="section"><div class="wrap">
-        <div class="about-grid">
-          <div><img src="owners.jpg" alt="Nicholas and Kathryn Shields" style="width:100%;border-radius:18px;display:block;"></div>
-          <div>
-            <h2 class="section-title">MEET NICHOLAS &amp; KATHRYN.</h2>
-            <p class="section-intro">A husband-and-wife team, not a random crew.</p>
-            <div class="about-copy">
-            <p>We moved to Transcona two years ago from Winkler, and it didn't take long to feel like home. Nicholas spent years as a painter in the manufacturing sector before moving into landscaping and snow clearing — work he's still in today. Kathryn is our Chief Operating Officer, running everything behind the scenes.</p>
-            <p>When you hire us, you're getting us: professional, reliable, and damage-free, every single visit. That's personal.</p>
-            </div>
-            <div class="actions" style="margin-top:22px"><a class="button dark" href="#about" data-route="about">Read our full story</a></div>
-          </div>
-        </div>
-      </div></section>
+      
 
-      <section class="section tint collapsible"><div class="wrap">
-        <h2 class="section-title">PROUDLY TRANSCONA.</h2>        <p class="section-intro">We're based right here in Transcona and serve homes across the neighbourhood.</p>
-        <div class="map-wrap"><iframe title="Map of Transcona, Winnipeg" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-        <p class="map-note">Just outside Transcona? Send your address through the booking form above — we'll tell you straight whether we can cover you.</p>
-      </div></section>
+      
 
-      <section class="section collapsible">
-        <div class="wrap offer">
-          <img src="embedded-2.jpg" alt="Early-bird seasonal prepay offer from Shields Property Services" />
-          <div><h2>Pay the season upfront and save.</h2><p>Early-bird pricing is available to the first five customers. The first customer receives an additional exclusive discount.</p></div>
-          <a class="button primary" href="#contact" data-route="contact">Claim a spot</a>
-        </div>
-      </section>
+      
+
 
 
     </section>
@@ -352,7 +321,25 @@
         <div><h2>Early-bird season rates</h2><p>Essential $675 · Complete $875 · Premium $1,275. First five customers who pay the full season upfront.</p></div>
         <a class="button primary" href="#contact" data-route="contact">Ask about availability</a>
       </div></section>
-    </section>
+    <section class="section"><div class="wrap">
+        <h2 class="section-title">NEIGHBOURS HELPING NEIGHBOURS.</h2>
+        <p class="section-intro">Love the service? Send a neighbour our way and you both save.</p>
+        <div class="plans">
+          <article class="plan">
+            <span class="label">For your neighbour</span><h2>$25 OFF</h2>
+            <ul><li>New customers take $25 off their first invoice</li><li>Just mention your name when they book</li></ul>
+          </article>
+          <article class="plan featured">
+            <span class="label">For you</span><h2>$25 CREDIT</h2>
+            <ul><li>$25 credit on your next invoice</li><li>Paid out once their first invoice is settled</li></ul>
+          </article>
+          <article class="plan">
+            <span class="label">The fine print</span><h2>SIMPLE</h2>
+            <ul><li>One credit per monthly invoice — extras roll forward</li><li>Credits expire March 31, 2027</li></ul>
+          </article>
+        </div>
+      </div></section>
+</section>
 
     <section class="view" id="about" aria-labelledby="about-title">
       <div class="page-head"><div class="wrap"><h1 id="about-title">LOCAL SERVICE. CLEAR STANDARDS.</h1><p>Shields Property Services brings dependable, damage-conscious property care to Transcona.</p></div></div>
@@ -476,7 +463,11 @@
             </div>
           </article>
         </div>
-        <div class="service-area"><div><h3>Serving Transcona, Winnipeg</h3><p>Residential seasonal snow clearing and custom storefront walkway quotes.</p></div><a class="button primary" href="mailto:shieldspropertyserviceinc@gmail.com?subject=Service%20area%20question">Check my address</a></div>
+        <section class="section tint"><div class="wrap">
+        <h2 class="section-title">PROUDLY TRANSCONA.</h2>        <p class="section-intro">We're based right here in Transcona and serve homes across the neighbourhood.</p>
+        <div class="map-wrap"><iframe title="Map of Transcona, Winnipeg" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <p class="map-note">Just outside Transcona? Send your address through the booking form above — we'll tell you straight whether we can cover you.</p>
+      </div></section>
       </div></div>
     </section>
   </main>
