@@ -524,6 +524,8 @@
 .guide h2{margin-bottom:12px}
 .guide ul{margin:12px 0 12px 20px}
 .guide li{margin-bottom:8px}
+.guide-cat{margin-bottom:36px}
+.guide-cat-title{font-size:1.4em;margin-bottom:20px;padding-bottom:8px;border-bottom:2px solid var(--orange)}
 .bounds{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0;list-style:none;padding:0}
 .bounds li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow);font-size:16px}
 .bounds li strong{color:var(--navy)}
