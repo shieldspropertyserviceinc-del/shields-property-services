@@ -154,6 +154,10 @@
     .addr-suggest button:last-child { border-bottom:0; }
     .attrib { font-size:12px; color:var(--muted); margin-top:6px; }
     .call-fab { display:none; }
+    .book-cta { background:var(--navy); color:#fff; border-radius:18px; padding:46px 48px; display:flex; align-items:center; justify-content:space-between; gap:30px; box-shadow:var(--shadow); }
+    .book-cta h2 { font-family:"Barlow Condensed",sans-serif; font-weight:800; font-size:clamp(38px,4.6vw,58px); line-height:.95; margin:0 0 10px; color:#fff; }
+    .book-cta p { color:#d8e8ef; margin:0; font-size:19px; max-width:560px; }
+    .book-cta .button { flex:none; font-size:20px; padding:16px 36px; }
     .faq { display:grid; gap:12px; margin-top:28px; max-width:860px; }
     .faq details { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
     .faq summary { font-weight:800; font-size:19px; cursor:pointer; }
@@ -175,6 +179,8 @@
       .section { padding:60px 0; }
       .page-head { padding:50px 0 44px; }
       .service-area { align-items:flex-start; flex-direction:column; }
+      .book-cta { flex-direction:column; align-items:stretch; text-align:center; padding:36px 26px; }
+      .book-cta .button { width:100%; }
       footer { padding-bottom:110px; }
       .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(6,1fr); left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; overflow:hidden; }
       .mobile-nav .nav-link { border-radius:0; padding:12px 4px 11px; font-size:14px; }
@@ -226,47 +232,15 @@
         </div>
       </div>
 
-      <section class="section tint collapsible" id="booknow" aria-labelledby="booknow-title" data-open>
-        <div class="wrap">
-          <h2 class="section-title" id="booknow-title">BOOK YOUR WINTER.</h2>
-          <p class="section-intro">Pick your plan, pin your address on the map, and send your booking request.</p>
-        <div class="book-grid">
-          <article class="book-card">
-            <h2>Booking request</h2>
-            <p>Fill this in and we'll confirm your spot by phone or email.</p>
-            <form id="book-form">
-              <div class="field"><label for="bk-plan">Plan</label>
-                <select id="bk-plan" name="plan">
-                  <option>Essential — $150/mo</option>
-                  <option selected>Complete — $200/mo</option>
-                  <option>Premium — $300/mo</option>
-                  <option>Per visit — $45/visit</option>
-                  <option>Not sure yet</option>
-                </select></div>
-              <div class="field-row">
-                <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
-                <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
-              </div>
-              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email"></div>
-              <div class="field"><label for="bk-address">Property address to be cleared</label>
-                <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off">
-                <div class="addr-suggest" id="bk-suggest" hidden></div></div>
-                <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
-              </div>
-              <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
-              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
-              <p class="map-note">This opens your email app with everything filled in — just hit send.</p>
-              <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
-            </form>
-          </article>
-          <div>
-            <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-            <div class="actions" style="margin-top:14px"><button class="button dark" type="button" id="bk-locate">Locate my address on the map</button></div>
-            <p class="map-note">Type your address, then tap the button to pin it on the map.</p>
-          </div>
+            <section class="section"><div class="wrap">
+        <div class="book-cta">
+          <div><h2>READY WHEN THE SNOW FLIES?</h2>
+          <p>Pick your plan, pin your address on the map, and lock in your winter in under two minutes.</p></div>
+          <a class="button primary" href="#book" data-route="book">Book now</a>
         </div>
-        </div>
-      </section>
+      </div></section>
+
+
 
       <section class="section collapsible"><div class="wrap">
         <h2 class="section-title">NEIGHBOURS HELPING NEIGHBOURS.</h2>
@@ -314,9 +288,23 @@
         </div>
       </section>
 
+      <section class="section"><div class="wrap">
+        <div class="about-grid">
+          <div><img src="owners.jpg" alt="Nicholas and Kathryn Shields" style="width:100%;border-radius:18px;display:block;"></div>
+          <div>
+            <h2 class="section-title">MEET NICHOLAS &amp; KATHRYN.</h2>
+            <p class="section-intro">A husband-and-wife team, not a random crew.</p>
+            <div class="about-copy">
+            <p>We moved to Transcona two years ago from Winkler, and it didn't take long to feel like home. Nicholas spent years as a painter in the manufacturing sector before moving into landscaping and snow clearing — work he's still in today. Kathryn is our Chief Operating Officer, running everything behind the scenes.</p>
+            <p>When you hire us, you're getting us: professional, reliable, and damage-free, every single visit. That's personal.</p>
+            </div>
+            <div class="actions" style="margin-top:22px"><a class="button dark" href="#about" data-route="about">Read our full story</a></div>
+          </div>
+        </div>
+      </div></section>
+
       <section class="section tint collapsible"><div class="wrap">
-        <h2 class="section-title">PROUDLY TRANSCONA.</h2>
-        <p class="section-intro">We're based right here in Transcona and serve homes across the neighbourhood.</p>
+        <h2 class="section-title">PROUDLY TRANSCONA.</h2>        <p class="section-intro">We're based right here in Transcona and serve homes across the neighbourhood.</p>
         <div class="map-wrap"><iframe title="Map of Transcona, Winnipeg" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
         <p class="map-note">Just outside Transcona? Send your address through the booking form above — we'll tell you straight whether we can cover you.</p>
       </div></section>
@@ -419,6 +407,47 @@
       </div></div>
     </section>
 
+    <section class="view" id="book" aria-labelledby="book-title">
+      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR WINTER.</h1><p>Pick your plan, pin your address on the map, and send your booking request.</p></div></div>
+      <div class="section"><div class="wrap">
+<div class="book-grid">
+          <article class="book-card">
+            <h2>Booking request</h2>
+            <p>Fill this in and we'll confirm your spot by phone or email.</p>
+            <form id="book-form">
+              <div class="field"><label for="bk-plan">Plan</label>
+                <select id="bk-plan" name="plan">
+                  <option>Essential — $150/mo</option>
+                  <option selected>Complete — $200/mo</option>
+                  <option>Premium — $300/mo</option>
+                  <option>Per visit — $45/visit</option>
+                  <option>Not sure yet</option>
+                </select></div>
+              <div class="field-row">
+                <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
+                <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
+              </div>
+              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email"></div>
+              <div class="field"><label for="bk-address">Property address to be cleared</label>
+                <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off">
+                <div class="addr-suggest" id="bk-suggest" hidden></div></div>
+                <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
+              </div>
+              <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
+              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
+              <p class="map-note">This opens your email app with everything filled in — just hit send.</p>
+              <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
+            </form>
+          </article>
+          <div>
+            <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+            <div class="actions" style="margin-top:14px"><button class="button dark" type="button" id="bk-locate">Locate my address on the map</button></div>
+            <p class="map-note">Type your address, then tap the button to pin it on the map.</p>
+          </div>
+        </div>
+      </div></div>
+    </section>
+
     <section class="view" id="contact" aria-labelledby="contact-title">
       <div class="page-head"><div class="wrap"><h1 id="contact-title">LET'S CLEAR YOUR WINTER.</h1><p>Request a free, no-pressure estimate for your Transcona property.</p></div></div>
       <div class="section"><div class="wrap">
@@ -470,13 +499,11 @@
   function showRoute(){
     var name=location.hash.slice(1);
     if(routes.indexOf(name)===-1) name='home';
-    var view=name==='book'?'home':name;
-    document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('active',v.id===view);});
+    document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('active',v.id===name);});
     document.querySelectorAll('[data-route]').forEach(function(a){
       if(a.dataset.route===name) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
     });
-    if(name==='book'){var bk=document.getElementById('booknow');if(bk){bk.scrollIntoView();}else{window.scrollTo(0,0);}}
-    else window.scrollTo(0,0);
+    window.scrollTo(0,0);
     var titles={home:'Shields Property Services | Snow Clearing in Transcona',pricing:'Pricing | Shields Property Services',about:'About | Shields Property Services',faq:'FAQ | Shields Property Services',book:'Book | Shields Property Services',contact:'Contact | Shields Property Services'};
     document.title=titles[name];
   }
