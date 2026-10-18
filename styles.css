@@ -533,8 +533,8 @@
 .cat-icon{margin-right:8px}
 .cat-count{display:inline-block;font-size:14px;font-weight:700;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:2px 12px;margin-left:12px;vertical-align:middle;letter-spacing:0}
 .guide-search-wrap{position:relative;max-width:860px;margin-bottom:28px}
-.guide-search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none}
-.guide-search-wrap input{width:100%;padding:14px 18px 14px 48px;font-size:17px;border:2px solid var(--line);border-radius:12px;background:var(--surface)}
+.guide-search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:22px;pointer-events:none}
+.guide-search-wrap input{width:100%;padding:18px 22px 18px 56px;font-size:20px;border:2px solid var(--line);border-radius:14px;background:var(--surface)}
 .guide-search-wrap input:focus{outline:none;border-color:var(--blue)}
 .guide{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
 .guide summary{font-weight:800;font-size:19px;cursor:pointer;list-style:none}
