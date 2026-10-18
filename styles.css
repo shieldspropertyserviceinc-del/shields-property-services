@@ -490,15 +490,15 @@
           .est-price{font-size:44px;font-weight:800;margin:4px 0}
           .est-price small{font-size:18px;font-weight:600}
 
-.seasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:8px}
-.season{display:flex;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--season,#3A9ACD);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
-.season-img{width:104px;height:104px;object-fit:cover;border-radius:10px;flex-shrink:0;display:block}
+.seasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;margin-top:8px}
+.season{display:flex;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--season,#3A9ACD);border-radius:14px;padding:17px;box-shadow:var(--shadow)}
+.season-img{width:130px;height:130px;object-fit:cover;border-radius:10px;flex-shrink:0;display:block}
 .season-body{flex:1;min-width:0}
-.season .s-label{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--season,#3A9ACD)}
-.s-icon{width:13px;height:13px;vertical-align:-2px;margin-right:4px}
-.season h3{margin:2px 0;font-size:18px}
-.season ul{margin:6px 0 10px;padding-left:18px;font-size:14px}
+.season .s-label{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--season,#3A9ACD)}
+.s-icon{width:16px;height:16px;vertical-align:-2px;margin-right:4px}
+.season h3{margin:2px 0;font-size:22px}
+.season ul{margin:6px 0 10px;padding-left:18px;font-size:15px}
 .season li{margin:3px 0}
 .season .actions{margin:0}
-@media (max-width:640px){.season-img{width:64px;height:64px;border-radius:8px}.season{gap:12px;padding:12px}.season h3{font-size:16px}}
+@media (max-width:640px){.season-img{width:80px;height:80px;border-radius:8px}.season{gap:12px;padding:14px}.season h3{font-size:18px}}
 
