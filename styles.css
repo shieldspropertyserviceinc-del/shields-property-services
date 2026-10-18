@@ -530,6 +530,12 @@
 .guide-cat:last-child{margin-bottom:0}
 .guide-cat-title{font-size:clamp(30px,4vw,40px);letter-spacing:-.015em;margin:0 0 14px;color:var(--navy)}
 .guide-wrap{display:grid;gap:12px;margin-top:14px;max-width:860px}
+.cat-icon{margin-right:8px}
+.cat-count{display:inline-block;font-size:14px;font-weight:700;color:var(--muted);background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:2px 12px;margin-left:12px;vertical-align:middle;letter-spacing:0}
+.guide-search-wrap{position:relative;max-width:860px;margin-bottom:28px}
+.guide-search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:18px;pointer-events:none}
+.guide-search-wrap input{width:100%;padding:14px 18px 14px 48px;font-size:17px;border:2px solid var(--line);border-radius:12px;background:var(--surface)}
+.guide-search-wrap input:focus{outline:none;border-color:var(--blue)}
 .guide{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
 .guide summary{font-weight:800;font-size:19px;cursor:pointer;list-style:none}
 .guide summary::-webkit-details-marker{display:none}
