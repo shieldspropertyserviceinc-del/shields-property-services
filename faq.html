@@ -100,7 +100,14 @@
       <a class="nav-link" href="referral.html">Referral</a>
       <a class="nav-link cta" href="contact.html">Free estimate</a>
     </nav>
+    <button class="site-search-toggle" id="site-search-toggle" aria-label="Search the site" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
   </header>
+  <div class="site-search" id="site-search" hidden>
+    <div class="wrap">
+      <input id="site-search-input" type="search" placeholder="Search services, pricing, guides…" autocomplete="off" aria-label="Search the site">
+      <div class="site-search-results" id="site-search-results"></div>
+    </div>
+  </div>
 
   <main>
     <div class="page">
@@ -112,51 +119,51 @@
         <section class="faq-cat">
           <h2 class="faq-cat-title">Snow clearing</h2>
           <div class="faq">
-            <details><summary>How do the snowfall triggers work?</summary><p>We watch the forecast. When snowfall reaches your plan's trigger — 6 cm for Essential, 4 cm for Complete, 2 cm for Premium — we come out and clear within 12 hours of the snow stopping.</p></details>
-            <details><summary>What exactly gets cleared each visit?</summary><p>Your driveway, your walkway, and snow brushed off up to two vehicles parked in the driveway. Windrow clearing (the ridge the city plow leaves) is included with Complete and Premium; Essential can add it for $25 per visit.</p></details>
-            <details><summary>What if I'm not home when it snows?</summary><p>No problem — we clear whether you're home or not. That's the whole point: wake up or come home to a clear driveway.</p></details>
-            <details><summary>Will your equipment damage my driveway or lawn?</summary><p>We work damage-conscious on every visit. Professional, reliable, damage-free isn't a slogan — it's the standard.</p></details>
-            <details><summary>Do you offer one-time snow clearing?</summary><p>Yes — $45 per visit, with the same 12-hour clearing standard. No plan required.</p></details>
-            <details><summary>What is a windrow, and do you clear it?</summary><p>The windrow is the ridge of snow the city plow leaves across the end of your driveway. It’s included with Complete and Premium plans, or add it to Essential for $25 per visit.</p></details>
-            <details><summary>Do you salt or sand icy driveways?</summary><p>Yes — salting and sanding is included with our Premium plan and available as an add-on with Essential and Complete.</p></details>
-            <details><summary>Will you let me know before each visit?</summary><p>If you’d like a heads-up before we arrive, just ask — we notify before visits on request.</p></details>
-            <details><summary>What if my cars are in the driveway when you come?</summary><p>No problem — we’ll do our best to clear around and under your vehicles, and we brush them off with soft car brushes.</p></details>
-            <details><summary>When does the season run?</summary><p>November through March, every winter.</p></details>
+            <details id="faq-how-do-the-snowfall-triggers-work"><summary>How do the snowfall triggers work?</summary><p>We watch the forecast. When snowfall reaches your plan's trigger — 6 cm for Essential, 4 cm for Complete, 2 cm for Premium — we come out and clear within 12 hours of the snow stopping.</p></details>
+            <details id="faq-what-exactly-gets-cleared-each-visit"><summary>What exactly gets cleared each visit?</summary><p>Your driveway, your walkway, and snow brushed off up to two vehicles parked in the driveway. Windrow clearing (the ridge the city plow leaves) is included with Complete and Premium; Essential can add it for $25 per visit.</p></details>
+            <details id="faq-what-if-i-m-not-home-when-it-snows"><summary>What if I'm not home when it snows?</summary><p>No problem — we clear whether you're home or not. That's the whole point: wake up or come home to a clear driveway.</p></details>
+            <details id="faq-will-your-equipment-damage-my-driveway-or-lawn"><summary>Will your equipment damage my driveway or lawn?</summary><p>We work damage-conscious on every visit. Professional, reliable, damage-free isn't a slogan — it's the standard.</p></details>
+            <details id="faq-do-you-offer-one-time-snow-clearing"><summary>Do you offer one-time snow clearing?</summary><p>Yes — $45 per visit, with the same 12-hour clearing standard. No plan required.</p></details>
+            <details id="faq-what-is-a-windrow-and-do-you-clear-it"><summary>What is a windrow, and do you clear it?</summary><p>The windrow is the ridge of snow the city plow leaves across the end of your driveway. It’s included with Complete and Premium plans, or add it to Essential for $25 per visit.</p></details>
+            <details id="faq-do-you-salt-or-sand-icy-driveways"><summary>Do you salt or sand icy driveways?</summary><p>Yes — salting and sanding is included with our Premium plan and available as an add-on with Essential and Complete.</p></details>
+            <details id="faq-will-you-let-me-know-before-each-visit"><summary>Will you let me know before each visit?</summary><p>If you’d like a heads-up before we arrive, just ask — we notify before visits on request.</p></details>
+            <details id="faq-what-if-my-cars-are-in-the-driveway-when-you-come"><summary>What if my cars are in the driveway when you come?</summary><p>No problem — we’ll do our best to clear around and under your vehicles, and we brush them off with soft car brushes.</p></details>
+            <details id="faq-when-does-the-season-run"><summary>When does the season run?</summary><p>November through March, every winter.</p></details>
           </div>
         </section>
         <section class="faq-cat">
           <h2 class="faq-cat-title">Pricing &amp; payments</h2>
           <div class="faq">
-            <details><summary>How and when do I pay?</summary><p>E-transfer, debit, or credit. Invoices go out monthly and are due within 15 days.</p></details>
-            <details><summary>What happens if my payment is late?</summary><p>Invoices are due within 15 days. Balances unpaid after 31 days accrue interest at 5% APR, and service pauses after 45 days unpaid.</p></details>
-            <details><summary>Can I cancel my plan mid-season?</summary><p>Yes. If you signed a season contract, there’s a $50 charge for each month remaining in the season.</p></details>
-            <details><summary>Do you offer any discounts?</summary><p>Yes — seniors get 10% off, plus our Neighbour Referral Program gets you and a friend $25 each. And right now the very first customer gets an extra 35% off early-bird season rates.</p></details>
+            <details id="faq-how-and-when-do-i-pay"><summary>How and when do I pay?</summary><p>E-transfer, debit, or credit. Invoices go out monthly and are due within 15 days.</p></details>
+            <details id="faq-what-happens-if-my-payment-is-late"><summary>What happens if my payment is late?</summary><p>Invoices are due within 15 days. Balances unpaid after 31 days accrue interest at 5% APR, and service pauses after 45 days unpaid.</p></details>
+            <details id="faq-can-i-cancel-my-plan-mid-season"><summary>Can I cancel my plan mid-season?</summary><p>Yes. If you signed a season contract, there’s a $50 charge for each month remaining in the season.</p></details>
+            <details id="faq-do-you-offer-any-discounts"><summary>Do you offer any discounts?</summary><p>Yes — seniors get 10% off, plus our Neighbour Referral Program gets you and a friend $25 each. And right now the very first customer gets an extra 35% off early-bird season rates.</p></details>
           </div>
         </section>
         <section class="faq-cat">
           <h2 class="faq-cat-title">Booking &amp; service area</h2>
           <div class="faq">
-            <details><summary>Which areas do you serve?</summary><p>We guarantee service across Transcona, Winnipeg — an area roughly bounded by Gunn Road (north), Dugald Road (south), Plessis Road (west), and the Perimeter Highway (east). Beyond these boundaries, we accept bookings on request.<br><a href="contact.html"><img src="service-area-map.webp" alt="Map of the Shields Property Services guaranteed service area in Transcona" loading="lazy" style="width:100%;max-width:620px;border-radius:12px;margin-top:12px;display:block;border:2px solid var(--line)"></a></p></details>
-            <details><summary>How do I get started?</summary><p>Fill in the booking form on our <a href="book.html">Book page</a>, or request a free in-person estimate. No pressure, no obligation.</p></details>
-            <details><summary>Do you do commercial work?</summary><p>We clear walkways for small storefronts in Transcona — free custom quote per property.</p></details>
+            <details id="faq-which-areas-do-you-serve"><summary>Which areas do you serve?</summary><p>We guarantee service across Transcona, Winnipeg — an area roughly bounded by Gunn Road (north), Dugald Road (south), Plessis Road (west), and the Perimeter Highway (east). Beyond these boundaries, we accept bookings on request.<br><a href="contact.html"><img src="service-area-map.webp" alt="Map of the Shields Property Services guaranteed service area in Transcona" loading="lazy" style="width:100%;max-width:620px;border-radius:12px;margin-top:12px;display:block;border:2px solid var(--line)"></a></p></details>
+            <details id="faq-how-do-i-get-started"><summary>How do I get started?</summary><p>Fill in the booking form on our <a href="book.html">Book page</a>, or request a free in-person estimate. No pressure, no obligation.</p></details>
+            <details id="faq-do-you-do-commercial-work"><summary>Do you do commercial work?</summary><p>We clear walkways for small storefronts in Transcona — free custom quote per property.</p></details>
           </div>
         </section>
         <section class="faq-cat">
           <h2 class="faq-cat-title">Spring, summer &amp; fall</h2>
           <div class="faq">
-            <details><summary>What's included in a spring cleanup?</summary><p>Removal of all debris and dead vegetation — from $50. Every job starts with a free in-person estimate.</p></details>
-            <details><summary>Do you mow on a regular schedule?</summary><p>Yes — weekly mowing for contract clients, or book us per visit whenever you need it. From $40.</p></details>
-            <details><summary>Do you bag the clippings and leaves?</summary><p>Yes — all waste is bagged and removed, unless you’d prefer we mulch it back in.</p></details>
-            <details><summary>What summer services do you offer besides mowing?</summary><p>Comprehensive yard care — hedging, garden beds and more. Tell us what you need and we’ll quote it free.</p></details>
-            <details><summary>What's included in a fall cleanup?</summary><p>Leaf cleanup plus pickup of all plant and tree droppings and any garbage in the yard — from $50. Please note: we don't pick up pet waste.</p></details>
-            <details><summary>Should I mark anything in my yard before winter?</summary><p>It’s very much appreciated — marking sprinkler heads and hidden edges keeps your lawn looking great in spring. We can also do this for you during a fall cleanup.</p></details>
-            <details><summary>What services do you offer besides snow clearing?</summary><p>We’re year-round: spring cleanup and aeration, summer mowing and landscaping, fall leaf cleanup. See our Services page for details.</p></details>
+            <details id="faq-what-s-included-in-a-spring-cleanup"><summary>What's included in a spring cleanup?</summary><p>Removal of all debris and dead vegetation — from $50. Every job starts with a free in-person estimate.</p></details>
+            <details id="faq-do-you-mow-on-a-regular-schedule"><summary>Do you mow on a regular schedule?</summary><p>Yes — weekly mowing for contract clients, or book us per visit whenever you need it. From $40.</p></details>
+            <details id="faq-do-you-bag-the-clippings-and-leaves"><summary>Do you bag the clippings and leaves?</summary><p>Yes — all waste is bagged and removed, unless you’d prefer we mulch it back in.</p></details>
+            <details id="faq-what-summer-services-do-you-offer-besides-mowing"><summary>What summer services do you offer besides mowing?</summary><p>Comprehensive yard care — hedging, garden beds and more. Tell us what you need and we’ll quote it free.</p></details>
+            <details id="faq-what-s-included-in-a-fall-cleanup"><summary>What's included in a fall cleanup?</summary><p>Leaf cleanup plus pickup of all plant and tree droppings and any garbage in the yard — from $50. Please note: we don't pick up pet waste.</p></details>
+            <details id="faq-should-i-mark-anything-in-my-yard-before-winter"><summary>Should I mark anything in my yard before winter?</summary><p>It’s very much appreciated — marking sprinkler heads and hidden edges keeps your lawn looking great in spring. We can also do this for you during a fall cleanup.</p></details>
+            <details id="faq-what-services-do-you-offer-besides-snow-clearing"><summary>What services do you offer besides snow clearing?</summary><p>We’re year-round: spring cleanup and aeration, summer mowing and landscaping, fall leaf cleanup. See our Services page for details.</p></details>
           </div>
         </section>
         <section class="faq-cat">
           <h2 class="faq-cat-title">Referrals</h2>
           <div class="faq">
-            <details><summary>How does the referral program work?</summary><p>New customers get $25 off their first invoice and you get a $25 credit once it’s paid — with unlimited referrals. See our Referral page for details.</p></details>
+            <details id="faq-how-does-the-referral-program-work"><summary>How does the referral program work?</summary><p>New customers get $25 off their first invoice and you get a $25 credit once it’s paid — with unlimited referrals. See our Referral page for details.</p></details>
           </div>
         </section>
         </div>
@@ -192,6 +199,37 @@
       tgl.setAttribute('aria-label', expanded?'Expand navigation':'Collapse navigation');
       mnav.classList.toggle('collapsed', expanded);
     });}
+  })();
+  (function(){
+    var btn=document.getElementById('site-search-toggle'),
+        bar=document.getElementById('site-search'),
+        inp=document.getElementById('site-search-input'),
+        res=document.getElementById('site-search-results'),
+        idx=null;
+    if(!btn||!bar||!inp) return;
+    function toggle(show){
+      var open = show!==undefined ? show : bar.hidden;
+      bar.hidden=!open;
+      btn.setAttribute('aria-expanded', open?'true':'false');
+      if(open){ inp.focus(); }
+      else { inp.value=''; res.innerHTML=''; }
+    }
+    btn.addEventListener('click',function(){ toggle(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!bar.hidden){ toggle(false); }});
+    fetch('search-index.json').then(function(r){return r.json();}).then(function(j){idx=j;}).catch(function(){});
+    inp.addEventListener('input',function(){
+      var q=inp.value.trim().toLowerCase();
+      if(!q||!idx){res.innerHTML='';return;}
+      var words=q.split(/\s+/);
+      var hits=idx.filter(function(e){
+        var hay=(e.t+' '+e.x).toLowerCase();
+        return words.every(function(w){return hay.indexOf(w)!==-1;});
+      }).slice(0,8);
+      if(!hits.length){res.innerHTML='<div class="site-search-none">No results for &ldquo;'+inp.value.replace(/</g,'&lt;')+'&rdquo;</div>';return;}
+      res.innerHTML=hits.map(function(e){
+        return '<a href="'+e.u+'"><div class="r-page">'+e.p+'</div><div class="r-title">'+e.t.replace(/</g,'&lt;')+'</div><div class="r-snip">'+e.x.replace(/</g,'&lt;').substring(0,140)+'&hellip;</div></a>';
+      }).join('');
+    });
   })();
 
   var fqS=document.getElementById('faq-search'),fqN=document.getElementById('faq-none');  if(fqS){fqS.addEventListener('input',function(){    var q=fqS.value.trim().toLowerCase(),shown=0;    document.querySelectorAll('.faq-cat').forEach(function(cat){      var cs=0;      cat.querySelectorAll('details').forEach(function(d){        var hit=!q||d.textContent.toLowerCase().indexOf(q)!==-1;        d.style.display=hit?'':'none';        if(q&&hit){d.open=true;}        if(hit){cs++;}      });      cat.style.display=cs?'':'none';      shown+=cs;    });    fqN.hidden=shown>0;  });}})();
