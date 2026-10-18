@@ -567,7 +567,7 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .hero h1 em{color:#fff}
 .hero .lead{color:rgba(255,255,255,.9)}
 .hero .trust span{color:rgba(255,255,255,.8)}
-.page-head{background:linear-gradient(135deg,var(--navy) 0%,#1e4a6e 100%);color:#fff;padding:48px 0}
+.page-head{background:#0d2d43;background:linear-gradient(135deg,#0d2d43 0%,#1e4a6e 100%);color:#fff;padding:48px 0}
 .page-head h1{color:#fff}
 .page-head p{color:rgba(255,255,255,.8)}
 .section{padding:56px 0}
@@ -576,7 +576,7 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .service.link-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--orange));opacity:0;transition:opacity .25s ease}
 .service.link-card:hover::before{opacity:1}
 .service.link-card .num{background:var(--blue);color:#fff;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:18px}
-.book-cta{background:linear-gradient(135deg,var(--orange) 0%,#e67e22 100%);border-radius:18px;padding:36px;color:#fff;box-shadow:0 8px 32px rgba(255,140,40,.25)}
+.book-cta{background:#ff8c28;background:linear-gradient(135deg,#ff8c28 0%,#e67e22 100%);border-radius:18px;padding:36px;color:#fff;box-shadow:0 8px 32px rgba(255,140,40,.25)}
 .book-cta h2{color:#fff}
 .book-cta p{color:rgba(255,255,255,.9)}
 
