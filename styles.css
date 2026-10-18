@@ -562,12 +562,11 @@ html{scroll-behavior:smooth}
 input,select,textarea{transition:border-color .2s ease,box-shadow .2s ease}
 input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15)}
 /* Premium round 2: sophisticated details */
-.hero{background:linear-gradient(135deg,var(--navy) 0%,#1e4a6e 50%,var(--blue) 100%);color:#fff;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 70% 20%,rgba(255,140,40,.15) 0%,transparent 50%);pointer-events:none}
+.hero{background:#0d2d43;background:linear-gradient(135deg,#0d2d43 0%,#1e4a6e 50%,#3A9ACD 100%);color:#fff;position:relative;overflow:hidden}
 .hero h1{color:#fff}
 .hero h1 em{color:#fff}
-.hero .lead{color:rgba(255,255,255,.85)}
-.hero .trust span{color:rgba(255,255,255,.75)}
+.hero .lead{color:rgba(255,255,255,.9)}
+.hero .trust span{color:rgba(255,255,255,.8)}
 .page-head{background:linear-gradient(135deg,var(--navy) 0%,#1e4a6e 100%);color:#fff;padding:48px 0}
 .page-head h1{color:#fff}
 .page-head p{color:rgba(255,255,255,.8)}
