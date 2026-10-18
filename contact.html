@@ -30,6 +30,13 @@
 </head>
 <body>
 <div class="site-shell">
+  <div class="site-search" id="site-search">
+    <div class="wrap">
+      <div class="field" style="margin-bottom:0"><label for="site-search-input">Search the site</label>
+      <input id="site-search-input" type="search" placeholder="Try &lsquo;windrow&rsquo; or &lsquo;pricing&rsquo;&hellip;" autocomplete="off"></div>
+      <div class="site-search-results" id="site-search-results"></div>
+    </div>
+  </div>
   <header class="topbar">
     <nav aria-label="Main navigation">
       <a class="nav-link" href="index.html">Home</a>
@@ -42,14 +49,7 @@
       <a class="nav-link" href="referral.html">Referral</a>
       <a class="nav-link cta" href="contact.html" aria-current="page">Free estimate</a>
     </nav>
-    <button class="site-search-toggle" id="site-search-toggle" aria-label="Search the site" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
   </header>
-  <div class="site-search" id="site-search" hidden>
-    <div class="wrap">
-      <input id="site-search-input" type="search" placeholder="Search services, pricing, guides…" autocomplete="off" aria-label="Search the site">
-      <div class="site-search-results" id="site-search-results"></div>
-    </div>
-  </div>
 
   <main>
     <div class="page">
@@ -138,21 +138,11 @@
     });}
   })();
   (function(){
-    var btn=document.getElementById('site-search-toggle'),
-        bar=document.getElementById('site-search'),
-        inp=document.getElementById('site-search-input'),
+    var inp=document.getElementById('site-search-input'),
         res=document.getElementById('site-search-results'),
         idx=null;
-    if(!btn||!bar||!inp) return;
-    function toggle(show){
-      var open = show!==undefined ? show : bar.hidden;
-      bar.hidden=!open;
-      btn.setAttribute('aria-expanded', open?'true':'false');
-      if(open){ inp.focus(); }
-      else { inp.value=''; res.innerHTML=''; }
-    }
-    btn.addEventListener('click',function(){ toggle(); });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!bar.hidden){ toggle(false); }});
+    if(!inp||!res) return;
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ inp.value=''; res.innerHTML=''; inp.blur(); }});
     fetch('search-index.json').then(function(r){return r.json();}).then(function(j){idx=j;}).catch(function(){});
     inp.addEventListener('input',function(){
       var q=inp.value.trim().toLowerCase();
