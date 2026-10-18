@@ -45,19 +45,24 @@
 
   <main>
     <div class="page">
-      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR WINTER.</h1><p>Pick your plan, pin your address on the map, and send your booking request.</p></div></div>
+      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR SERVICE.</h1><p>Pick a snow plan or fall cleanup, pin your address on the map, and send your booking request.</p></div></div>
       <div class="section"><div class="wrap">
 <div class="book-grid">
           <article class="book-card">
             <h2>Booking request</h2>
             <p>Fill this in and we'll confirm your spot by phone or email.</p>
             <form id="book-form">
-              <div class="field"><label for="bk-plan">Plan</label>
+              <div class="field"><label for="bk-plan">Service or plan</label>
                 <select id="bk-plan" name="plan">
+                  <optgroup label="Snow clearing">
                   <option>Essential — $150/mo</option>
                   <option selected>Complete — $200/mo</option>
                   <option>Premium — $300/mo</option>
                   <option>Per visit — $45/visit</option>
+                  </optgroup>
+                  <optgroup label="Fall services">
+                  <option>Fall cleanup — from $50</option>
+                  </optgroup>
                   <option>Not sure yet</option>
                 </select></div>
               <div class="field-row">
