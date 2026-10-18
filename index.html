@@ -213,6 +213,47 @@
         </div>
       </div>
 
+      <section class="section tint" id="booknow" aria-labelledby="booknow-title">
+        <div class="wrap">
+          <h2 class="section-title" id="booknow-title">BOOK YOUR WINTER.</h2>
+          <p class="section-intro">Pick your plan, pin your address on the map, and send your booking request.</p>
+        <div class="book-grid">
+          <article class="book-card">
+            <h2>Booking request</h2>
+            <p>Fill this in and we'll confirm your spot by phone or email.</p>
+            <form id="book-form">
+              <div class="field"><label for="bk-plan">Plan</label>
+                <select id="bk-plan" name="plan">
+                  <option>Essential — $150/mo</option>
+                  <option selected>Complete — $200/mo</option>
+                  <option>Premium — $300/mo</option>
+                  <option>Per visit — $45/visit</option>
+                  <option>Not sure yet</option>
+                </select></div>
+              <div class="field-row">
+                <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
+                <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
+              </div>
+              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email"></div>
+              <div class="field"><label for="bk-address">Property address to be cleared</label>
+                <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off">
+                <div class="addr-suggest" id="bk-suggest" hidden></div></div>
+                <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
+              </div>
+              <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
+              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
+              <p class="map-note">This opens your email app with everything filled in — just hit send.</p>
+            </form>
+          </article>
+          <div>
+            <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+            <div class="actions" style="margin-top:14px"><button class="button dark" type="button" id="bk-locate">Locate my address on the map</button></div>
+            <p class="map-note">Type your address, then tap the button to pin it on the map.</p>
+          </div>
+        </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="wrap">
           <h2 class="section-title">Snow clearing that covers the details.</h2>
@@ -318,46 +359,6 @@
       </div></section>
     </section>
 
-    <section class="view" id="book" aria-labelledby="book-title">
-      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR WINTER.</h1><p>Pick your plan, pin your address on the map, and send your booking request.</p></div></div>
-      <div class="section"><div class="wrap">
-        <div class="book-grid">
-          <article class="book-card">
-            <h2>Booking request</h2>
-            <p>Fill this in and we'll confirm your spot by phone or email.</p>
-            <form id="book-form">
-              <div class="field"><label for="bk-plan">Plan</label>
-                <select id="bk-plan" name="plan">
-                  <option>Essential — $150/mo</option>
-                  <option selected>Complete — $200/mo</option>
-                  <option>Premium — $300/mo</option>
-                  <option>Per visit — $45/visit</option>
-                  <option>Not sure yet</option>
-                </select></div>
-              <div class="field-row">
-                <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
-                <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
-              </div>
-              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email"></div>
-              <div class="field"><label for="bk-address">Property address to be cleared</label>
-                <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off">
-                <div class="addr-suggest" id="bk-suggest" hidden></div></div>
-                <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
-              </div>
-              <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
-              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
-              <p class="map-note">This opens your email app with everything filled in — just hit send.</p>
-            </form>
-          </article>
-          <div>
-            <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-            <div class="actions" style="margin-top:14px"><button class="button dark" type="button" id="bk-locate">Locate my address on the map</button></div>
-            <p class="map-note">Type your address, then tap the button to pin it on the map.</p>
-          </div>
-        </div>
-      </div></div>
-    </section>
-
     <section class="view" id="contact" aria-labelledby="contact-title">
       <div class="page-head"><div class="wrap"><h1 id="contact-title">LET'S CLEAR YOUR WINTER.</h1><p>Request a free, no-pressure estimate for your Transcona property.</p></div></div>
       <div class="section"><div class="wrap">
@@ -407,11 +408,13 @@
   function showRoute(){
     var name=location.hash.slice(1);
     if(routes.indexOf(name)===-1) name='home';
-    document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('active',v.id===name);});
+    var view=name==='book'?'home':name;
+    document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('active',v.id===view);});
     document.querySelectorAll('[data-route]').forEach(function(a){
       if(a.dataset.route===name) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
     });
-    window.scrollTo(0,0);
+    if(name==='book'){var bk=document.getElementById('booknow');if(bk){bk.scrollIntoView();}else{window.scrollTo(0,0);}}
+    else window.scrollTo(0,0);
     var titles={home:'Shields Property Services | Snow Clearing in Transcona',pricing:'Pricing | Shields Property Services',about:'About | Shields Property Services',book:'Book | Shields Property Services',contact:'Contact | Shields Property Services'};
     document.title=titles[name];
   }
