@@ -134,6 +134,19 @@
     .social-link { font-weight:700; text-underline-offset:3px; }
     .footer-social { display:inline-flex; align-items:center; min-height:44px; padding:9px 14px; border:1px solid #507184; border-radius:8px; color:#fff; text-decoration:none; font-weight:800; }
     .footer-social:hover { border-color:var(--sky); background:#102f41; }
+    .book-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
+    .book-card { background:var(--surface); border-top:7px solid var(--orange); padding:34px; box-shadow:var(--shadow); }
+    .book-card h2 { font-family:"Barlow Condensed"; font-size:38px; margin:0 0 12px; }
+    .book-card p { color:var(--muted); }
+    .field { margin-bottom:18px; }
+    .field label { display:block; font-weight:800; margin-bottom:7px; }
+    .field input, .field select, .field textarea { width:100%; padding:13px 14px; border:2px solid var(--line); border-radius:10px; font:inherit; background:var(--surface); color:var(--ink); }
+    .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:var(--sky); }
+    .field textarea { min-height:110px; resize:vertical; }
+    .field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .map-wrap { border-radius:14px; overflow:hidden; box-shadow:var(--shadow); border:2px solid var(--line); }
+    .map-wrap iframe { width:100%; height:420px; border:0; display:block; }
+    .map-note { color:var(--muted); font-size:15px; margin-top:10px; }
     .mobile-nav { display:none; }
     @media (max-width:820px) {
       .topbar { display:none; }
@@ -142,7 +155,7 @@
       .hero-mark { display:none; }
       .hero h1 { font-size:clamp(58px,18vw,78px); }
       .hero h1 em { color:var(--navy); }
-      .services, .plans, .pricing-notes, .about-grid, .contact-grid, .promise { grid-template-columns:1fr; }
+      .services, .plans, .pricing-notes, .about-grid, .contact-grid, .book-grid, .promise { grid-template-columns:1fr; }
       .plans { gap:15px; }
       .plan.featured { transform:none; }
       .offer { grid-template-columns:92px 1fr; padding:22px; }
@@ -152,7 +165,7 @@
       .page-head { padding:50px 0 44px; }
       .service-area { align-items:flex-start; flex-direction:column; }
       footer { padding-bottom:110px; }
-      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(4,1fr); left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; overflow:hidden; }
+      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(5,1fr); left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; overflow:hidden; }
       .mobile-nav .nav-link { border-radius:0; padding:12px 4px 11px; font-size:14px; }
     }
     @media (max-width:480px) {
@@ -172,6 +185,7 @@
       <a class="nav-link" href="#home" data-route="home">Home</a>
       <a class="nav-link" href="#pricing" data-route="pricing">Pricing</a>
       <a class="nav-link" href="#about" data-route="about">About</a>
+      <a class="nav-link" href="#book" data-route="book">Book</a>
       <a class="nav-link cta" href="#contact" data-route="contact">Free estimate</a>
     </nav>
   </header>
@@ -298,6 +312,42 @@
       </div></section>
     </section>
 
+    <section class="view" id="book" aria-labelledby="book-title">
+      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR WINTER.</h1><p>Pick your plan, pin your address on the map, and send your booking request.</p></div></div>
+      <div class="section"><div class="wrap">
+        <div class="book-grid">
+          <article class="book-card">
+            <h2>Booking request</h2>
+            <p>Fill this in and we'll confirm your spot by phone or email.</p>
+            <form id="book-form">
+              <div class="field"><label for="bk-plan">Plan</label>
+                <select id="bk-plan" name="plan">
+                  <option>Essential — $150/mo</option>
+                  <option selected>Complete — $200/mo</option>
+                  <option>Premium — $300/mo</option>
+                  <option>Per visit — $45/visit</option>
+                  <option>Not sure yet</option>
+                </select></div>
+              <div class="field-row">
+                <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
+                <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
+              </div>
+              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email"></div>
+              <div class="field"><label for="bk-address">Property address to be cleared</label><input id="bk-address" name="address" type="text" placeholder="123 Example St, Transcona" autocomplete="street-address"></div>
+              <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
+              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
+              <p class="map-note">This opens your email app with everything filled in — just hit send.</p>
+            </form>
+          </article>
+          <div>
+            <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+            <div class="actions" style="margin-top:14px"><button class="button dark" type="button" id="bk-locate">Locate my address on the map</button></div>
+            <p class="map-note">Type your address, then tap the button to pin it on the map.</p>
+          </div>
+        </div>
+      </div></div>
+    </section>
+
     <section class="view" id="contact" aria-labelledby="contact-title">
       <div class="page-head"><div class="wrap"><h1 id="contact-title">LET'S CLEAR YOUR WINTER.</h1><p>Request a free, no-pressure estimate for your Transcona property.</p></div></div>
       <div class="section"><div class="wrap">
@@ -337,12 +387,13 @@
     <a class="nav-link" href="#home" data-route="home">Home</a>
     <a class="nav-link" href="#pricing" data-route="pricing">Pricing</a>
     <a class="nav-link" href="#about" data-route="about">About</a>
+    <a class="nav-link" href="#book" data-route="book">Book</a>
     <a class="nav-link" href="#contact" data-route="contact">Contact</a>
   </nav>
 </div>
 <script>
 (function(){
-  var routes=['home','pricing','about','contact'];
+  var routes=['home','pricing','about','book','contact'];
   function showRoute(){
     var name=location.hash.slice(1);
     if(routes.indexOf(name)===-1) name='home';
@@ -351,11 +402,24 @@
       if(a.dataset.route===name) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
     });
     window.scrollTo(0,0);
-    var titles={home:'Shields Property Services | Snow Clearing in Transcona',pricing:'Pricing | Shields Property Services',about:'About | Shields Property Services',contact:'Contact | Shields Property Services'};
+    var titles={home:'Shields Property Services | Snow Clearing in Transcona',pricing:'Pricing | Shields Property Services',about:'About | Shields Property Services',book:'Book | Shields Property Services',contact:'Contact | Shields Property Services'};
     document.title=titles[name];
   }
   window.addEventListener('hashchange',showRoute);
   showRoute();
+  var locateBtn=document.getElementById('bk-locate');
+  if(locateBtn){locateBtn.addEventListener('click',function(){
+    var addr=document.getElementById('bk-address').value.trim();
+    var q=addr?addr+', Winnipeg, MB':'Transcona, Winnipeg, MB';
+    document.getElementById('bk-map').src='https://maps.google.com/maps?q='+encodeURIComponent(q)+'&output=embed';
+  });}
+  var bookForm=document.getElementById('book-form');
+  if(bookForm){bookForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){return document.getElementById(id).value.trim();};
+    var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nNotes: '+v('bk-notes');
+    location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
+  });}
 })();
 </script>
 </body>
