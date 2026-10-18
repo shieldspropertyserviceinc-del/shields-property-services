@@ -138,6 +138,11 @@
     });}
   })();
   (function(){
+    // Scroll-reveal animations
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.1});
+    document.querySelectorAll('.guide-cat,.faq-cat,.season,.service.link-card,.section').forEach(function(el){el.classList.add('reveal');io.observe(el);});
+  })();
+  (function(){
     var inp=document.getElementById('site-search-input'),
         res=document.getElementById('site-search-results'),
         idx=null;
