@@ -53,8 +53,7 @@
         <p class="map-note" id="guide-none" hidden>No guides match your search.</p>
         <section class="guide-cat" data-cat="winter">
           <h2 class="guide-cat-title">Winter</h2>
-        <article class="guide" id="winter-prep">
-          <h3>How to prepare your driveway for winter</h3>
+        <details class="guide" id="winter-prep"><summary>How to prepare your driveway for winter</summary>
           <p>Winnipeg averages about 126 cm of snow a year. A little prep in October saves you headaches in January:</p>
           <ul>
             <li><strong>Mark your edges.</strong> Put driveway markers or stakes along the edges before the ground freezes. It helps whoever clears your snow avoid chewing up grass or hitting hidden curbs.</li>
@@ -63,28 +62,22 @@
             <li><strong>Check your drainage.</strong> Make sure downspouts direct water away from the driveway, or you'll get an ice rink by December.</li>
             <li><strong>Stock up on sand.</strong> Even with a clearing service, a bag of sand by the door helps on icy mornings between visits.</li>
           </ul>
-          <p class="map-note">We appreciate yard markers — they keep lawns looking great in spring. Ask us about marking during your fall cleanup.</p>
-        </article>
-        <article class="guide" id="triggers">
-          <h3>Snow clearing triggers explained: 2 cm vs 4 cm vs 6 cm</h3>
+          <p class="map-note">We appreciate yard markers — they keep lawns looking great in spring. Ask us about marking during your fall cleanup.</p></details>
+        <details class="guide" id="triggers"><summary>Snow clearing triggers explained: 2 cm vs 4 cm vs 6 cm</summary>
           <p>A "trigger" is the snowfall amount that sends the crew out. Here's how to pick:</p>
           <ul>
             <li><strong>6 cm (Essential)</strong> — for people who don't mind a bit of snow and mainly want the big dumps handled. Most cost-effective.</li>
             <li><strong>4 cm (Complete)</strong> — the sweet spot for most Transcona driveways. You will rarely wake up to an uncleared driveway.</li>
             <li><strong>2 cm (Premium)</strong> — for anyone who needs reliable access every morning, or just hates seeing snow, period.</li>
           </ul>
-          <p>Winnipeg gets a lot of 2–4 cm dustings that add up. If you are on the fence, the 4 cm trigger covers the vast majority of winter mornings without the premium price.</p>
-        </article>
-        <article class="guide" id="windrow">
-          <h3>What is windrow (and why should you care?)</h3>
+          <p>Winnipeg gets a lot of 2–4 cm dustings that add up. If you are on the fence, the 4 cm trigger covers the vast majority of winter mornings without the premium price.</p></details>
+        <details class="guide" id="windrow"><summary>What is windrow (and why should you care?)</summary>
           <p>Windrow is the ridge of hard, packed snow the city plow leaves across the end of your driveway. It is the heaviest, iciest snow you will deal with all winter — and it shows up after you have already cleared the rest.</p>
-          <p>Most budget services skip it. We include windrow clearing with Complete and Premium plans, and offer it as a $25/visit add-on for Essential. If you have ever tried to chip through a plow ridge with a shovel at 7 am, you know why it matters.</p>
-        </article>
+          <p>Most budget services skip it. We include windrow clearing with Complete and Premium plans, and offer it as a $25/visit add-on for Essential. If you have ever tried to chip through a plow ridge with a shovel at 7 am, you know why it matters.</p></details>
         </section>
         <section class="guide-cat" data-cat="fall">
           <h2 class="guide-cat-title">Fall</h2>
-        <article class="guide" id="fall-checklist">
-          <h3>Fall cleanup checklist for Winnipeg homes</h3>
+        <details class="guide" id="fall-checklist"><summary>Fall cleanup checklist for Winnipeg homes</summary>
           <p>Do this before the first lasting snowfall and your spring self will thank you:</p>
           <ul>
             <li><strong>Clear all leaves.</strong> Matted leaves smother grass over winter and invite mold in spring.</li>
@@ -93,17 +86,14 @@
             <li><strong>Mark sprinkler heads and hidden edges.</strong> Flag anything a blower or shovel could hit.</li>
             <li><strong>Last mow short.</strong> Cut the grass a bit shorter than usual for the final mow — it reduces snow mold.</li>
           </ul>
-          <p>Our fall cleanup covers all of this, from $50. <a href="book.html">Book yours before the snow flies &rarr;</a></p>
-        </article>
+          <p>Our fall cleanup covers all of this, from $50. <a href="book.html">Book yours before the snow flies &rarr;</a></p></details>
         </section>
         <section class="guide-cat" data-cat="spring-summer">
           <h2 class="guide-cat-title">Spring &amp; Summer</h2>
-        <article class="guide" id="aeration">
-          <h3>When to aerate your lawn in Manitoba</h3>
+        <details class="guide" id="aeration"><summary>When to aerate your lawn in Manitoba</summary>
           <p>The best time to aerate in Winnipeg is early fall (September) or spring (May) — when the grass is actively growing but the heat is not stressing it.</p>
           <p>Signs your lawn needs it: water pools instead of soaking in, the soil feels rock-hard, or thin/bare patches keep coming back despite watering and fertilizing. Clay-heavy Manitoba soil compacts easily, so most lawns benefit from aeration every 1–2 years.</p>
-          <p>We offer aeration with a free custom quote. <a href="contact.html">Ask us about it &rarr;</a></p>
-        </article>
+          <p>We offer aeration with a free custom quote. <a href="contact.html">Ask us about it &rarr;</a></p></details>
         </section>
       </div></div>
       <section class="section"><div class="wrap"><h2 class="section-title">READY WHEN YOU ARE.</h2><p class="section-intro">Put the reading down and let us handle it.</p><div class="actions"><a class="button primary" href="book.html">Book a service</a></div></div></section>
@@ -132,9 +122,10 @@
     var q=gsS.value.trim().toLowerCase(),shown=0;
     document.querySelectorAll('.guide-cat').forEach(function(cat){
       var cs=0;
-      cat.querySelectorAll('.guide').forEach(function(g){
+      cat.querySelectorAll('details.guide').forEach(function(g){
         var hit=!q||g.textContent.toLowerCase().indexOf(q)!==-1;
         g.style.display=hit?'':'none';
+        if(q&&hit){g.open=true;}
         if(hit){cs++;}
       });
       cat.style.display=cs?'':'none';
