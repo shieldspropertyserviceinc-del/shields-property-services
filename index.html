@@ -176,7 +176,7 @@
       .page-head { padding:50px 0 44px; }
       .service-area { align-items:flex-start; flex-direction:column; }
       footer { padding-bottom:110px; }
-      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(5,1fr); left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; overflow:hidden; }
+      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(6,1fr); left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; overflow:hidden; }
       .mobile-nav .nav-link { border-radius:0; padding:12px 4px 11px; font-size:14px; }
       .call-fab { display:grid; place-items:center; position:fixed; right:16px; bottom:92px; z-index:60; width:62px; height:62px; border-radius:50%; background:var(--orange); color:#102b3d; box-shadow:0 10px 25px rgba(0,0,0,.32); text-decoration:none; }
       .call-fab svg { width:28px; height:28px; }
@@ -200,6 +200,7 @@
       <a class="nav-link" href="#home" data-route="home">Home</a>
       <a class="nav-link" href="#pricing" data-route="pricing">Pricing</a>
       <a class="nav-link" href="#about" data-route="about">About</a>
+      <a class="nav-link" href="#faq" data-route="faq">FAQ</a>
       <a class="nav-link" href="#book" data-route="book">Book</a>
       <a class="nav-link cta" href="#contact" data-route="contact">Free estimate</a>
     </nav>
@@ -325,20 +326,7 @@
         </div>
       </section>
 
-      <section class="section"><div class="wrap">
-        <h2 class="section-title">QUESTIONS, ANSWERED.</h2>
-        <p class="section-intro">The stuff Transcona neighbours ask us most.</p>
-        <div class="faq">
-          <details><summary>How do the snowfall triggers work?</summary><p>We watch the forecast. When snowfall reaches your plan's trigger — 6 cm for Essential, 4 cm for Complete, 2 cm for Premium — we come out and clear within 12 hours of the snow stopping.</p></details>
-          <details><summary>What exactly gets cleared each visit?</summary><p>Your driveway, your walkway, and snow brushed off up to two vehicles parked in the driveway. Windrow clearing (the ridge the city plow leaves) is included with Complete and Premium; Essential can add it for $25 per visit.</p></details>
-          <details><summary>What if I'm not home when it snows?</summary><p>No problem — we clear whether you're home or not. That's the whole point: wake up or come home to a clear driveway.</p></details>
-          <details><summary>Will your equipment damage my driveway or lawn?</summary><p>We work damage-conscious on every visit. Professional, reliable, damage-free isn't a slogan — it's the standard.</p></details>
-          <details><summary>How and when do I pay?</summary><p>E-transfer, debit, or credit. Invoices go out monthly and are due within 15 days.</p></details>
-          <details><summary>When does the season run?</summary><p>November through March, every winter.</p></details>
-          <details><summary>Which areas do you serve?</summary><p>Transcona, Winnipeg — see our service area map above. Just outside it? Ask us; we'll give you a straight answer.</p></details>
-          <details><summary>How do I get started?</summary><p>Fill in the booking form at the top of this page, or request a free in-person estimate. No pressure, no obligation.</p></details>
-        </div>
-      </div></section>
+
     </section>
 
     <section class="view" id="pricing" aria-labelledby="pricing-title">
@@ -411,6 +399,23 @@
       </div></section>
     </section>
 
+    <section class="view" id="faq" aria-labelledby="faq-title">
+      <div class="page-head"><div class="wrap"><h1 id="faq-title">QUESTIONS, ANSWERED.</h1><p>The stuff Transcona neighbours ask us most.</p></div></div>
+      <div class="section"><div class="wrap">
+        <div class="faq">
+          <details><summary>How do the snowfall triggers work?</summary><p>We watch the forecast. When snowfall reaches your plan's trigger — 6 cm for Essential, 4 cm for Complete, 2 cm for Premium — we come out and clear within 12 hours of the snow stopping.</p></details>
+          <details><summary>What exactly gets cleared each visit?</summary><p>Your driveway, your walkway, and snow brushed off up to two vehicles parked in the driveway. Windrow clearing (the ridge the city plow leaves) is included with Complete and Premium; Essential can add it for $25 per visit.</p></details>
+          <details><summary>What if I'm not home when it snows?</summary><p>No problem — we clear whether you're home or not. That's the whole point: wake up or come home to a clear driveway.</p></details>
+          <details><summary>Will your equipment damage my driveway or lawn?</summary><p>We work damage-conscious on every visit. Professional, reliable, damage-free isn't a slogan — it's the standard.</p></details>
+          <details><summary>How and when do I pay?</summary><p>E-transfer, debit, or credit. Invoices go out monthly and are due within 15 days.</p></details>
+          <details><summary>When does the season run?</summary><p>November through March, every winter.</p></details>
+          <details><summary>Which areas do you serve?</summary><p>Transcona, Winnipeg — see our service area map above. Just outside it? Ask us; we'll give you a straight answer.</p></details>
+          <details><summary>How do I get started?</summary><p>Fill in the booking form on our homepage, or request a free in-person estimate. No pressure, no obligation.</p></details>
+        </div>
+      
+      </div></div>
+    </section>
+
     <section class="view" id="contact" aria-labelledby="contact-title">
       <div class="page-head"><div class="wrap"><h1 id="contact-title">LET'S CLEAR YOUR WINTER.</h1><p>Request a free, no-pressure estimate for your Transcona property.</p></div></div>
       <div class="section"><div class="wrap">
@@ -450,6 +455,7 @@
     <a class="nav-link" href="#home" data-route="home">Home</a>
     <a class="nav-link" href="#pricing" data-route="pricing">Pricing</a>
     <a class="nav-link" href="#about" data-route="about">About</a>
+    <a class="nav-link" href="#faq" data-route="faq">FAQ</a>
     <a class="nav-link" href="#book" data-route="book">Book</a>
     <a class="nav-link" href="#contact" data-route="contact">Contact</a>
   </nav>
@@ -457,7 +463,7 @@
 </div>
 <script>
 (function(){
-  var routes=['home','pricing','about','book','contact'];
+  var routes=['home','pricing','about','faq','book','contact'];
   function showRoute(){
     var name=location.hash.slice(1);
     if(routes.indexOf(name)===-1) name='home';
@@ -468,7 +474,7 @@
     });
     if(name==='book'){var bk=document.getElementById('booknow');if(bk){bk.scrollIntoView();}else{window.scrollTo(0,0);}}
     else window.scrollTo(0,0);
-    var titles={home:'Shields Property Services | Snow Clearing in Transcona',pricing:'Pricing | Shields Property Services',about:'About | Shields Property Services',book:'Book | Shields Property Services',contact:'Contact | Shields Property Services'};
+    var titles={home:'Shields Property Services | Snow Clearing in Transcona',pricing:'Pricing | Shields Property Services',about:'About | Shields Property Services',faq:'FAQ | Shields Property Services',book:'Book | Shields Property Services',contact:'Contact | Shields Property Services'};
     document.title=titles[name];
   }
   window.addEventListener('hashchange',showRoute);
