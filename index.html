@@ -11,16 +11,17 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shields Property Services" />
   <meta property="og:title" content="Shields Property Services | Snow Clearing in Transcona" />
-  <meta property="og:description" content="Reliable residential snow clearing in Transcona, Winnipeg. Driveway, walkway and vehicles cleared within 12 hours. Plans from $150/mo. Free in-person estimates." />
+  <meta property="og:description" content="Shields Property Services — reliable residential snow clearing in Transcona, Winnipeg. Driveway, walkway and vehicles cleared within 12 hours. Plans from $150/mo. Free in-person estimates." />
   <meta property="og:url" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/" />
   <meta property="og:image" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Shields Property Services | Snow Clearing in Transcona" />
-  <meta name="twitter:description" content="Reliable residential snow clearing in Transcona, Winnipeg. Driveway, walkway and vehicles cleared within 12 hours. Plans from $150/mo. Free in-person estimates." />
+  <meta name="twitter:description" content="Shields Property Services — reliable residential snow clearing in Transcona, Winnipeg. Driveway, walkway and vehicles cleared within 12 hours. Plans from $150/mo. Free in-person estimates." />
   <meta name="twitter:image" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png" />
   <link rel="canonical" href="https://shieldspropertyserviceinc-del.github.io/shields-property-services/" />
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
+  <link rel="stylesheet" href="styles.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,229 +82,30 @@
   }
   </script>
   <title>Shields Property Services | Snow Clearing in Transcona</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap');
-    :root {
-      color-scheme: light dark;
-      --sky: #3A9ACD;
-      --sky-deep: #247ba9;
-      --navy: #0d2d43;
-      --orange: #ef9226;
-      --orange-dark: #bc6510;
-      --paper: #f7fbfd;
-      --surface: #ffffff;
-      --surface-soft: #eaf4f8;
-      --ink: #102b3d;
-      --muted: #4a6475;
-      --line: #c7dbe5;
-      --white: #ffffff;
-      --shadow: 0 18px 48px rgba(13,45,67,.13);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --paper: #081923;
-        --surface: #102a3a;
-        --surface-soft: #16384a;
-        --ink: #f4f9fb;
-        --muted: #c1d4dd;
-        --line: #31576b;
-        --shadow: 0 18px 48px rgba(0,0,0,.28);
-      }
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin:0; background:var(--paper); color:var(--ink); font-family:"Source Sans 3", sans-serif; font-size:17px; line-height:1.55; }
-    button, a { font:inherit; }
-    a { color:inherit; }
-    .site-shell { min-height:100vh; }
-    .topbar { position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:flex-end; gap:24px; padding:10px max(22px, calc((100vw - 1180px)/2)); background:color-mix(in srgb, var(--paper) 94%, transparent); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); }
-    nav { display:flex; align-items:center; gap:5px; }
-    .nav-link { border:0; background:transparent; color:var(--muted); text-decoration:none; padding:10px 13px; border-radius:8px; font-weight:700; cursor:pointer; }
-    .nav-link:hover, .nav-link[aria-current="page"] { color:var(--ink); background:var(--surface-soft); }
-    .nav-link.cta { background:var(--orange); color:#102b3d; margin-left:8px; }
-    main { overflow:hidden; }
-    .view { display:none; min-height:calc(100vh - 67px); }
-    .view.active { display:block; animation:reveal .28s ease-out; }
-    @keyframes reveal { from { opacity:.35; } to { opacity:1; } }
-    @media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
-    .wrap { width:min(1180px, calc(100% - 44px)); margin:0 auto; }
-    .hero { background:linear-gradient(110deg, var(--sky) 0 64%, var(--navy) 64%); color:#fff; }
-    .hero-grid { min-height:640px; display:grid; grid-template-columns:1.12fr .88fr; align-items:center; gap:54px; padding:70px 0 76px; }
-    .hero h1, .page-head h1, .section-title, .plan h2, .about-quote { font-family:"Barlow Condensed",sans-serif; font-weight:800; line-height:.93; margin:0; }
-    .hero h1 { font-size:clamp(58px,8vw,108px); max-width:720px; letter-spacing:-.025em; }
-    .hero h1 em { color:var(--navy); font-style:normal; }
-    .hero .lead { max-width:650px; font-size:clamp(20px,2.3vw,27px); line-height:1.35; margin:26px 0 30px; color:#f7fdff; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; }
-    .button { display:inline-flex; align-items:center; justify-content:center; min-height:50px; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:800; border:2px solid transparent; cursor:pointer; }
-    .button.primary { background:var(--orange); color:#102b3d; }
-    .button.secondary { border-color:rgba(255,255,255,.8); color:#fff; }
-    .button.dark { background:var(--navy); color:#fff; }
-    .trust { display:flex; gap:22px; flex-wrap:wrap; margin-top:34px; font-size:15px; font-weight:700; color:#eef8fb; }
-    .trust span { display:flex; align-items:center; gap:8px; }
-    .trust i { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--orange); }
-    .hero-mark { display:flex; justify-content:center; align-items:center; }
-    .hero-mark img { width:min(100%,390px); filter:drop-shadow(0 28px 42px rgba(0,0,0,.26)); }
-    .section { padding:88px 0; }
-    .section.tint { background:var(--surface-soft); }
-    .section-title { font-size:clamp(42px,5vw,66px); letter-spacing:-.015em; max-width:760px; }
-    .section-intro { color:var(--muted); font-size:20px; max-width:670px; margin:18px 0 38px; }
-    .services { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .service { padding:28px; border-top:6px solid var(--sky); background:var(--surface); box-shadow:var(--shadow); }
-    a.service.link-card { text-decoration:none; color:inherit; display:block; transition:transform .15s, box-shadow .15s; }
-    a.service.link-card:hover { transform:translateY(-4px); box-shadow:0 22px 50px rgba(13,45,67,.18); }
-    a.service.link-card .num { color:var(--orange); font-weight:900; font-size:26px; }
-    a.service.link-card h3 { font-size:24px; margin:10px 0 8px; }
-    a.service.link-card p { color:var(--muted); margin:0; }
-    .service:nth-child(2) { border-top-color:var(--orange); }
-    .service h3 { font-family:"Barlow Condensed",sans-serif; font-size:30px; margin:4px 0 9px; }
-    .service p { color:var(--muted); margin:0; }
-    .service .num { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--navy); color:#fff; font-weight:800; }
-    .promise { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
-    .promise-points { display:grid; gap:0; }
-    .promise-point { display:grid; grid-template-columns:56px 1fr; gap:18px; padding:22px 0; border-bottom:1px solid var(--line); }
-    .promise-point strong { font-size:21px; display:block; }
-    .promise-point p { color:var(--muted); margin:4px 0 0; }
-    .symbol { width:50px; height:50px; background:var(--sky); color:#fff; display:grid; place-items:center; border-radius:50%; font-family:"Barlow Condensed"; font-size:24px; font-weight:800; }
-    .offer { background:var(--navy); color:#fff; padding:34px; display:grid; grid-template-columns:180px 1fr auto; align-items:center; gap:30px; }
-    .offer img { width:180px; aspect-ratio:1; object-fit:cover; }
-    .offer h2 { font-family:"Barlow Condensed"; font-size:40px; margin:0 0 8px; }
-    .offer p { color:#dcecf3; margin:0; }
-    .page-head { padding:72px 0 54px; background:var(--sky); color:#fff; }
-    .page-head h1 { font-size:clamp(56px,7vw,88px); }
-    .page-head p { font-size:22px; max-width:660px; margin:18px 0 0; }
-    .plans { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:start; }
-    .plan { background:var(--surface); border:1px solid var(--line); padding:30px; position:relative; }
-    .plan.featured { border:3px solid var(--orange); transform:translateY(-10px); }
-    .plan .label { color:var(--sky-deep); font-weight:800; }
-    .plan h2 { font-size:43px; margin:8px 0 10px; }
-    .price { font-family:"Barlow Condensed"; font-size:56px; line-height:1; font-weight:800; color:var(--orange-dark); }
-    .price small { font-family:"Source Sans 3"; font-size:17px; color:var(--muted); font-weight:600; }
-    .trigger { display:inline-block; margin:16px 0 22px; padding:7px 12px; background:var(--surface-soft); border-radius:999px; font-weight:800; }
-    .plan ul { list-style:none; padding:0; margin:0 0 26px; }
-    .plan li { padding:10px 0 10px 25px; border-bottom:1px solid var(--line); position:relative; }
-    .plan li::before { content:"✓"; color:var(--sky-deep); position:absolute; left:0; font-weight:900; }
-    .plan .button { width:100%; }
-    .pricing-notes { margin-top:32px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    .note { padding:22px 0; border-top:2px solid var(--line); }
-    .note strong { display:block; margin-bottom:5px; }
-    .note span { color:var(--muted); }
-    .about-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:70px; align-items:start; }
-    .about-quote { font-size:clamp(44px,6vw,76px); color:var(--sky-deep); }
-    .about-copy p { color:var(--muted); font-size:19px; }
-    .values { margin-top:38px; display:grid; gap:18px; }
-    .value { border-bottom:1px solid var(--line); padding-bottom:18px; }
-    .value strong { font-size:21px; }
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
-    .contact-card { background:var(--surface); border-top:7px solid var(--sky); padding:34px; box-shadow:var(--shadow); }
-    .contact-card.orange { border-top-color:var(--orange); }
-    .contact-card h2 { font-family:"Barlow Condensed"; font-size:38px; margin:0 0 12px; }
-    .contact-card p { color:var(--muted); }
-    .contact-list { display:grid; gap:12px; margin:25px 0; }
-    .contact-line { display:flex; gap:12px; align-items:flex-start; }
-    .contact-line b { min-width:78px; }
-    .estimate-steps { counter-reset:step; display:grid; gap:14px; margin-top:22px; }
-    .estimate-steps div { display:grid; grid-template-columns:34px 1fr; gap:12px; align-items:start; }
-    .estimate-steps div::before { counter-increment:step; content:counter(step); width:30px; height:30px; border-radius:50%; background:var(--orange); color:#102b3d; font-weight:900; display:grid; place-items:center; }
-    .service-area { background:var(--navy); color:#fff; padding:34px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-    .service-area h3 { margin:0; font-family:"Barlow Condensed"; font-size:34px; }
-    .service-area p { color:#d8e8ef; margin:4px 0 0; }
-    footer { background:#071c29; color:#d8e8ef; padding:34px 0 92px; }
-    .footer-row { display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; }
-    footer b { color:#fff; }
-    .social-link { font-weight:700; text-underline-offset:3px; }
-    .footer-social { display:inline-flex; align-items:center; min-height:44px; padding:9px 14px; border:1px solid #507184; border-radius:8px; color:#fff; text-decoration:none; font-weight:800; }
-    .footer-social:hover { border-color:var(--sky); background:#102f41; }
-    .book-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; }
-    .book-card { background:var(--surface); border-top:7px solid var(--orange); padding:34px; box-shadow:var(--shadow); }
-    .book-card h2 { font-family:"Barlow Condensed"; font-size:38px; margin:0 0 12px; }
-    .book-card p { color:var(--muted); }
-    .field { margin-bottom:18px; }
-    .field label { display:block; font-weight:800; margin-bottom:7px; }
-    .field input, .field select, .field textarea { width:100%; padding:13px 14px; border:2px solid var(--line); border-radius:10px; font:inherit; background:var(--surface); color:var(--ink); }
-    .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:var(--sky); }
-    .field textarea { min-height:110px; resize:vertical; }
-    .field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .map-wrap { border-radius:14px; overflow:hidden; box-shadow:var(--shadow); border:2px solid var(--line); }
-    .map-wrap iframe { width:100%; height:420px; border:0; display:block; }
-    .map-note { color:var(--muted); font-size:15px; margin-top:10px; }
-    .addr-wrap { position:relative; }
-    .addr-suggest { position:absolute; top:100%; left:0; right:0; background:var(--surface); border:2px solid var(--line); border-top:0; border-radius:0 0 10px 10px; z-index:20; max-height:260px; overflow:auto; box-shadow:var(--shadow); }
-    .addr-suggest button { display:block; width:100%; text-align:left; padding:12px 14px; background:none; border:0; border-bottom:1px solid var(--line); font:inherit; color:var(--ink); cursor:pointer; }
-    .addr-suggest button:hover { background:var(--surface-soft); }
-    .addr-suggest button:last-child { border-bottom:0; }
-    .attrib { font-size:12px; color:var(--muted); margin-top:6px; }
-    .call-fab { display:none; }
-    .book-cta { background:var(--navy); color:#fff; border-radius:18px; padding:46px 48px; display:flex; align-items:center; justify-content:space-between; gap:30px; box-shadow:var(--shadow); }
-    .book-cta h2 { font-family:"Barlow Condensed",sans-serif; font-weight:800; font-size:clamp(38px,4.6vw,58px); line-height:.95; margin:0 0 10px; color:#fff; }
-    .book-cta p { color:#d8e8ef; margin:0; font-size:19px; max-width:560px; }
-    .book-cta .button { flex:none; font-size:20px; padding:16px 36px; }
-    .faq { display:grid; gap:12px; margin-top:28px; max-width:860px; }
-    .faq details { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
-    .faq summary { font-weight:800; font-size:19px; cursor:pointer; }
-    .faq details p { color:var(--muted); margin:10px 0 0; font-size:17px; }
-    .mobile-nav { display:none; }
-    @media (max-width:820px) {
-      .topbar { display:none; }
-      .hero { background:var(--sky); }
-      .hero-grid { min-height:auto; grid-template-columns:1fr; padding:52px 0 58px; gap:40px; }
-      .hero-mark { display:none; }
-      .hero h1 { font-size:clamp(58px,18vw,78px); }
-      .hero h1 em { color:var(--navy); }
-      .services, .plans, .pricing-notes, .about-grid, .contact-grid, .book-grid, .field-row, .promise { grid-template-columns:1fr; }
-      .plans { gap:15px; }
-      .plan.featured { transform:none; }
-      .offer { grid-template-columns:92px 1fr; padding:22px; }
-      .offer img { width:92px; }
-      .offer .button { grid-column:1/-1; }
-      .section { padding:60px 0; }
-      .page-head { padding:50px 0 44px; }
-      .service-area { align-items:flex-start; flex-direction:column; }
-      .book-cta { flex-direction:column; align-items:stretch; text-align:center; padding:36px 26px; }
-      .book-cta .button { width:100%; }
-      footer { padding-bottom:110px; }
-      .mobile-nav { position:fixed; display:grid; grid-template-columns:repeat(6,1fr); left:10px; right:10px; bottom:max(10px, env(safe-area-inset-bottom)); z-index:50; border:1px solid var(--line); background:var(--surface); box-shadow:0 10px 35px rgba(0,0,0,.24); border-radius:13px; overflow:hidden; }
-      .mobile-nav .nav-link { border-radius:0; padding:12px 4px 11px; font-size:14px; }
-      .collapse-toggle { cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--surface); border:2px solid var(--line); border-radius:14px; padding:16px 16px 16px 20px; box-shadow:var(--shadow); }
-      .collapse-toggle .chev { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--orange); color:#102b3d; font-size:26px; line-height:1; flex:none; transition:transform .2s; font-family:"Source Sans 3",sans-serif; font-weight:400; }
-      .collapse-toggle.open .chev { transform:rotate(90deg); }
-      .call-fab { display:grid; place-items:center; position:fixed; right:16px; bottom:92px; z-index:60; width:62px; height:62px; border-radius:50%; background:var(--orange); color:#102b3d; box-shadow:0 10px 25px rgba(0,0,0,.32); text-decoration:none; }
-      .call-fab svg { width:28px; height:28px; }
-      .call-fab:active { transform:scale(.94); }
-    }
-    @media (max-width:480px) {
-      .wrap { width:min(100% - 30px, 1180px); }
-      .section-title { font-size:43px; }
-      .offer { grid-template-columns:1fr; }
-      .offer img { width:100%; max-height:220px; object-position:center 28%; }
-      .offer .button { grid-column:auto; }
-      .contact-card { padding:25px; }
-      .book-card { padding:25px; }
-    }
-  </style>
 </head>
 <body>
 <div class="site-shell">
   <header class="topbar">
     <nav aria-label="Main navigation">
-      <a class="nav-link" href="#home" data-route="home">Home</a>
-      <a class="nav-link" href="#pricing" data-route="pricing">Pricing</a>
-      <a class="nav-link" href="#about" data-route="about">About</a>
-      <a class="nav-link" href="#faq" data-route="faq">FAQ</a>
-      <a class="nav-link" href="#book" data-route="book">Book</a>
-      <a class="nav-link cta" href="#contact" data-route="contact">Free estimate</a>
+      <a class="nav-link" href="index.html" aria-current="page">Home</a>
+      <a class="nav-link" href="pricing.html">Pricing</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="faq.html">FAQ</a>
+      <a class="nav-link" href="book.html">Book</a>
+      <a class="nav-link cta" href="contact.html">Free estimate</a>
     </nav>
   </header>
 
   <main>
-    <section class="view" id="home" aria-labelledby="home-title">
+    <div class="page">
       <div class="hero">
         <div class="wrap hero-grid">
           <div>
             <h1 id="home-title">WINTER READY. <em>EVERY TIME.</em></h1>
             <p class="lead">Reliable residential snow clearing for Transcona driveways, walkways and up to two vehicles.</p>
             <div class="actions">
-              <a class="button primary" href="#contact" data-route="contact">Get a free estimate</a>
-              <a class="button secondary" href="#pricing" data-route="pricing">View plans</a>
+              <a class="button primary" href="contact.html">Get a free estimate</a>
+              <a class="button secondary" href="pricing.html">View plans</a>
             </div>
             <div class="trust"><span><i></i> Within 12 hours after your trigger is met</span><span><i></i> Nov–Mar seasonal service</span><span><i></i> Damage-conscious care</span></div>
           </div>
@@ -315,12 +117,12 @@
         <h2 class="section-title">FIND WHAT YOU NEED.</h2>
         <p class="section-intro">Everything's one tap away.</p>
         <div class="services">
-          <a class="service link-card" href="#book" data-route="book"><span class="num">&rarr;</span><h3>Book Now</h3><p>Pick your plan, pin your address, lock in winter.</p></a>
-          <a class="service link-card" href="#pricing" data-route="pricing"><span class="num">&rarr;</span><h3>Plans &amp; Pricing</h3><p>Three simple plans from $150/mo.</p></a>
-          <a class="service link-card" href="#about" data-route="about"><span class="num">&rarr;</span><h3>Meet the Owners</h3><p>The family behind Shields Property Services.</p></a>
-          <a class="service link-card" href="#faq" data-route="faq"><span class="num">&rarr;</span><h3>FAQ</h3><p>Triggers, billing, and what&apos;s included.</p></a>
-          <a class="service link-card" href="#pricing" data-route="pricing"><span class="num">&rarr;</span><h3>Referral Program</h3><p>$25 for you, $25 for your neighbour.</p></a>
-          <a class="service link-card" href="#contact" data-route="contact"><span class="num">&rarr;</span><h3>Contact</h3><p>Free in-person estimates in Transcona.</p></a>
+          <a class="service link-card" href="book.html"><span class="num">&rarr;</span><h3>Book Now</h3><p>Pick your plan, pin your address, lock in winter.</p></a>
+          <a class="service link-card" href="pricing.html"><span class="num">&rarr;</span><h3>Plans &amp; Pricing</h3><p>Three simple plans from $150/mo.</p></a>
+          <a class="service link-card" href="about.html"><span class="num">&rarr;</span><h3>Meet the Owners</h3><p>The family behind Shields Property Services.</p></a>
+          <a class="service link-card" href="faq.html"><span class="num">&rarr;</span><h3>FAQ</h3><p>Triggers, billing, and what&apos;s included.</p></a>
+          <a class="service link-card" href="pricing.html"><span class="num">&rarr;</span><h3>Referral Program</h3><p>$25 for you, $25 for your neighbour.</p></a>
+          <a class="service link-card" href="contact.html"><span class="num">&rarr;</span><h3>Contact</h3><p>Free in-person estimates in Transcona.</p></a>
         </div>
       </div></section>
 
@@ -328,7 +130,7 @@
         <div class="book-cta">
           <div><h2>READY WHEN THE SNOW FLIES?</h2>
           <p>Pick your plan, pin your address on the map, and lock in your winter in under two minutes.</p></div>
-          <a class="button primary" href="#book" data-route="book">Book now</a>
+          <a class="button primary" href="book.html">Book now</a>
         </div>
       </div></section>
 
@@ -343,7 +145,7 @@
           <div>
             <h2 class="section-title">Built for Winnipeg winter.</h2>
             <p class="section-intro">Choose a trigger that fits how quickly you want clearing to begin, then leave the snowfall to us.</p>
-            <a class="button dark" href="#pricing" data-route="pricing">Compare all plans</a>
+            <a class="button dark" href="pricing.html">Compare all plans</a>
           </div>
           <div class="promise-points">
             <div class="promise-point"><span class="symbol">12h</span><div><strong>Timely service</strong><p>Visits completed within 12 hours after your plan's snowfall trigger is met.</p></div></div>
@@ -361,332 +163,25 @@
 
 
 
-    </section>
-
-    <section class="view" id="pricing" aria-labelledby="pricing-title">
-      <div class="page-head"><div class="wrap"><h1 id="pricing-title">SIMPLE WINTER PRICING.</h1><p>Three seasonal plans, one dependable standard of care. Service runs November through March.</p></div></div>
-      <div class="section"><div class="wrap">
-        <style>
-          .estimator{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:36px}
-          .estimator h2{margin:0 0 6px}
-          .estimator .q{margin:18px 0}
-          .estimator .q p{font-weight:700;margin:0 0 10px}
-          .qpills{display:flex;flex-wrap:wrap;gap:10px}
-          .qpill{border:2px solid var(--line);background:var(--surface-soft);border-radius:999px;padding:10px 18px;font-weight:600;cursor:pointer;transition:all .15s}
-          .qpill[aria-pressed="true"]{border-color:var(--orange);background:var(--orange);color:#102b3d}
-          .est-result{margin-top:20px;border-top:1px solid var(--line);padding-top:20px}
-          .est-plan{font-size:15px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:1px}
-          .est-price{font-size:44px;font-weight:800;margin:4px 0}
-          .est-price small{font-size:18px;font-weight:600}
-        </style>
-        <div class="estimator" id="estimator">
-          <h2>Not sure which plan fits?</h2>
-          <p style="margin:0;color:var(--muted)">Answer three quick questions — we'll point you to the right one.</p>
-          <div class="q" data-q="speed">
-            <p>1. How fast do you need clearing after it snows?</p>
-            <div class="qpills">
-              <button type="button" class="qpill" data-val="essential" aria-pressed="false">No rush — a couple days is fine</button>
-              <button type="button" class="qpill" data-val="complete" aria-pressed="false">Same day would be great</button>
-              <button type="button" class="qpill" data-val="premium" aria-pressed="false">ASAP — I need out early</button>
-            </div>
-          </div>
-          <div class="q" data-q="windrow">
-            <p>2. Want the windrow (the ridge the city plow leaves) cleared too?</p>
-            <div class="qpills">
-              <button type="button" class="qpill" data-val="yes" aria-pressed="false">Yes, clear it</button>
-              <button type="button" class="qpill" data-val="no" aria-pressed="false">No, skip it</button>
-            </div>
-          </div>
-          <div class="q" data-q="cars">
-            <p>3. How many vehicles park in your driveway?</p>
-            <div class="qpills">
-              <button type="button" class="qpill" data-val="two" aria-pressed="false">1 – 2</button>
-              <button type="button" class="qpill" data-val="more" aria-pressed="false">3 or more</button>
-            </div>
-          </div>
-          <div class="actions"><button class="button primary" type="button" id="est-go">See my recommendation</button></div>
-          <div class="est-result" id="est-result" hidden>
-            <div class="est-plan" id="est-plan-name"></div>
-            <div class="est-price" id="est-price"></div>
-            <p id="est-detail" style="color:var(--muted)"></p>
-            <div class="actions"><button class="button dark" type="button" id="est-book">Book this plan</button></div>
-          </div>
-        </div>
-        <div class="plans">
-          <article class="plan">
-            <span class="label">For lighter snowfall</span><h2>ESSENTIAL</h2><div class="price">$150<small>/month</small></div><span class="trigger">6 cm trigger</span>
-            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Snow off up to two vehicles</li><li>Within 12 hours</li></ul>
-            <a class="button dark" href="#contact" data-route="contact">Request Essential</a>
-          </article>
-          <article class="plan featured">
-            <span class="label">Balanced coverage</span><h2>COMPLETE</h2><div class="price">$200<small>/month</small></div><span class="trigger">4 cm trigger</span>
-            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Snow off up to two vehicles</li><li>Windrow clearing included</li><li>Within 12 hours</li></ul>
-            <a class="button primary" href="#contact" data-route="contact">Request Complete</a>
-          </article>
-          <article class="plan">
-            <span class="label">Most responsive</span><h2>PREMIUM</h2><div class="price">$300<small>/month</small></div><span class="trigger">2 cm trigger</span>
-            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Snow off up to two vehicles</li><li>Windrow clearing included</li><li>Within 12 hours</li></ul>
-            <a class="button dark" href="#contact" data-route="contact">Request Premium</a>
-          </article>
-        </div>
-        <div class="pricing-notes">
-          <div class="note"><strong>Per visit: $45</strong><span>Prefer pay-as-you-go? Book individual visits.</span></div>
-          <div class="note"><strong>Windrow add-on: $25/visit</strong><span>Add end-of-driveway windrow clearing to Essential.</span></div>
-          <div class="note"><strong>No tax added</strong><span>Payment accepted by e-transfer, debit or credit.</span></div>
-          <div class="note"><strong>Invoices due in 15 days</strong><span>Service pauses if an invoice goes 30 days unpaid.</span></div>
-        </div>
-      </div></div>
-      <section class="section tint"><div class="wrap offer">
-        <img src="embedded-2.jpg" alt="Early-bird offer showing seasonal prepay prices" />
-        <div><h2>Early-bird season rates</h2><p>Essential $675 · Complete $875 · Premium $1,275. First five customers who pay the full season upfront.</p></div>
-        <a class="button primary" href="#contact" data-route="contact">Ask about availability</a>
-      </div></section>
-    <section class="section"><div class="wrap">
-        <h2 class="section-title">NEIGHBOURS HELPING NEIGHBOURS.</h2>
-        <p class="section-intro">Love the service? Send a neighbour our way and you both save.</p>
-        <div class="plans">
-          <article class="plan">
-            <span class="label">For your neighbour</span><h2>$25 OFF</h2>
-            <ul><li>New customers take $25 off their first invoice</li><li>Just mention your name when they book</li></ul>
-          </article>
-          <article class="plan featured">
-            <span class="label">For you</span><h2>$25 CREDIT</h2>
-            <ul><li>$25 credit on your next invoice</li><li>Paid out once their first invoice is settled</li></ul>
-          </article>
-          <article class="plan">
-            <span class="label">The fine print</span><h2>SIMPLE</h2>
-            <ul><li>One credit per monthly invoice — extras roll forward</li><li>Credits expire March 31, 2027</li></ul>
-          </article>
-        </div>
-      </div></section>
-</section>
-
-    <section class="view" id="about" aria-labelledby="about-title">
-      <div class="page-head"><div class="wrap"><h1 id="about-title">LOCAL SERVICE. CLEAR STANDARDS.</h1><p>Shields Property Services brings dependable, damage-conscious property care to Transcona.</p></div></div>
-      <div class="section"><div class="wrap about-grid">
-        <div><p class="about-quote">PROFESSIONAL.<br>RELIABLE.<br>DAMAGE-FREE.</p></div>
-        <div class="about-copy">
-          <h2 class="section-title">Care for the whole path home.</h2>
-          <p>Winnipeg winters demand consistency. Shields Property Services is built around straightforward plans, clear snowfall triggers and service within 12 hours of each qualifying snowfall.</p>
-          <p>We work directly with homeowners, provide free in-person estimates and treat each property with care—from the driveway and walkway to up to two vehicles parked outside.</p>
-          <div class="values">
-            <div class="value"><strong>Clear expectations</strong><br><span>Know your trigger, monthly rate and what's included before the season starts.</span></div>
-            <div class="value"><strong>Neighbour-focused service</strong><br><span>Local routes support practical, dependable service in Transcona.</span></div>
-            <div class="value"><strong>Built to earn trust</strong><br><span>Professional communication, responsible care and reliable follow-through.</span></div>
-          </div>
-        </div>
-      </div></div>
-      <section class="section"><div class="wrap">
-        <h2 class="section-title">Meet the owners</h2>
-        <div class="about-grid">
-          <div><img src="owners.jpg" alt="Nicholas and Kathryn Shields" style="width:100%;border-radius:18px;display:block;"></div>
-          <div class="about-copy">
-          <p>Hi — we're Nicholas and Kathryn Shields, the husband-and-wife team behind Shields Property Services.</p>
-          <p>We moved to Transcona two years ago from Winkler, and it didn't take long to feel like home. Before starting this company, Nicholas spent years as a painter in the manufacturing sector, then moved into landscaping and snow clearing — work he's still in today. There's nothing he likes more than getting out during a storm and helping neighbours dig out.</p>
-          <p>Kathryn is our Chief Operating Officer. She runs everything behind the scenes so Nicholas can stay focused on your property.</p>
-          <p>We're also proud parents to a two-year-old daughter — who we hope will take the reins herself one day.</p>
-          <p>When you hire us, you're not getting some random crew. You're getting us: professional, reliable, and damage-free, every single visit. That's personal.</p>
-          <p><strong>— Nicholas &amp; Kathryn</strong></p>
-          </div>
-        </div>
-      </div></section>
-      <section class="section tint"><div class="wrap">
-        <h2 class="section-title">Commercial walkway clearing</h2>
-        <p class="section-intro">Small storefronts in Transcona can request a free custom quote for dependable walkway clearing. Pricing is tailored to the property.</p>
-        <a class="button dark" href="#contact" data-route="contact">Request a commercial quote</a>
-      </div></section>
-    </section>
-
-    <section class="view" id="faq" aria-labelledby="faq-title">
-      <div class="page-head"><div class="wrap"><h1 id="faq-title">QUESTIONS, ANSWERED.</h1><p>The stuff Transcona neighbours ask us most.</p></div></div>
-      <div class="section"><div class="wrap">
-        <div class="faq">
-          <details><summary>How do the snowfall triggers work?</summary><p>We watch the forecast. When snowfall reaches your plan's trigger — 6 cm for Essential, 4 cm for Complete, 2 cm for Premium — we come out and clear within 12 hours of the snow stopping.</p></details>
-          <details><summary>What exactly gets cleared each visit?</summary><p>Your driveway, your walkway, and snow brushed off up to two vehicles parked in the driveway. Windrow clearing (the ridge the city plow leaves) is included with Complete and Premium; Essential can add it for $25 per visit.</p></details>
-          <details><summary>What if I'm not home when it snows?</summary><p>No problem — we clear whether you're home or not. That's the whole point: wake up or come home to a clear driveway.</p></details>
-          <details><summary>Will your equipment damage my driveway or lawn?</summary><p>We work damage-conscious on every visit. Professional, reliable, damage-free isn't a slogan — it's the standard.</p></details>
-          <details><summary>How and when do I pay?</summary><p>E-transfer, debit, or credit. Invoices go out monthly and are due within 15 days.</p></details>
-          <details><summary>When does the season run?</summary><p>November through March, every winter.</p></details>
-          <details><summary>Which areas do you serve?</summary><p>Transcona, Winnipeg — see the service area map on our <a href="#contact" data-route="contact">Contact page</a>. Just outside it? Ask us; we'll give you a straight answer.</p></details>
-          <details><summary>How do I get started?</summary><p>Fill in the booking form on our <a href="#book" data-route="book">Book page</a>, or request a free in-person estimate. No pressure, no obligation.</p></details>
-        </div>
-      
-      </div></div>
-    </section>
-
-    <section class="view" id="book" aria-labelledby="book-title">
-      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR WINTER.</h1><p>Pick your plan, pin your address on the map, and send your booking request.</p></div></div>
-      <div class="section"><div class="wrap">
-<div class="book-grid">
-          <article class="book-card">
-            <h2>Booking request</h2>
-            <p>Fill this in and we'll confirm your spot by phone or email.</p>
-            <form id="book-form">
-              <div class="field"><label for="bk-plan">Plan</label>
-                <select id="bk-plan" name="plan">
-                  <option>Essential — $150/mo</option>
-                  <option selected>Complete — $200/mo</option>
-                  <option>Premium — $300/mo</option>
-                  <option>Per visit — $45/visit</option>
-                  <option>Not sure yet</option>
-                </select></div>
-              <div class="field-row">
-                <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
-                <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
-              </div>
-              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email" required></div>
-              <div class="field"><label for="bk-address">Property address to be cleared</label>
-                <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off" required>
-                <div class="addr-suggest" id="bk-suggest" hidden></div></div>
-                <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
-              </div>
-              <h3 style="margin:18px 0 4px">Free in-person consultation</h3>
-              <p class="map-note" style="margin-top:0">Pick when you'd like us to stop by — we'll confirm by phone.</p>
-              <div class="field-row">
-                <div class="field"><label for="bk-date">Preferred date</label><input id="bk-date" name="preferred_date" type="date" required></div>
-                <div class="field"><label for="bk-time">Preferred time</label>
-                  <select id="bk-time" name="preferred_time">
-                    <option>Morning (8am – 12pm)</option>
-                    <option>Afternoon (12 – 5pm)</option>
-                    <option>Evening (5 – 8pm)</option>
-                  </select></div>
-              </div>
-              <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
-              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
-              <p class="map-note">Hit send and you're done — we'll confirm your spot, and you'll get an instant email confirmation.</p>
-              <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
-            </form>
-            <div id="bk-done" hidden>
-              <h2>Request received!</h2>
-              <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll call you within 24 hours to confirm your free in-person consultation, and a confirmation email is headed to your inbox now.</p>
-              <p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>
-            </div>
-          </article>
-          <div>
-            <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-            <div class="actions" style="margin-top:14px"><button class="button dark" type="button" id="bk-locate">Locate my address on the map</button></div>
-            <p class="map-note">Type your address, then tap the button to pin it on the map.</p>
-          </div>
-        </div>
-      </div></div>
-    </section>
-
-    <section class="view" id="contact" aria-labelledby="contact-title">
-      <div class="page-head"><div class="wrap"><h1 id="contact-title">LET'S CLEAR YOUR WINTER.</h1><p>Request a free, no-pressure estimate for your Transcona property.</p></div></div>
-      <div class="section"><div class="wrap">
-        <div class="contact-grid">
-          <article class="contact-card">
-            <h2>Get in touch</h2>
-            <p>Call, email or DM. Include your address and the plan you're considering so we can prepare for your estimate.</p>
-            <div class="contact-list">
-              <div class="contact-line"><b>Phone</b><a href="tel:+14313421575">(431) 342-1575</a></div>
-              <div class="contact-line"><b>Email</b><a href="mailto:shieldspropertyserviceinc@gmail.com?subject=Free%20snow%20clearing%20estimate">shieldspropertyserviceinc@gmail.com</a></div>
-              <div class="contact-line"><b>Instagram</b><a class="social-link" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer">@shieldpropertyservices</a></div>
-              <div class="contact-line"><b>Facebook</b><a class="social-link" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer">Shields Property Services</a></div>
-            </div>
-            <div class="actions">
-              <a class="button primary" href="tel:+14313421575">Call now</a>
-              <a class="button dark" href="mailto:shieldspropertyserviceinc@gmail.com?subject=Free%20snow%20clearing%20estimate&body=Hi%20Shields%20Property%20Services%2C%0A%0AI%27d%20like%20a%20free%20estimate.%0A%0AProperty%20address%3A%0APlan%20I%27m%20considering%3A%0ABest%20time%20to%20reach%20me%3A">Email for estimate</a>
-            </div>
-            <h3 style="margin:22px 0 4px">Message now</h3>
-            <p class="map-note" style="margin-top:0">Questions about plans, pricing or coverage? Send it here — we reply within 24 hours.</p>
-            <form id="msg-form">
-              <div class="field"><label for="msg-name">Name</label><input id="msg-name" name="name" type="text" autocomplete="name" required></div>
-              <div class="field"><label for="msg-contact">Phone or email</label><input id="msg-contact" name="contact" type="text" autocomplete="email" required></div>
-              <div class="field"><label for="msg-text">Message</label><textarea id="msg-text" name="message" placeholder="What's your question?" required></textarea></div>
-              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send message</button></div>
-            </form>
-            <div id="msg-done" hidden>
-              <p><strong>Message sent!</strong> We'll get back to you within 24 hours.</p>
-            </div>
-          </article>
-          <article class="contact-card orange">
-            <h2>What happens next</h2>
-            <p>Your estimate is quick, local and obligation-free.</p>
-            <div class="estimate-steps">
-              <div><span><strong>Tell us about the property.</strong><br>Send the address and the plan that interests you.</span></div>
-              <div><span><strong>We visit in person.</strong><br>We'll confirm the scope and provide straightforward pricing.</span></div>
-              <div><span><strong>Choose your coverage.</strong><br>Select your plan and preferred payment method.</span></div>
-            </div>
-          </article>
-        </div>
-        <div class="service-area-full" style="margin-top:34px">
-        <h2 class="section-title">PROUDLY TRANSCONA.</h2>
-        <p class="section-intro">We're based right here in Transcona and serve homes across the neighbourhood.</p>
-        <div class="map-wrap"><iframe title="Map of Transcona, Winnipeg" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&z=12&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-        <p class="map-note">Just outside Transcona? Send your address through the booking form on our <a href="#book" data-route="book">Book page</a> — we'll tell you straight whether we can cover you.</p>
-        <div class="actions" style="margin-top:14px"><a class="button dark" href="#book" data-route="book">Check my address</a></div>
-      </div>
-      </div></div>
-    </section>
+    </div>
   </main>
 
   <footer><div class="wrap footer-row"><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a> · <a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a><div>Transcona, Winnipeg · (431) 342-1575</div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
-    <a class="nav-link" href="#home" data-route="home">Home</a>
-    <a class="nav-link" href="#pricing" data-route="pricing">Pricing</a>
-    <a class="nav-link" href="#about" data-route="about">About</a>
-    <a class="nav-link" href="#faq" data-route="faq">FAQ</a>
-    <a class="nav-link" href="#book" data-route="book">Book</a>
-    <a class="nav-link" href="#contact" data-route="contact">Contact</a>
+    <a class="nav-link" href="index.html" aria-current="page">Home</a>
+      <a class="nav-link" href="pricing.html">Pricing</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="faq.html">FAQ</a>
+      <a class="nav-link" href="book.html">Book</a>
+      <a class="nav-link" href="contact.html">Contact</a>
   </nav>
   <a class="call-fab" href="tel:+14313421575" aria-label="Call Shields Property Services now"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.25 1.02l-2.2 2.21z"/></svg></a>
 </div>
 <script>
 (function(){
-  var routes=['home','pricing','about','faq','book','contact'];
-  function showRoute(){
-    var name=location.hash.slice(1);
-    if(routes.indexOf(name)===-1) name='home';
-    document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('active',v.id===name);});
-    document.querySelectorAll('[data-route]').forEach(function(a){
-      if(a.dataset.route===name) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
-    });
-    window.scrollTo(0,0);
-    var titles={home:'Shields Property Services | Snow Clearing in Transcona',pricing:'Pricing | Shields Property Services',about:'About | Shields Property Services',faq:'FAQ | Shields Property Services',book:'Book | Shields Property Services',contact:'Contact | Shields Property Services'};
-    document.title=titles[name];
-  }
-  window.addEventListener('hashchange',showRoute);
-  showRoute();
-  var locateBtn=document.getElementById('bk-locate');
-  function setMap(q){document.getElementById('bk-map').src='https://maps.google.com/maps?q='+encodeURIComponent(q)+'&output=embed';}
-  if(locateBtn){locateBtn.addEventListener('click',function(){
-    var addr=document.getElementById('bk-address').value.trim();
-    setMap(addr?addr+', Winnipeg, MB':'Transcona, Winnipeg, MB');
-  });}
-  var addrInput=document.getElementById('bk-address'),suggestBox=document.getElementById('bk-suggest'),addrTimer=null;
-  if(addrInput&&suggestBox){
-    addrInput.addEventListener('input',function(){
-      clearTimeout(addrTimer);
-      var q=addrInput.value.trim();
-      if(q.length<4){suggestBox.hidden=true;suggestBox.innerHTML='';return;}
-      addrTimer=setTimeout(function(){
-        fetch('https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=5&countrycodes=ca&q='+encodeURIComponent(q+', Winnipeg, Manitoba'))
-          .then(function(r){return r.json();})
-          .then(function(list){
-            suggestBox.innerHTML='';
-            if(!list||!list.length){suggestBox.hidden=true;return;}
-            list.forEach(function(p){
-              var b=document.createElement('button');
-              b.type='button';
-              b.textContent=p.display_name;
-              b.addEventListener('click',function(){
-                addrInput.value=p.display_name;
-                suggestBox.hidden=true;suggestBox.innerHTML='';
-                setMap(p.display_name);
-              });
-              suggestBox.appendChild(b);
-            });
-            suggestBox.hidden=false;
-          })
-          .catch(function(){suggestBox.hidden=true;});
-      },350);
-    });
-    document.addEventListener('click',function(e){if(!e.target.closest('.addr-wrap')){suggestBox.hidden=true;}});
-  }
   if(window.matchMedia('(max-width: 820px)').matches){
-    document.querySelectorAll('#home .section.collapsible').forEach(function(sec){
+    document.querySelectorAll('.section.collapsible').forEach(function(sec){
       var title=sec.querySelector('h2');
       if(!title) return;
       var body=document.createElement('div');
@@ -707,116 +202,7 @@
       title.addEventListener('click',toggle);
       title.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
     });
-  }
-  /* Quote estimator */
-  var estBox=document.getElementById('estimator');
-  if(estBox){
-    var estAnswers={};
-    estBox.querySelectorAll('.q').forEach(function(q){
-      var key=q.getAttribute('data-q');
-      q.querySelectorAll('.qpill').forEach(function(pill){
-        pill.addEventListener('click',function(){
-          q.querySelectorAll('.qpill').forEach(function(p){p.setAttribute('aria-pressed','false');});
-          pill.setAttribute('aria-pressed','true');
-          estAnswers[key]=pill.getAttribute('data-val');
-        });
-      });
-    });
-    var plans={
-      essential:{name:'Essential',price:'$150',per:'/month',trigger:'6 cm trigger',opt:'Essential — $150/mo'},
-      complete:{name:'Complete',price:'$200',per:'/month',trigger:'4 cm trigger',opt:'Complete — $200/mo'},
-      premium:{name:'Premium',price:'$300',per:'/month',trigger:'2 cm trigger',opt:'Premium — $300/mo'}
-    };
-    document.getElementById('est-go').addEventListener('click',function(){
-      if(!estAnswers.speed){estBox.querySelector('[data-q="speed"]').scrollIntoView({behavior:'smooth',block:'center'});return;}
-      var plan=plans[estAnswers.speed]||plans.complete;
-      var detail='Cleared within 12 hours of snowfall · '+plan.trigger+' · Driveway, walkway and snow off up to two vehicles.';
-      if(estAnswers.windrow==='yes'){
-        detail+= (estAnswers.speed==='essential') ? ' Add windrow clearing for $25/visit.' : ' Windrow clearing included.';
-      }
-      if(estAnswers.cars==='more'){detail+=' Note: we brush snow off up to two vehicles per visit.';}
-      document.getElementById('est-plan-name').textContent='We recommend '+plan.name;
-      document.getElementById('est-price').innerHTML=plan.price+'<small>'+plan.per+'</small>';
-      document.getElementById('est-detail').textContent=detail;
-      var res=document.getElementById('est-result');
-      res.hidden=false;
-      document.getElementById('est-book').onclick=function(){
-        location.hash='#book';
-        setTimeout(function(){
-          var sel=document.getElementById('bk-plan');
-          if(sel){sel.value=plan.opt;}
-          var f=document.getElementById('book-form');
-          if(f){f.scrollIntoView({behavior:'smooth',block:'start'});}
-        },300);
-      };
-      res.scrollIntoView({behavior:'smooth',block:'center'});
-    });
-  }
-  /* Leave-a-message form */
-  var msgForm=document.getElementById('msg-form');
-  if(msgForm){msgForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-    var btn=msgForm.querySelector('button[type="submit"]');
-    btn.disabled=true;btn.textContent='Sending…';
-    fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
-      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({
-        _subject:'Website message — '+v('msg-name'),
-        _template:'table',
-        _captcha:'false',
-        name:v('msg-name'),contact:v('msg-contact'),message:v('msg-text')
-      })
-    }).then(function(r){return r.json();}).then(function(j){
-      if(j&&j.success){
-        msgForm.hidden=true;
-        var done=document.getElementById('msg-done');
-        done.hidden=false;
-        done.scrollIntoView({behavior:'smooth',block:'center'});
-      }else{throw new Error('send-failed');}
-    }).catch(function(){
-      location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Website message — '+v('msg-name'))+'&body='+encodeURIComponent('From: '+v('msg-name')+' ('+v('msg-contact')+')\n\n'+v('msg-text'));
-      btn.disabled=false;btn.textContent='Send message';
-    });
-  });}
-  var bookForm=document.getElementById('book-form');
-  if(bookForm){
-    var dateInput=document.getElementById('bk-date');
-    if(dateInput){dateInput.min=new Date().toISOString().split('T')[0];}
-    bookForm.addEventListener('submit',function(e){
-    e.preventDefault();
-    var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-    var btn=bookForm.querySelector('button[type="submit"]');
-    btn.disabled=true;btn.textContent='Sending…';
-    var firstName=(v('bk-name').split(' ')[0]||'there');
-    var payload={
-      _subject:'New booking request — '+v('bk-name'),
-      _template:'table',
-      _captcha:'false',
-      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will call you within 24 hours to confirm your free in-person consultation.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
-      name:v('bk-name'),email:v('bk-email'),phone:v('bk-phone'),
-      plan:v('bk-plan'),address:v('bk-address'),
-      preferred_date:v('bk-date'),preferred_time:v('bk-time'),
-      notes:v('bk-notes')
-    };
-    fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
-      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify(payload)
-    }).then(function(r){return r.json();}).then(function(j){
-      if(j&&j.success){
-        bookForm.hidden=true;
-        var done=document.getElementById('bk-done');
-        done.querySelector('.bk-done-name').textContent=firstName;
-        done.hidden=false;
-        done.scrollIntoView({behavior:'smooth',block:'center'});
-      }else{throw new Error('send-failed');}
-    }).catch(function(){
-      var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nPreferred visit date: '+v('bk-date')+'\nPreferred time: '+v('bk-time')+'\nNotes: '+v('bk-notes');
-      location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
-      btn.disabled=false;btn.textContent='Send booking request';
-    });
-  });}
-})();
+  }})();
 </script>
 </body>
 </html>
