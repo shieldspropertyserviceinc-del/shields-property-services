@@ -517,6 +517,8 @@
 .zone-status.in{background:#e8f5e9;color:#1b5e20;border:2px solid #4caf50}
 .zone-status.out{background:#fff3e0;color:#e65100;border:2px solid #ff9800}
 .excluded-note{display:inline-block;background:#fff3cd;padding:4px 10px;border-radius:6px;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.link-button{background:none;border:none;color:var(--blue);font:inherit;font-weight:700;cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:3px}
+.link-button:disabled{opacity:.6;cursor:default}
 .bounds{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:20px 0;list-style:none;padding:0}
 .bounds li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow);font-size:16px}
 .bounds li strong{color:var(--navy)}
