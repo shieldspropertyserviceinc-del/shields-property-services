@@ -588,6 +588,17 @@
               <a class="button primary" href="tel:+14313421575">Call now</a>
               <a class="button dark" href="mailto:shieldspropertyserviceinc@gmail.com?subject=Free%20snow%20clearing%20estimate&body=Hi%20Shields%20Property%20Services%2C%0A%0AI%27d%20like%20a%20free%20estimate.%0A%0AProperty%20address%3A%0APlan%20I%27m%20considering%3A%0ABest%20time%20to%20reach%20me%3A">Email for estimate</a>
             </div>
+            <h3 style="margin:22px 0 4px">Leave a message</h3>
+            <p class="map-note" style="margin-top:0">Questions about plans, pricing or coverage? Send it here — we reply within 24 hours.</p>
+            <form id="msg-form">
+              <div class="field"><label for="msg-name">Name</label><input id="msg-name" name="name" type="text" autocomplete="name" required></div>
+              <div class="field"><label for="msg-contact">Phone or email</label><input id="msg-contact" name="contact" type="text" autocomplete="email" required></div>
+              <div class="field"><label for="msg-text">Message</label><textarea id="msg-text" name="message" placeholder="What's your question?" required></textarea></div>
+              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send message</button></div>
+            </form>
+            <div id="msg-done" hidden>
+              <p><strong>Message sent!</strong> We'll get back to you within 24 hours.</p>
+            </div>
           </article>
           <article class="contact-card orange">
             <h2>What happens next</h2>
@@ -741,6 +752,33 @@
       res.scrollIntoView({behavior:'smooth',block:'center'});
     });
   }
+  /* Leave-a-message form */
+  var msgForm=document.getElementById('msg-form');
+  if(msgForm){msgForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+    var btn=msgForm.querySelector('button[type="submit"]');
+    btn.disabled=true;btn.textContent='Sending…';
+    fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'Website message — '+v('msg-name'),
+        _template:'table',
+        _captcha:'false',
+        name:v('msg-name'),contact:v('msg-contact'),message:v('msg-text')
+      })
+    }).then(function(r){return r.json();}).then(function(j){
+      if(j&&j.success){
+        msgForm.hidden=true;
+        var done=document.getElementById('msg-done');
+        done.hidden=false;
+        done.scrollIntoView({behavior:'smooth',block:'center'});
+      }else{throw new Error('send-failed');}
+    }).catch(function(){
+      location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Website message — '+v('msg-name'))+'&body='+encodeURIComponent('From: '+v('msg-name')+' ('+v('msg-contact')+')\n\n'+v('msg-text'));
+      btn.disabled=false;btn.textContent='Send message';
+    });
+  });}
   var bookForm=document.getElementById('book-form');
   if(bookForm){
     var dateInput=document.getElementById('bk-date');
