@@ -545,6 +545,25 @@
 .site-search-results .r-title{font-weight:800;margin:2px 0}
 .site-search-results .r-snip{font-size:15px;color:var(--muted)}
 .site-search-none{padding:16px;color:var(--muted);text-align:center}
+/* Premium design polish */
+html{scroll-behavior:smooth}
+.button{transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.button:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.button:active{transform:translateY(0)}
+.guide,.faq details{transition:box-shadow .25s ease,transform .25s ease}
+.guide:hover,.faq details:hover{box-shadow:0 4px 16px rgba(58,154,205,.12)}
+.service.link-card{transition:transform .25s ease,box-shadow .25s ease}
+.service.link-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.season{transition:transform .25s ease,box-shadow .25s ease}
+.season:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+input,select,textarea{transition:border-color .2s ease,box-shadow .2s ease}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15)}
+.site-search-results a{transition:transform .2s ease,border-color .2s ease}
+.site-search-results a:hover{transform:translateX(4px)}
+
 .guide{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
 .guide summary{font-weight:800;font-size:19px;cursor:pointer;list-style:none}
 .guide summary::-webkit-details-marker{display:none}
