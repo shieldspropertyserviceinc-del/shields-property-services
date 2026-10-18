@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#3A9ACD" />
+  <meta name="description" content="Book your winter snow clearing in Transcona, Winnipeg. Pick a plan, pin your address, choose a consultation time." />
+  <link rel="icon" href="data:," />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Shields Property Services" />
+  <meta property="og:title" content="Book | Shields Property Services" />
+  <meta property="og:description" content="Book your winter snow clearing in Transcona, Winnipeg. Pick a plan, pin your address, choose a consultation time." />
+  <meta property="og:url" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/book.html" />
+  <meta property="og:image" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book | Shields Property Services" />
+  <meta name="twitter:description" content="Book your winter snow clearing in Transcona, Winnipeg. Pick a plan, pin your address, choose a consultation time." />
+  <meta name="twitter:image" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png" />
+  <link rel="canonical" href="https://shieldspropertyserviceinc-del.github.io/shields-property-services/book.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Book | Shields Property Services</title>
+</head>
+<body>
+<div class="site-shell">
+  <header class="topbar">
+    <nav aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="pricing.html">Pricing</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="faq.html">FAQ</a>
+      <a class="nav-link" href="book.html" aria-current="page">Book</a>
+      <a class="nav-link cta" href="contact.html">Free estimate</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page">
+      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR WINTER.</h1><p>Pick your plan, pin your address on the map, and send your booking request.</p></div></div>
+      <div class="section"><div class="wrap">
+<div class="book-grid">
+          <article class="book-card">
+            <h2>Booking request</h2>
+            <p>Fill this in and we'll confirm your spot by phone or email.</p>
+            <form id="book-form">
+              <div class="field"><label for="bk-plan">Plan</label>
+                <select id="bk-plan" name="plan">
+                  <option>Essential — $150/mo</option>
+                  <option selected>Complete — $200/mo</option>
+                  <option>Premium — $300/mo</option>
+                  <option>Per visit — $45/visit</option>
+                  <option>Not sure yet</option>
+                </select></div>
+              <div class="field-row">
+                <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
+                <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
+              </div>
+              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email" required></div>
+              <div class="field"><label for="bk-address">Property address to be cleared</label>
+                <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off" required>
+                <div class="addr-suggest" id="bk-suggest" hidden></div></div>
+                <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
+              </div>
+              <h3 style="margin:18px 0 4px">Free in-person consultation</h3>
+              <p class="map-note" style="margin-top:0">Pick when you'd like us to stop by — we'll confirm by phone.</p>
+              <div class="field-row">
+                <div class="field"><label for="bk-date">Preferred date</label><input id="bk-date" name="preferred_date" type="date" required></div>
+                <div class="field"><label for="bk-time">Preferred time</label>
+                  <select id="bk-time" name="preferred_time">
+                    <option>Morning (8am – 12pm)</option>
+                    <option>Afternoon (12 – 5pm)</option>
+                    <option>Evening (5 – 8pm)</option>
+                  </select></div>
+              </div>
+              <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
+              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
+              <p class="map-note">Hit send and you're done — we'll confirm your spot, and you'll get an instant email confirmation.</p>
+              <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
+            </form>
+            <div id="bk-done" hidden>
+              <h2>Request received!</h2>
+              <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll call you within 24 hours to confirm your free in-person consultation, and a confirmation email is headed to your inbox now.</p>
+              <p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>
+            </div>
+          </article>
+          <div>
+            <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+            <div class="actions" style="margin-top:14px"><button class="button dark" type="button" id="bk-locate">Locate my address on the map</button></div>
+            <p class="map-note">Type your address, then tap the button to pin it on the map.</p>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </main>
+
+  <footer><div class="wrap footer-row"><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a> · <a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a><div>Transcona, Winnipeg · (431) 342-1575</div></div></footer>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="pricing.html">Pricing</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="faq.html">FAQ</a>
+      <a class="nav-link" href="book.html" aria-current="page">Book</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+  </nav>
+  <a class="call-fab" href="tel:+14313421575" aria-label="Call Shields Property Services now"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.25 1.02l-2.2 2.21z"/></svg></a>
+</div>
+<script>
+(function(){
+  var locateBtn=document.getElementById('bk-locate');
+  function setMap(q){document.getElementById('bk-map').src='https://maps.google.com/maps?q='+encodeURIComponent(q)+'&output=embed';}
+  if(locateBtn){locateBtn.addEventListener('click',function(){
+    var addr=document.getElementById('bk-address').value.trim();
+    setMap(addr?addr+', Winnipeg, MB':'Transcona, Winnipeg, MB');
+  });}
+  var addrInput=document.getElementById('bk-address'),suggestBox=document.getElementById('bk-suggest'),addrTimer=null;
+  if(addrInput&&suggestBox){
+    addrInput.addEventListener('input',function(){
+      clearTimeout(addrTimer);
+      var q=addrInput.value.trim();
+      if(q.length<4){suggestBox.hidden=true;suggestBox.innerHTML='';return;}
+      addrTimer=setTimeout(function(){
+        fetch('https://nominatim.openstreetmap.org/search?format=jsonv2&addressdetails=1&limit=5&countrycodes=ca&q='+encodeURIComponent(q+', Winnipeg, Manitoba'))
+          .then(function(r){return r.json();})
+          .then(function(list){
+            suggestBox.innerHTML='';
+            if(!list||!list.length){suggestBox.hidden=true;return;}
+            list.forEach(function(p){
+              var b=document.createElement('button');
+              b.type='button';
+              b.textContent=p.display_name;
+              b.addEventListener('click',function(){
+                addrInput.value=p.display_name;
+                suggestBox.hidden=true;suggestBox.innerHTML='';
+                setMap(p.display_name);
+              });
+              suggestBox.appendChild(b);
+            });
+            suggestBox.hidden=false;
+          })
+          .catch(function(){suggestBox.hidden=true;});
+      },350);
+    });
+    document.addEventListener('click',function(e){if(!e.target.closest('.addr-wrap')){suggestBox.hidden=true;}});
+  }
+  (function(){
+    try{
+      var plan=new URLSearchParams(location.search).get('plan');
+      if(plan){var sel=document.getElementById('bk-plan');if(sel){sel.value=plan;}}
+    }catch(e){}
+  })();
+
+  var bookForm=document.getElementById('book-form');
+  if(bookForm){
+    var dateInput=document.getElementById('bk-date');
+    if(dateInput){dateInput.min=new Date().toISOString().split('T')[0];}
+    bookForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+    var btn=bookForm.querySelector('button[type="submit"]');
+    btn.disabled=true;btn.textContent='Sending…';
+    var firstName=(v('bk-name').split(' ')[0]||'there');
+    var payload={
+      _subject:'New booking request — '+v('bk-name'),
+      _template:'table',
+      _captcha:'false',
+      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will call you within 24 hours to confirm your free in-person consultation.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
+      name:v('bk-name'),email:v('bk-email'),phone:v('bk-phone'),
+      plan:v('bk-plan'),address:v('bk-address'),
+      preferred_date:v('bk-date'),preferred_time:v('bk-time'),
+      notes:v('bk-notes')
+    };
+    fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(function(r){return r.json();}).then(function(j){
+      if(j&&j.success){
+        bookForm.hidden=true;
+        var done=document.getElementById('bk-done');
+        done.querySelector('.bk-done-name').textContent=firstName;
+        done.hidden=false;
+        done.scrollIntoView({behavior:'smooth',block:'center'});
+      }else{throw new Error('send-failed');}
+    }).catch(function(){
+      var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nPreferred visit date: '+v('bk-date')+'\nPreferred time: '+v('bk-time')+'\nNotes: '+v('bk-notes');
+      location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
+      btn.disabled=false;btn.textContent='Send booking request';
+    });
+  });}})();
+</script>
+</body>
+</html>
