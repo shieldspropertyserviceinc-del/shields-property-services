@@ -488,17 +488,33 @@
                 <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
                 <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
               </div>
-              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email"></div>
+              <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email" required></div>
               <div class="field"><label for="bk-address">Property address to be cleared</label>
                 <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off" required>
                 <div class="addr-suggest" id="bk-suggest" hidden></div></div>
                 <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
               </div>
+              <h3 style="margin:18px 0 4px">Free in-person consultation</h3>
+              <p class="map-note" style="margin-top:0">Pick when you'd like us to stop by — we'll confirm by phone.</p>
+              <div class="field-row">
+                <div class="field"><label for="bk-date">Preferred date</label><input id="bk-date" name="preferred_date" type="date" required></div>
+                <div class="field"><label for="bk-time">Preferred time</label>
+                  <select id="bk-time" name="preferred_time">
+                    <option>Morning (8am – 12pm)</option>
+                    <option>Afternoon (12 – 5pm)</option>
+                    <option>Evening (5 – 8pm)</option>
+                  </select></div>
+              </div>
               <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
               <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
-              <p class="map-note">This opens your email app with everything filled in — just hit send.</p>
+              <p class="map-note">Hit send and you're done — we'll confirm your spot, and you'll get an instant email confirmation.</p>
               <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
             </form>
+            <div id="bk-done" hidden>
+              <h2>Request received!</h2>
+              <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll call you within 24 hours to confirm your free in-person consultation, and a confirmation email is headed to your inbox now.</p>
+              <p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>
+            </div>
           </article>
           <div>
             <div class="map-wrap"><iframe id="bk-map" title="Map of the property address" src="https://maps.google.com/maps?q=Transcona,Winnipeg,MB&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
@@ -636,11 +652,41 @@
     });
   }
   var bookForm=document.getElementById('book-form');
-  if(bookForm){bookForm.addEventListener('submit',function(e){
+  if(bookForm){
+    var dateInput=document.getElementById('bk-date');
+    if(dateInput){dateInput.min=new Date().toISOString().split('T')[0];}
+    bookForm.addEventListener('submit',function(e){
     e.preventDefault();
-    var v=function(id){return document.getElementById(id).value.trim();};
-    var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nNotes: '+v('bk-notes');
-    location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
+    var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+    var btn=bookForm.querySelector('button[type="submit"]');
+    btn.disabled=true;btn.textContent='Sending…';
+    var firstName=(v('bk-name').split(' ')[0]||'there');
+    var payload={
+      _subject:'New booking request — '+v('bk-name'),
+      _template:'table',
+      _captcha:'false',
+      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will call you within 24 hours to confirm your free in-person consultation.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
+      name:v('bk-name'),email:v('bk-email'),phone:v('bk-phone'),
+      plan:v('bk-plan'),address:v('bk-address'),
+      preferred_date:v('bk-date'),preferred_time:v('bk-time'),
+      notes:v('bk-notes')
+    };
+    fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    }).then(function(r){return r.json();}).then(function(j){
+      if(j&&j.success){
+        bookForm.hidden=true;
+        var done=document.getElementById('bk-done');
+        done.querySelector('.bk-done-name').textContent=firstName;
+        done.hidden=false;
+        done.scrollIntoView({behavior:'smooth',block:'center'});
+      }else{throw new Error('send-failed');}
+    }).catch(function(){
+      var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nPreferred visit date: '+v('bk-date')+'\nPreferred time: '+v('bk-time')+'\nNotes: '+v('bk-notes');
+      location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
+      btn.disabled=false;btn.textContent='Send booking request';
+    });
   });}
 })();
 </script>
