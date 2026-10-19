@@ -133,16 +133,34 @@
   <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="learn.html">Tips & Tricks</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
-    <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link" href="services.html">Services</a>
-      <a class="nav-link" href="pricing.html" aria-current="page">Pricing</a>
-      <a class="nav-link" href="about.html">About</a>
-      <a class="nav-link" href="faq.html">FAQ</a>
-      <a class="nav-link" href="learn.html">Tips & Tricks</a>
-      <a class="nav-link" href="book.html">Book</a>
-      <a class="nav-link" href="referral.html">Referral</a>
-      <a class="nav-link" href="social.html">Social</a>
-      <a class="nav-link" href="contact.html">Contact</a>
+    <div class="mnav-grid">
+<a class="mnav-top mnav-solo" href="index.html">Home</a>
+<div class="mnav-group">
+<button class="mnav-top" aria-expanded="false">Services <span class="mnav-chev">▾</span></button>
+<div class="mnav-drop" hidden>
+<a class="mnav-link" href="services.html">All Services</a>
+<a class="mnav-link" href="learn.html">Tips & Tricks</a>
+</div></div>
+<div class="mnav-group active">
+<button class="mnav-top" aria-expanded="false">Pricing <span class="mnav-chev">▾</span></button>
+<div class="mnav-drop" hidden>
+<a class="mnav-link" href="pricing.html" aria-current="page">Plans & Pricing</a>
+<a class="mnav-link" href="referral.html">Referral Program</a>
+</div></div>
+<div class="mnav-group">
+<button class="mnav-top" aria-expanded="false">Book <span class="mnav-chev">▾</span></button>
+<div class="mnav-drop" hidden>
+<a class="mnav-link" href="book.html">Book Now</a>
+<a class="mnav-link" href="contact.html">Contact</a>
+</div></div>
+<div class="mnav-group">
+<button class="mnav-top" aria-expanded="false">About <span class="mnav-chev">▾</span></button>
+<div class="mnav-drop" hidden>
+<a class="mnav-link" href="about.html">About Us</a>
+<a class="mnav-link" href="faq.html">FAQ</a>
+<a class="mnav-link" href="social.html">Social</a>
+</div></div>
+</div>
   </nav>
   <a class="call-fab" href="tel:+14313421575" aria-label="Call Shields Property Services now"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.25 1.02l-2.2 2.21z"/></svg></a>
 <button class="nav-toggle" id="nav-toggle" aria-label="Collapse navigation" aria-expanded="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg></button>
@@ -183,6 +201,34 @@
       res.innerHTML=hits.map(function(e){
         return '<a href="'+e.u+'"><div class="r-page">'+e.p+'</div><div class="r-title">'+e.t.replace(/</g,'&lt;')+'</div><div class="r-snip">'+e.x.replace(/</g,'&lt;').substring(0,140)+'&hellip;</div></a>';
       }).join('');
+    });
+  })();
+
+  (function(){
+    // Mobile nav dropdowns
+    document.querySelectorAll('.mnav-group > .mnav-top').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        var group = btn.parentElement;
+        var wasOpen = group.classList.contains('open');
+        document.querySelectorAll('.mnav-group.open').forEach(function(g){
+          g.classList.remove('open');
+          g.querySelector('.mnav-drop').hidden = true;
+          g.querySelector('.mnav-top').setAttribute('aria-expanded','false');
+        });
+        if(!wasOpen){
+          group.classList.add('open');
+          group.querySelector('.mnav-drop').hidden = false;
+          btn.setAttribute('aria-expanded','true');
+        }
+      });
+    });
+    document.addEventListener('click', function(){
+      document.querySelectorAll('.mnav-group.open').forEach(function(g){
+        g.classList.remove('open');
+        g.querySelector('.mnav-drop').hidden = true;
+        g.querySelector('.mnav-top').setAttribute('aria-expanded','false');
+      });
     });
   })();
 
