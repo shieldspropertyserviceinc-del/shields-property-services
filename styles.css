@@ -674,7 +674,7 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .driveway-note{background:#fff8ee;border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:12px;font-size:16px;color:#1a1a1a}
 /* Winter stats page */
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:24px 0}
-.stat-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;box-shadow:var(--shadow)}
+.stat-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;box-shadow:var(--shadow);color:#0d2d43}
 .stat-num{font-size:clamp(36px,5vw,52px);font-weight:900;color:var(--navy);line-height:1.1}
 .stat-num em{font-style:normal;color:var(--blue)}
 .stat-label{margin-top:8px;font-size:15px;color:var(--muted)}
@@ -685,12 +685,12 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .bar-fill{height:100%;border-radius:8px;background:#3A9ACD;background:linear-gradient(90deg,#1e4a6e,#3A9ACD);min-width:44px}
 .bar-val{font-weight:800;font-size:16px;color:var(--navy);text-align:right}
 .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:24px 0}
-.tl-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center;box-shadow:var(--shadow)}
+.tl-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 16px;text-align:center;box-shadow:var(--shadow);color:#0d2d43}
 .tl-icon{font-size:40px}
 .tl-month{font-weight:800;color:var(--navy);margin:8px 0 4px;font-size:17px}
 .tl-desc{font-size:14px;color:var(--muted)}
 .compare-wrap{margin:24px 0;display:grid;gap:16px}
-.calc-wrap{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.calc-wrap{max-width:640px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.06);color:#0d2d43}
 .calc-toggles{display:grid;gap:12px;margin:16px 0}
 .calc-toggle{display:flex;align-items:flex-start;gap:10px;font-weight:700;font-size:15px;cursor:pointer;color:var(--navy)}
 .calc-toggle input{width:20px;height:20px;margin-top:2px;accent-color:var(--orange)}
