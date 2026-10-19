@@ -554,8 +554,8 @@
 .ig-embed{min-width:0}
 .ig-embed .instagram-media{margin:0 auto!important;max-width:100%!important;min-width:0!important}
 /* Mobile nav dropdowns */
-.mnav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px 16px;background:#0d2d43;background:linear-gradient(135deg,#0d2d43 0%,#1e4a6e 60%,#3A9ACD 100%);border-radius:16px 16px 0 0}
-.mobile-nav{background:transparent!important;box-shadow:none!important;padding:0!important}
+.mnav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px 16px;background:transparent;border-radius:0}
+.mobile-nav{background:#0d2d43!important;background:linear-gradient(135deg,#0d2d43 0%,#1e4a6e 60%,#3A9ACD 100%)!important;box-shadow:0 -4px 20px rgba(0,0,0,.2)!important;padding:0!important;border-radius:16px 16px 0 0!important;overflow:hidden}
 .mnav-group{position:relative;display:flex}
 .mnav-top{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;padding:14px 6px;background:rgba(255,255,255,.95);border:none;border-radius:12px;font-weight:700;font-size:14px;color:#0d2d43;cursor:pointer;text-decoration:none;text-align:center;min-height:60px;height:100%;line-height:1.2;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 .mnav-top.active{background:#ff8c28;color:#0d2d43;border:none}
