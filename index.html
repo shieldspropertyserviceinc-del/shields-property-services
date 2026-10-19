@@ -117,19 +117,24 @@
         <div class="wrap hero-grid">
           <div>
             <h1 id="home-title">WINTER READY. <em>EVERY TIME.</em></h1>
-            <p class="lead">Reliable residential snow clearing for Transcona driveways and walkways.</p>
+            <p class="lead">Transcona’s dedicated snow crew. Driveways and walkways cleared within 12 hours — backed by our senior discount and straightforward pricing.</p>
             <div class="actions">
               <a class="button primary" href="contact.html">Get a free estimate</a>
               <a class="button secondary" href="pricing.html">View plans</a>
             </div>
-            <div class="trust"><span><i></i> Within 12 hours after your trigger is met</span><span><i></i> Nov–Mar seasonal service</span><span><i></i> Damage-conscious care</span></div>
+            <div class="hero-pills"><span class="hero-pill">📍 Transcona only</span><span class="hero-pill">⏱️ 12-hour guarantee</span><span class="hero-pill">👴 10% senior discount</span></div>
           </div>
           <div class="hero-mark"><img src="embedded-1.jpg" alt="Shields Property Services four-season shield" /></div>
         </div>
       </div>
 
                   <section class="section"><div class="wrap">
-        <h2 class="section-title">FIND WHAT YOU NEED.</h2>
+        <div class="earlybird-banner" id="earlybird-banner">
+      <button class="earlybird-close" id="earlybird-close" aria-label="Dismiss">&times;</button>
+      <div class="earlybird-text"><strong>🐦 Early-bird:</strong> first 5 prepaid seasons save up to $225. Plus the very first customer gets an extra 35% off — one only.</div>
+      <a class="button dark" href="pricing.html">See early-bird rates</a>
+    </div>
+    <h2 class="section-title">FIND WHAT YOU NEED.</h2>
         <p class="section-intro">Everything's one tap away.</p>
         <div class="services">
           <a class="service link-card" href="services.html"><span class="num">&rarr;</span><h3>All Services</h3><p>Four seasons of property care.</p></a>
@@ -302,7 +307,19 @@
       title.addEventListener('click',toggle);
       title.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
     });
-  }})();
+  }
+  (function(){
+    var banner=document.getElementById('earlybird-banner'),closeBtn=document.getElementById('earlybird-close');
+    if(!banner||!closeBtn)return;
+    try{
+      if(localStorage.getItem('sps-earlybird-dismissed')==='1'){banner.style.display='none';return;}
+    }catch(e){}
+    closeBtn.addEventListener('click',function(){
+      banner.style.display='none';
+      try{localStorage.setItem('sps-earlybird-dismissed','1');}catch(e){}
+    });
+  })();
+})();
 </script>
 </body>
 </html>
