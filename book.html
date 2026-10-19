@@ -43,7 +43,7 @@
       <a class="nav-link" href="services.html">Services</a>
       <a class="nav-link" href="pricing.html">Pricing</a>
       <a class="nav-link" href="about.html">About</a>
-      <a class="nav-link" href="faq.html">FAQ</a>
+      <a class="nav-link" href="faq.html">Q&A</a>
       <a class="nav-link" href="learn.html">Tips & Info</a>
       <a class="nav-link" href="book.html" aria-current="page">Book</a>
       <a class="nav-link" href="referral.html">Referral</a>
@@ -131,10 +131,10 @@
         <h2 class="section-title">WHERE WE SERVE.</h2>
         <p class="section-intro">We guarantee service across Transcona — between Gunn Road, Dugald Road, Plessis Road, and the Perimeter Highway. Outside the zone? We take bookings on request.</p>
         <div class="map-wrap"><img src="service-area-map.webp" alt="Map of the guaranteed service area in Transcona, Winnipeg" loading="lazy"></div>
-      </div></section><section class="section"><div class="wrap"><h2 class="section-title">STILL DECIDING?</h2><p class="section-intro">Take your time — everything is one tap away.</p><div class="services"><a class="service link-card" href="pricing.html"><span class="num">&rarr;</span><h3>Plans &amp; Pricing</h3><p>Three simple plans from $150/mo.</p></a><a class="service link-card" href="services.html"><span class="num">&rarr;</span><h3>All Services</h3><p>Four seasons of property care.</p></a><a class="service link-card" href="faq.html"><span class="num">&rarr;</span><h3>FAQ</h3><p>Triggers, billing, and what’s included.</p></a><a class="service link-card" href="contact.html"><span class="num">&rarr;</span><h3>Contact</h3><p>Free in-person estimates in Transcona.</p></a><a class="service link-card" href="liability-waiver.pdf"><span class="num">&darr;</span><h3>Liability Waiver</h3><p>Review and download our service waiver (PDF).</p></a></div></div></section></div>
+      </div></section><section class="section"><div class="wrap"><h2 class="section-title">STILL DECIDING?</h2><p class="section-intro">Take your time — everything is one tap away.</p><div class="services"><a class="service link-card" href="pricing.html"><span class="num">&rarr;</span><h3>Plans &amp; Pricing</h3><p>Three simple plans from $150/mo.</p></a><a class="service link-card" href="services.html"><span class="num">&rarr;</span><h3>All Services</h3><p>Four seasons of property care.</p></a><a class="service link-card" href="faq.html"><span class="num">&rarr;</span><h3>Q&amp;A</h3><p>Triggers, billing, and what’s included.</p></a><a class="service link-card" href="contact.html"><span class="num">&rarr;</span><h3>Contact</h3><p>Free in-person estimates in Transcona.</p></a><a class="service link-card" href="liability-waiver.pdf"><span class="num">&darr;</span><h3>Liability Waiver</h3><p>Review and download our service waiver (PDF).</p></a></div></div></section></div>
   </main>
 
-  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">FAQ</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
+  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mnav-grid">
@@ -157,7 +157,7 @@
 <button class="mnav-top" aria-expanded="false">About <span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
 <a class="mnav-link" href="about.html">About Us</a>
-<a class="mnav-link" href="faq.html">FAQ</a>
+<a class="mnav-link" href="faq.html">Q&A</a>
 <a class="mnav-link" href="social.html">Social</a>
 </div></div>
 </div>
@@ -355,8 +355,8 @@
     var contBtn=document.getElementById('bk-continue'),backBtn=document.getElementById('bk-back');
     if(!step1||!step2||!contBtn||!backBtn)return;
     function showStep(n){
-      step1.style.display=n===1?'':'none';
-      step2.style.display=n===2?'':'none';
+      step1.style.display=n===1?'block':'none';
+      step2.style.display=n===2?'block':'none';
       if(ind1&&ind2){
         ind1.className='bk-step'+(n===1?' current':' done');
         ind2.className='bk-step'+(n===2?' current':'');
