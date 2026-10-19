@@ -92,17 +92,17 @@
         <div class="plans">
           <article class="plan">
             <span class="label">For lighter snowfall</span><h2>ESSENTIAL</h2><div class="price">$150<small>/month</small></div><span class="trigger">6 cm trigger</span>
-            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Snow off up to two vehicles</li><li>Within 12 hours</li></ul>
+            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Optional complimentary vehicle snow brushing</li><li>Within 12 hours</li></ul>
             <a class="button dark" href="contact.html">Request Essential</a>
           </article>
           <article class="plan featured">
             <span class="label">Balanced coverage</span><h2>COMPLETE</h2><div class="price">$200<small>/month</small></div><span class="trigger">4 cm trigger</span>
-            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Snow off up to two vehicles</li><li>Windrow clearing included</li><li>Within 12 hours</li></ul>
+            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Optional complimentary vehicle snow brushing</li><li>Windrow clearing included</li><li>Within 12 hours</li></ul>
             <a class="button primary" href="contact.html">Request Complete</a>
           </article>
           <article class="plan">
             <span class="label">Most responsive</span><h2>PREMIUM</h2><div class="price">$300<small>/month</small></div><span class="trigger">2 cm trigger</span>
-            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Snow off up to two vehicles</li><li>Windrow clearing included</li><li>Within 12 hours</li></ul>
+            <ul><li>Driveway clearing</li><li>Walkway clearing</li><li>Optional complimentary vehicle snow brushing</li><li>Windrow clearing included</li><li>Within 12 hours</li></ul>
             <a class="button dark" href="contact.html">Request Premium</a>
           </article>
         </div>
@@ -250,11 +250,11 @@
     document.getElementById('est-go').addEventListener('click',function(){
       if(!estAnswers.speed){estBox.querySelector('[data-q="speed"]').scrollIntoView({behavior:'smooth',block:'center'});return;}
       var plan=plans[estAnswers.speed]||plans.complete;
-      var detail='Cleared within 12 hours of snowfall · '+plan.trigger+' · Driveway, walkway and snow off up to two vehicles.';
+      var detail='Cleared within 12 hours of snowfall · '+plan.trigger+' · Driveway and walkway clearing.';
       if(estAnswers.windrow==='yes'){
         detail+= (estAnswers.speed==='essential') ? ' Add windrow clearing for $25/visit.' : ' Windrow clearing included.';
       }
-      if(estAnswers.cars==='more'){detail+=' Note: we brush snow off up to two vehicles per visit.';}
+      if(estAnswers.cars==='more'){detail+=' Note: complimentary snow brushing for up to two vehicles is available on request.';}
       document.getElementById('est-plan-name').textContent='We recommend '+plan.name;
       document.getElementById('est-price').innerHTML=plan.price+'<small>'+plan.per+'</small>';
       document.getElementById('est-detail').textContent=detail;
