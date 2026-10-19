@@ -553,6 +553,18 @@
 .ig-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:24px}
 .ig-embed{min-width:0}
 .ig-embed .instagram-media{margin:0 auto!important;max-width:100%!important;min-width:0!important}
+/* Mobile nav dropdowns */
+.mnav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px}
+.mnav-group{position:relative}
+.mnav-top{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;padding:14px 8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;text-decoration:none;text-align:center}
+.mnav-top.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.mnav-top .mnav-chev{font-size:12px;transition:transform .2s ease}
+.mnav-group.open .mnav-chev{transform:rotate(180deg)}
+.mnav-drop{position:absolute;bottom:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 -4px 20px rgba(0,0,0,.15);overflow:hidden;z-index:50;min-width:140px}
+.mnav-link{display:block;padding:12px 16px;color:#1a1a1a;text-decoration:none;font-weight:600;font-size:14px;border-bottom:1px solid var(--line)}
+.mnav-link:last-child{border-bottom:none}
+.mnav-link[aria-current="page"]{background:var(--surface);color:var(--navy)}
+.mnav-link:hover{background:var(--surface)}
 @media (max-width:640px){.ig-grid{grid-template-columns:1fr}}
 
 
