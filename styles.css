@@ -639,7 +639,7 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .section-title{font-size:clamp(28px,4vw,38px);letter-spacing:-.02em}
 .service.link-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;position:relative;overflow:hidden}
 .service.link-card h3{color:#0d2d43;margin:12px 0 8px;font-size:20px}
-.service.link-card p{color:#4a6b8a}
+.service.link-card p{color:#2c4a5e}
 .service.link-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--orange));opacity:0;transition:opacity .25s ease}
 .service.link-card:hover::before{opacity:1}
 .service.link-card .num{background:var(--blue);color:#fff;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:18px}
