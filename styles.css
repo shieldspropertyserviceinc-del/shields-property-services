@@ -527,6 +527,7 @@
 .nav-toggle svg{width:24px;height:24px;transition:transform .25s}
 .nav-toggle[aria-expanded="false"] svg{transform:rotate(180deg)}
 .mobile-nav.collapsed{display:none!important}
+.mobile-nav.collapsed ~ #nav-toggle{bottom:20px!important}
 }
 .guide-cat{margin-bottom:36px}
 .guide-cat:last-child{margin-bottom:0}
