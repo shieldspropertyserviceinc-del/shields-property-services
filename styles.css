@@ -569,7 +569,8 @@
 
 
 
-.site-search{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--line);padding:10px 0}
+.site-search{position:fixed;top:0;left:0;right:0;z-index:100;background:#3A9ACD;border-bottom:1px solid #2e87b8;padding:10px 0}
+.site-search .field label{color:#fff}
 .site-search .field label{font-size:13px}
 .site-search .field input{padding:10px 14px;font-size:16px}
 .site-search-results{display:grid;gap:8px;margin-top:10px;max-height:60vh;overflow-y:auto}
