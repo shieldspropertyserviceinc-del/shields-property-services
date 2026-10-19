@@ -617,8 +617,8 @@ html{scroll-behavior:smooth}
 .button:active{transform:translateY(0)}
 .guide,.faq details{transition:box-shadow .25s ease,transform .25s ease}
 .guide:hover,.faq details:hover{box-shadow:0 4px 16px rgba(58,154,205,.12)}
-.service.link-card{transition:transform .25s ease,box-shadow .25s ease}
-.service.link-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.service.link-card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.service.link-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.12);border-color:var(--blue)}
 .season{transition:transform .25s ease,box-shadow .25s ease}
 .season:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
