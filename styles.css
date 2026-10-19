@@ -554,7 +554,7 @@
 .ig-embed{min-width:0}
 .ig-embed .instagram-media{margin:0 auto!important;max-width:100%!important;min-width:0!important}
 /* Mobile nav dropdowns */
-.mnav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:20px 16px 16px}
+.mnav-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:24px 20px 20px}
 .mnav-group{position:relative}
 .mnav-top{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;padding:16px 8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;text-decoration:none;text-align:center;min-height:56px}
 .mnav-top.active{background:var(--navy);color:#fff;border-color:var(--navy)}
