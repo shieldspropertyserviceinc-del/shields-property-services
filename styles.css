@@ -181,7 +181,7 @@
       .collapse-toggle { cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--surface); border:2px solid var(--line); border-radius:14px; padding:16px 16px 16px 20px; box-shadow:var(--shadow); }
       .collapse-toggle .chev { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--orange); color:#102b3d; font-size:26px; line-height:1; flex:none; transition:transform .2s; font-family:"Source Sans 3",sans-serif; font-weight:400; }
       .collapse-toggle.open .chev { transform:rotate(90deg); }
-      .call-fab { display:grid; place-items:center; position:fixed; right:16px; bottom:150px; z-index:60; width:62px; height:62px; border-radius:50%; background:var(--orange); color:#102b3d; box-shadow:0 10px 25px rgba(0,0,0,.32); text-decoration:none; }
+      .call-fab { display:grid; place-items:center; position:fixed; right:16px; bottom:220px; z-index:60; width:62px; height:62px; border-radius:50%; background:var(--orange); color:#102b3d; box-shadow:0 10px 25px rgba(0,0,0,.32); text-decoration:none; }
       .call-fab svg { width:28px; height:28px; }
       .call-fab:active { transform:scale(.94); }
     }
@@ -377,7 +377,7 @@
       .collapse-toggle { cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--surface); border:2px solid var(--line); border-radius:14px; padding:16px 16px 16px 20px; box-shadow:var(--shadow); }
       .collapse-toggle .chev { display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--orange); color:#102b3d; font-size:26px; line-height:1; flex:none; transition:transform .2s; font-family:"Source Sans 3",sans-serif; font-weight:400; }
       .collapse-toggle.open .chev { transform:rotate(90deg); }
-      .call-fab { display:grid; place-items:center; position:fixed; right:16px; bottom:150px; z-index:60; width:62px; height:62px; border-radius:50%; background:var(--orange); color:#102b3d; box-shadow:0 10px 25px rgba(0,0,0,.32); text-decoration:none; }
+      .call-fab { display:grid; place-items:center; position:fixed; right:16px; bottom:220px; z-index:60; width:62px; height:62px; border-radius:50%; background:var(--orange); color:#102b3d; box-shadow:0 10px 25px rgba(0,0,0,.32); text-decoration:none; }
       .call-fab svg { width:28px; height:28px; }
       .call-fab:active { transform:scale(.94); }
     }
