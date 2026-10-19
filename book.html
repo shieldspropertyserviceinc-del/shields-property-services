@@ -61,6 +61,7 @@
             <h2>Booking request</h2>
             <p>Fill this in and we'll confirm your spot by phone or email.</p>
             <form id="book-form">
+<div class="bk-steps"><div class="bk-step current" id="bk-step-ind-1">Step 1 of 2: Your details</div><div class="bk-step" id="bk-step-ind-2">Step 2 of 2: Property & visit</div></div><div id="bk-step-1">
               <div class="field"><label for="bk-plan">Service or plan</label>
                 <select id="bk-plan" name="plan">
                   <optgroup label="Snow clearing">
@@ -85,6 +86,7 @@
                 <div class="field"><label for="bk-phone">Phone</label><input id="bk-phone" name="phone" type="tel" autocomplete="tel" required></div>
               </div>
               <div class="field"><label for="bk-email">Email</label><input id="bk-email" name="email" type="email" autocomplete="email" required></div>
+              <div class="bk-nav-buttons"><button class="button primary" type="button" id="bk-continue" style="width:100%">Continue &rarr;</button></div></div><div id="bk-step-2">
               <div class="field"><label for="bk-address">Property address to be cleared</label>
                 <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off" required>
                 <div class="addr-suggest" id="bk-suggest" hidden></div></div>
@@ -106,8 +108,9 @@
               <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
               <div class="field"><label for="bk-source">How did you hear about us? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
                 <select id="bk-source" name="source"><option value="">—</option><option>Google search</option><option>Facebook</option><option>Instagram</option><option>Neighbour / word of mouth</option><option>Saw our truck or flyer</option><option>Other</option></select></div>
+              </div>
               <input type="text" id="bk-honey" name="_honey" style="display:none!important" tabindex="-1" autocomplete="off">
-              <div class="actions"><button class="button primary" type="submit" style="width:100%">Send booking request</button></div>
+              <div class="bk-nav-buttons"><button class="button dark" type="button" id="bk-back">&larr; Back</button><button class="button primary" type="submit" style="flex:1">Send booking request</button></div>
               <p class="map-note">Hit send and you're done — we'll confirm your spot, and you'll get an instant email confirmation.</p>
               <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
             </form>
@@ -344,7 +347,36 @@
       location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
       btn.disabled=false;btn.textContent='Send booking request';
     });
-  });}})();
+  });}
+
+  (function(){
+    var step1=document.getElementById('bk-step-1'),step2=document.getElementById('bk-step-2');
+    var ind1=document.getElementById('bk-step-ind-1'),ind2=document.getElementById('bk-step-ind-2');
+    var contBtn=document.getElementById('bk-continue'),backBtn=document.getElementById('bk-back');
+    if(!step1||!step2||!contBtn||!backBtn)return;
+    function showStep(n){
+      step1.style.display=n===1?'':'none';
+      step2.style.display=n===2?'':'none';
+      if(ind1&&ind2){
+        ind1.className='bk-step'+(n===1?' current':' done');
+        ind2.className='bk-step'+(n===2?' current':'');
+      }
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    contBtn.addEventListener('click',function(){
+      // validate step 1 fields before continuing
+      var valid=true;
+      ['bk-plan','bk-name','bk-phone','bk-email'].forEach(function(id){
+        var el=document.getElementById(id);
+        if(el&&!el.checkValidity()){valid=false;el.reportValidity();}
+      });
+      if(valid)showStep(2);
+    });
+    backBtn.addEventListener('click',function(){showStep(1);});
+    // start on step 1
+    showStep(1);
+  })();
+})();
 </script>
 </body>
 </html>
