@@ -502,6 +502,7 @@
 .season .actions{margin:0}
 @media (max-width:640px){.season-img{width:80px;height:80px;border-radius:8px}.season{gap:12px;padding:14px}.season h3{font-size:18px}}
 
+.top-wrap{position:sticky;top:0;z-index:100}.top-wrap .site-search{position:static}.top-wrap .topbar{position:static}
 .footer-nav{display:flex;flex-wrap:wrap;gap:8px 20px;flex:1 1 100%;margin-bottom:8px}
 .footer-nav a{color:#dcecf3;text-decoration:none;font-weight:700;font-size:15px}
 .footer-nav a:hover{color:var(--orange)}
@@ -605,7 +606,7 @@
 .field input::placeholder,.field textarea::placeholder{color:#6b8a9d;opacity:1}
 .site-search-results{display:grid;gap:8px;margin-top:10px;max-height:60vh;overflow-y:auto}
 .site-search-results:empty{display:none}
-.site-shell{padding-top:76px}
+.site-shell{padding-top:0}
 .site-search-results a{color:#0d2d43;display:block;padding:12px 16px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:inherit;background:#fff}
 .site-search-results a:hover{border-color:var(--blue)}
 .site-search-results .r-page{font-size:13px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em}
