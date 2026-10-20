@@ -714,4 +714,51 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .compare-fill.counter{background:#8a9aa8;background:linear-gradient(90deg,#6b7d8c,#8a9aa8)}
 .sources{font-size:13px;color:var(--muted);margin-top:24px;border-top:1px solid var(--line);padding-top:16px}
 @media (max-width:640px){.compare-row{grid-template-columns:1fr}}
+/* Storm tracker page */
+.storm-status{background:#fff;border:1px solid var(--line);border-left:8px solid #2F9E44;border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);color:#0d2d43;max-width:860px;margin:0 auto}
+.storm-status.is-ok{border-left-color:#2F9E44}
+.storm-status.is-warn{border-left-color:#E8A100}
+.storm-status.is-active{border-left-color:#3A9ACD}
+.storm-big{font-size:clamp(24px,4vw,34px);font-weight:900;color:#0d2d43;line-height:1.2}
+.storm-sub{margin:10px 0 0;font-size:17px;color:#2c4a5e}
+.storm-note{font-size:13px;color:#4a6b8a;margin-top:16px}
+.fc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:860px;margin:20px auto 0}
+.fc-day{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 14px;text-align:center;box-shadow:var(--shadow);color:#0d2d43}
+.fc-label{font-weight:800;color:#0d2d43;font-size:16px;text-transform:uppercase;letter-spacing:.04em}
+.fc-ico{font-size:34px;margin:8px 0 2px}
+.fc-amt{font-size:clamp(26px,4vw,38px);font-weight:900;color:#1e4a6e;line-height:1.1}
+.fc-cap{font-size:13px;color:#4a6b8a;margin-top:4px}
+@media (max-width:640px){.fc-grid{grid-template-columns:1fr}}
+/* DIY calculator page */
+.calc-wrap input[type=range]{width:100%;accent-color:#ff8c28;margin:6px 0 2px}
+.diy-val{font-weight:900;color:#1e4a6e}
+.diy-plans{display:grid;gap:12px;margin-top:16px}
+.diy-row{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#f0f6fb;border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:#0d2d43}
+.diy-row .map-note{color:#4a6b8a}
+.diy-save{font-size:15px;color:#2c4a5e;margin-top:2px}
+.diy-row .button{flex:none}
+@media (max-width:640px){.diy-row{flex-direction:column;align-items:flex-start}}
+/* Storm tracker: recap, season total, plan triggers */
+.storm-recap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);color:#0d2d43;max-width:860px;margin:0 auto}
+.recap-none{font-size:18px;font-weight:700;color:#0d2d43}
+.recap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.recap-item{text-align:center}
+.recap-label{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#4a6b8a}
+.recap-val{font-size:clamp(20px,3vw,28px);font-weight:900;color:#1e4a6e;margin-top:4px}
+@media (max-width:640px){.recap-grid{grid-template-columns:1fr}}
+.season-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 26px;box-shadow:var(--shadow);color:#0d2d43;max-width:860px;margin:0 auto}
+.season-head{font-size:18px;color:#0d2d43}
+.season-head #season-total{font-weight:900;color:#1e4a6e;font-size:22px}
+.season-track{position:relative;background:#eef3f7;border-radius:8px;height:26px;margin:14px 0 6px}
+.season-fill{height:100%;border-radius:8px;background:#3A9ACD;background:linear-gradient(90deg,#1e4a6e,#3A9ACD);min-width:0;transition:width .6s ease}
+.season-marker{position:absolute;top:-4px;bottom:-4px;right:0;width:4px;background:#ff8c28;border-radius:2px}
+.season-scale{display:flex;justify-content:space-between;font-size:13px;color:#4a6b8a}
+.trigger-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 26px;box-shadow:var(--shadow);color:#0d2d43;max-width:860px;margin:0 auto}
+.trigger-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.trigger-row:last-of-type{border-bottom:none}
+.trigger-plan{font-weight:800;font-size:17px;color:#0d2d43}
+.trigger-plan .map-note{color:#4a6b8a;font-weight:400}
+.trigger-badge{flex:none;font-weight:800;font-size:14px;padding:7px 14px;border-radius:999px;background:#eef3f7;color:#4a6b8a}
+.trigger-badge.on{background:#3A9ACD;color:#fff}
+.trigger-box .map-note,.season-wrap .map-note{color:#4a6b8a}
 
