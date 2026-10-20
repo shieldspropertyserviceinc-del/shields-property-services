@@ -22,7 +22,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Book | Shields Property Services", "description": "Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/book.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
@@ -111,8 +111,8 @@
               <div class="field"><label for="bk-source">How did you hear about us? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
                 <select id="bk-source" name="source"><option value="">—</option><option>Google search</option><option>Facebook</option><option>Instagram</option><option>Neighbour / word of mouth</option><option>Saw our truck or flyer</option><option>Other</option></select></div>
               </div>
-              <input type="text" id="bk-honey" name="_honey" style="display:none!important" tabindex="-1" autocomplete="off">
-              <div class="bk-nav-buttons"><button class="button dark" type="button" id="bk-back">&larr; Back</button><button class="button primary" type="submit" style="flex:1">Send booking request</button></div>
+              <input type="text" id="bk-honey" aria-hidden="true" name="_honey" style="display:none!important" tabindex="-1" autocomplete="off">
+              <div class="bk-nav-buttons" id="bk-step2-nav"><button class="button dark" type="button" id="bk-back">&larr; Back</button><button class="button primary" type="submit" style="flex:1">Send booking request</button></div>
               <p class="map-note">Hit send and you're done — we'll confirm your spot, and you'll get an instant email confirmation.</p>
               <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
             </form>
@@ -274,7 +274,10 @@
   (function(){
     try{
       var plan=new URLSearchParams(location.search).get('plan');
-      if(plan){var sel=document.getElementById('bk-plan');if(sel){sel.value=plan;}}
+      if(plan){var sel=document.getElementById('bk-plan');
+        if(sel){var want=plan.replace('Per-visit','Per visit');
+          for(var i=0;i<sel.options.length;i++){var tx=sel.options[i].text;
+            if(tx===plan||tx.indexOf(want+' —')===0){sel.selectedIndex=i;break;}}}}
     }catch(e){}
   })();
 
@@ -316,7 +319,7 @@
   var bookForm=document.getElementById('book-form');
   if(bookForm){
     var dateInput=document.getElementById('bk-date');
-    if(dateInput){dateInput.min=new Date().toISOString().split('T')[0];}
+    if(dateInput){dateInput.min=(function(){var d=new Date(),p=function(n){return (n<10?'0':'')+n;};return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());})();}
     bookForm.addEventListener('submit',function(e){
     e.preventDefault();
     var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
@@ -359,6 +362,8 @@
     function showStep(n){
       step1.style.display=n===1?'block':'none';
       step2.style.display=n===2?'block':'none';
+      var nav2=document.getElementById('bk-step2-nav');
+      if(nav2){nav2.style.display=n===2?'flex':'none';}
       if(ind1&&ind2){
         ind1.className='bk-step'+(n===1?' current':' done');
         ind2.className='bk-step'+(n===2?' current':'');
