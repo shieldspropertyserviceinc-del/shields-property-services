@@ -716,6 +716,10 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 @media (max-width:640px){.compare-row{grid-template-columns:1fr}}
 /* Storm tracker page */
 .storm-status{background:#fff;border:1px solid var(--line);border-left:8px solid #2F9E44;border-radius:14px;padding:24px 26px;box-shadow:var(--shadow);color:#0d2d43;max-width:860px;margin:0 auto}
+.storm-nav{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 6px}
+.storm-nav a{display:inline-block;padding:10px 18px;background:#fff;color:#0d2d43;border:2px solid var(--blue);border-radius:999px;font-weight:700;font-size:15px;text-decoration:none}
+.storm-nav a:hover{background:var(--blue);color:#fff}
+
 .storm-status.is-ok{border-left-color:#2F9E44}
 .storm-status.is-warn{border-left-color:#E8A100}
 .storm-status.is-active{border-left-color:#3A9ACD}
