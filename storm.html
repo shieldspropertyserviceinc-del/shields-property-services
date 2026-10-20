@@ -22,7 +22,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Storm Tracker | Shields Property Services", "description": "Live Winnipeg storm tracker: current snowfall status, 3-day estimated snowfall forecast for Transcona, and what to expect during a storm.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/storm.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
@@ -115,7 +115,7 @@
         <p class="section-intro">City services are separate from ours. These are the official City of Winnipeg resources.</p>
         <div class="services">
           <a class="service link-card" href="https://winnipeg.ca/publicworks/snow/default.stm" target="_blank" rel="noopener"><span class="num">&#128663;</span><h3>City Snow Clearing Status</h3><p>Plow progress and snow clearing operations from the City of Winnipeg.</p></a>
-          <a class="service link-card" href="https://winnipeg.ca/snow" target="_blank" rel="noopener"><span class="num">&#128290;</span><h3>Parking Ban &amp; Know Your Zone</h3><p>Residential parking ban status and your snow zone.</p></a>
+          <a class="service link-card" href="https://winnipeg.ca/publicworks/snow/winter-parking-bans.stm" target="_blank" rel="noopener"><span class="num">&#128290;</span><h3>Parking Ban &amp; Know Your Zone</h3><p>Residential parking ban status and your snow zone.</p></a>
           <a class="service link-card" href="tel:311"><span class="num">&#128222;</span><h3>Call 311</h3><p>City services &mdash; roads, sidewalks, and everything municipal.</p></a>
         </div>
       </div></div>
@@ -278,7 +278,10 @@
         }
         setStatus('is-ok','&#128994;','All clear','No significant snowfall in the forecast for Transcona. Check back when the sky changes.');
       })
-      .catch(function(){});
+      .catch(function(){
+        if(!CREWS_OUT)setStatus('is-warn','&#9888;&#65039;','Weather data unavailable','We could not load the live forecast just now. If it is snowing, assume we are on it — every property is cleared within 12 hours of the snowfall ending.');
+        if(fcEl)fcEl.innerHTML='<p class="map-note" style="text-align:center">Forecast unavailable right now — try refreshing in a few minutes.</p>';
+      });
     var recapNone=document.getElementById('recap-none'),recapGrid=document.getElementById('recap-grid');
     function showRecap(date,amount,cleared){
       var rd=document.getElementById('recap-date'),ra=document.getElementById('recap-amount'),rc=document.getElementById('recap-cleared');
@@ -308,6 +311,22 @@
     }
     if(LAST_STORM.date!=='—'){showRecap(LAST_STORM.date,LAST_STORM.amount,LAST_STORM.cleared);}
     if(SEASON_TOTAL_CM>0){setSeason(SEASON_TOTAL_CM,false);}
+    if(SEASON_TOTAL_CM<=0){
+      var _sn=new Date(); var _sy=_sn.getFullYear(); if(_sn.getMonth()<9)_sy=_sy-1;
+      var _sp=function(n){return (n<10?'0':'')+n;};
+      var _ss=_sy+'-11-01';
+      var _se=_sn.getFullYear()+'-'+_sp(_sn.getMonth()+1)+'-'+_sp(_sn.getDate());
+      if(_ss<=_se){
+        fetch('https://archive-api.open-meteo.com/v1/archive?latitude=49.8951&longitude=-97.1384&start_date='+_ss+'&end_date='+_se+'&daily=snowfall_sum&timezone=America%2FWinnipeg')
+          .then(function(r){if(!r.ok)throw new Error('wx');return r.json();})
+          .then(function(d){
+            var _as=(d.daily&&d.daily.snowfall_sum)||[];
+            var _tot=0; for(var k=0;k<_as.length;k++)_tot+=(_as[k]||0);
+            if(_tot>0)setSeason(_tot,true);
+          })
+          .catch(function(){});
+      }
+    }
     fetch('https://api.open-meteo.com/v1/forecast?latitude=49.8951&longitude=-97.1384&daily=snowfall_sum&timezone=America%2FWinnipeg&past_days=92&forecast_days=3')
       .then(function(r){if(!r.ok)throw new Error('wx');return r.json();})
       .then(function(d){
@@ -315,11 +334,6 @@
         var todayIdx=92;
         if(!times.length||sums.length<todayIdx+2)return;
         setTriggers((sums[todayIdx]||0)+(sums[todayIdx+1]||0));
-        var now=new Date(); var yr=now.getFullYear(); if(now.getMonth()<10)yr=yr-1;
-        var seasonStart=yr+'-11-01';
-        var total=0;
-        for(var i=0;i<todayIdx&&i<times.length;i++){if(times[i]>=seasonStart)total+=(sums[i]||0);}
-        if(SEASON_TOTAL_CM<=0&&total>0)setSeason(total,true);
         if(LAST_STORM.date==='—'){
           for(var j=todayIdx-1;j>=0;j--){
             if((sums[j]||0)>=1){
