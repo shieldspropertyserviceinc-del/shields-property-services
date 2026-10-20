@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#3A9ACD" />
+  <meta name="description" content="Live Winnipeg storm tracker: current snowfall status, 3-day estimated snowfall forecast for Transcona, and what to expect during a storm." />
+  <link rel="icon" href="data:," />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Shields Property Services" />
+  <meta property="og:title" content="Storm Tracker | Shields Property Services" />
+  <meta property="og:description" content="Live Winnipeg storm tracker: current snowfall status, 3-day estimated snowfall forecast for Transcona, and what to expect during a storm." />
+  <meta property="og:url" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/storm.html" />
+  <meta property="og:image" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Storm Tracker | Shields Property Services" />
+  <meta name="twitter:description" content="Live Winnipeg storm tracker: current snowfall status, 3-day estimated snowfall forecast for Transcona, and what to expect during a storm." />
+  <meta name="twitter:image" content="https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png" />
+  <link rel="canonical" href="https://shieldspropertyserviceinc-del.github.io/shields-property-services/storm.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
+  <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "Storm Tracker | Shields Property Services", "description": "Live Winnipeg storm tracker: current snowfall status, 3-day estimated snowfall forecast for Transcona, and what to expect during a storm.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/storm.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
+  </script>
+  <title>Storm Tracker | Shields Property Services</title>
+</head>
+<body>
+<div class="site-shell">
+  <div class="site-search" id="site-search">
+    <div class="wrap">
+      <div class="field" style="margin-bottom:0"><label for="site-search-input">Search the site</label>
+      <input id="site-search-input" type="search" placeholder="Try &lsquo;windrow&rsquo; or &lsquo;pricing&rsquo;&hellip;" autocomplete="off"></div>
+      <div class="site-search-results" id="site-search-results"></div>
+    </div>
+  </div>
+  <header class="topbar">
+    <nav aria-label="Main navigation">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="services.html">Services</a>
+      <a class="nav-link" href="pricing.html">Pricing</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="faq.html">Q&A</a>
+      <a class="nav-link" href="learn.html">Tips & Info</a>
+      <a class="nav-link" href="book.html">Book</a>
+      <a class="nav-link" href="referral.html">Referral</a>
+      <a class="nav-link" href="social.html">Social</a>
+      <a class="nav-link cta" href="contact.html">Free estimate</a>
+    </nav>
+  </header>
+
+  <main>
+<div class="page">
+      <div class="page-head"><div class="wrap"><h1>STORM TRACKER.</h1><p>Live snowfall status for Transcona &mdash; and what happens next when the snow flies.</p></div></div>
+      <div class="section"><div class="wrap">
+        <h2 class="section-title">CURRENT STATUS.</h2>
+        <div class="storm-status is-ok" id="storm-status" aria-live="polite">
+          <div class="storm-big">&#128994; All clear</div>
+          <p class="storm-sub">No significant snowfall in the forecast for Transcona. Check back when the sky changes.</p>
+        </div>
+        <h2 class="section-title" style="margin-top:36px">3-DAY SNOWFALL FORECAST.</h2>
+        <p class="section-intro">Estimated snowfall for Winnipeg, by day. Snowfall only &mdash; that is what this page is about.</p>
+        <div class="fc-grid" id="storm-forecast">
+          <div class="fc-day"><div class="fc-label">Today</div><div class="fc-ico">&#10052;</div><div class="fc-amt">&mdash; cm</div><div class="fc-cap">loading forecast&hellip;</div></div>
+          <div class="fc-day"><div class="fc-label">Tomorrow</div><div class="fc-ico">&#10052;</div><div class="fc-amt">&mdash; cm</div><div class="fc-cap">loading forecast&hellip;</div></div>
+          <div class="fc-day"><div class="fc-label">Day after</div><div class="fc-ico">&#10052;</div><div class="fc-amt">&mdash; cm</div><div class="fc-cap">loading forecast&hellip;</div></div>
+        </div>
+        <p class="storm-note">Snowfall amounts are forecast estimates from Open-Meteo weather data for Winnipeg &mdash; actual amounts vary street by street. See <a href="winter-stats.html">Winnipeg winter stats</a> for the long-term picture: 126 cm of snow in an average year.</p>
+        <h2 class="section-title" style="margin-top:36px">LAST STORM RECAP.</h2>
+        <div class="storm-recap" id="storm-recap">
+          <div class="recap-none" id="recap-none">No storms yet this season &mdash; we're ready when it comes.</div>
+          <div class="recap-grid" id="recap-grid" hidden>
+            <div class="recap-item"><div class="recap-label">Last snowfall</div><div class="recap-val" id="recap-date">&mdash;</div></div>
+            <div class="recap-item"><div class="recap-label">Amount that fell</div><div class="recap-val" id="recap-amount">&mdash;</div></div>
+            <div class="recap-item"><div class="recap-label">Clearing completed</div><div class="recap-val" id="recap-cleared">&mdash;</div></div>
+          </div>
+        </div>
+        <h2 class="section-title" style="margin-top:36px">SEASON SNOWFALL SO FAR.</h2>
+        <div class="season-wrap">
+          <div class="season-head"><span id="season-total">0 cm</span> of the 126 cm Winnipeg average <span class="map-note" id="season-note"></span></div>
+          <div class="season-track"><div class="season-fill" id="season-fill" style="width:0%"></div><div class="season-marker" title="126 cm average"></div></div>
+          <div class="season-scale"><span>0 cm</span><span>126 cm average</span></div>
+        </div>
+        <h2 class="section-title" style="margin-top:36px">IS MY PLAN TRIGGERED?</h2>
+        <p class="section-intro">Based on the forecast snowfall for today and tomorrow.</p>
+        <div class="trigger-box" id="trigger-box">
+          <div class="trigger-row"><span class="trigger-plan">Essential <span class="map-note">6 cm trigger</span></span><span class="trigger-badge" id="trig-6">Checking forecast&hellip;</span></div>
+          <div class="trigger-row"><span class="trigger-plan">Complete <span class="map-note">4 cm trigger</span></span><span class="trigger-badge" id="trig-4">Checking forecast&hellip;</span></div>
+          <div class="trigger-row"><span class="trigger-plan">Premium <span class="map-note">2 cm trigger</span></span><span class="trigger-badge" id="trig-2">Checking forecast&hellip;</span></div>
+          <p class="map-note" id="trigger-note"></p>
+        </div>
+        <h2 class="section-title" style="margin-top:36px">WHAT HAPPENS DURING A STORM.</h2>
+        <details class="guide" id="storm-step-watch"><summary>1. We watch the forecast</summary>
+          <p>When snowfall is forecast to hit your plan&rsquo;s trigger, we plan the route in advance &mdash; streets grouped for efficiency, Premium (2 cm) customers first, then Complete (4 cm), then Essential (6 cm).</p></details>
+        <details class="guide" id="storm-step-mobilize"><summary>2. We mobilize after the snowfall ends</summary>
+          <p>Clearing starts as the snow winds down, so you get one clean pass instead of chasing a moving storm. In multi-day storms we may do a mid-storm pass to keep driveways passable, then a final clear when it ends.</p></details>
+        <details class="guide" id="storm-step-cleared"><summary>3. Every property cleared within 12 hours</summary>
+          <p>Driveways and walkways are cleared within 12 hours of the snowfall ending. That is the guarantee on every plan &mdash; no need to call or text to check.</p></details>
+        <details class="guide" id="storm-step-windrow"><summary>4. Windrows handled per your plan</summary>
+          <p>The city plow ridge at the end of your driveway: included every visit on Complete and Premium, available as a $25/visit add-on on Essential. If a windrow appears after our visit, let us know and we will come back for it.</p></details>
+        <h2 class="section-title" style="margin-top:36px">DURING A STORM, YOU CAN EXPECT.</h2>
+        <ul class="checklist">
+          <li><strong>No need to call.</strong> We track every property on our route &mdash; if you are a customer, you are on the list.</li>
+          <li><strong>Driveways and walkways first.</strong> Getting you in and out safely is the priority on every visit.</li>
+          <li><strong>Sanding available.</strong> $15 per application as an add-on; included on Premium.</li>
+          <li><strong>Honest delays.</strong> Severe blizzards with road closures can slow us down &mdash; safety comes first, and we will always communicate if the 12-hour window is at risk.</li>
+        </ul>
+        <h2 class="section-title" style="margin-top:36px">CITY OF WINNIPEG &mdash; OFFICIAL.</h2>
+        <p class="section-intro">City services are separate from ours. These are the official City of Winnipeg resources.</p>
+        <div class="services">
+          <a class="service link-card" href="https://winnipeg.ca/publicworks/snow/default.stm" target="_blank" rel="noopener"><span class="num">&#128663;</span><h3>City Snow Clearing Status</h3><p>Plow progress and snow clearing operations from the City of Winnipeg.</p></a>
+          <a class="service link-card" href="https://winnipeg.ca/snow" target="_blank" rel="noopener"><span class="num">&#128290;</span><h3>Parking Ban &amp; Know Your Zone</h3><p>Residential parking ban status and your snow zone.</p></a>
+          <a class="service link-card" href="tel:311"><span class="num">&#128222;</span><h3>Call 311</h3><p>City services &mdash; roads, sidewalks, and everything municipal.</p></a>
+        </div>
+      </div></div>
+      <section class="section"><div class="wrap"><h2 class="section-title">NOT COVERED YET?</h2><p class="section-intro">Book before the next storm and your driveway is on the route.</p><div class="actions"><a class="button primary" href="book.html">Book snow clearing</a><a class="button dark" href="pricing.html">See plans</a></div></div></section>
+    </div>
+  </main>
+
+  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <div class="mnav-grid">
+<a class="mnav-top mnav-solo" href="index.html">Home</a>
+<a class="mnav-top mnav-solo" href="services.html">Services</a>
+<a class="mnav-top mnav-solo" href="learn.html">Tips & Info</a>
+<div class="mnav-group">
+<button class="mnav-top" aria-expanded="false">Pricing <span class="mnav-chev">▾</span></button>
+<div class="mnav-drop" hidden>
+<a class="mnav-link" href="pricing.html">Plans & Pricing</a>
+<a class="mnav-link" href="referral.html">Referral Program</a>
+</div></div>
+<div class="mnav-group">
+<button class="mnav-top" aria-expanded="false">Book <span class="mnav-chev">▾</span></button>
+<div class="mnav-drop" hidden>
+<a class="mnav-link" href="book.html">Book Now</a>
+<a class="mnav-link" href="contact.html">Contact</a>
+</div></div>
+<div class="mnav-group">
+<button class="mnav-top" aria-expanded="false">About <span class="mnav-chev">▾</span></button>
+<div class="mnav-drop" hidden>
+<a class="mnav-link" href="about.html">About Us</a>
+<a class="mnav-link" href="faq.html">Q&A</a>
+<a class="mnav-link" href="social.html">Social</a>
+</div></div>
+</div>
+  </nav>
+  <a class="call-fab" href="tel:+14313421575" aria-label="Call Shields Property Services now"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.25 1.02l-2.2 2.21z"/></svg></a>
+<button class="nav-toggle" id="nav-toggle" aria-label="Collapse navigation" aria-expanded="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg></button>
+</div>
+<script>
+(function(){
+  (function(){
+    var tgl=document.getElementById('nav-toggle');
+    var mnav=document.querySelector('.mobile-nav');
+    if(tgl&&mnav){tgl.addEventListener('click',function(){
+      var expanded=tgl.getAttribute('aria-expanded')==='true';
+      tgl.setAttribute('aria-expanded', expanded?'false':'true');
+      tgl.setAttribute('aria-label', expanded?'Expand navigation':'Collapse navigation');
+      mnav.classList.toggle('collapsed', expanded);
+    });}
+  })();
+  (function(){
+    // Scroll-reveal animations
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.1});
+    document.querySelectorAll('.guide-cat,.faq-cat,.season,.service.link-card,.section').forEach(function(el){el.classList.add('reveal');io.observe(el);});
+  })();
+  (function(){
+    var inp=document.getElementById('site-search-input'),
+        res=document.getElementById('site-search-results'),
+        idx=null;
+    if(!inp||!res) return;
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'){ inp.value=''; res.innerHTML=''; inp.blur(); }});
+    fetch('search-index.json').then(function(r){return r.json();}).then(function(j){idx=j;}).catch(function(){});
+    inp.addEventListener('input',function(){
+      var q=inp.value.trim().toLowerCase();
+      if(!q||!idx){res.innerHTML='';return;}
+      var words=q.split(/\s+/);
+      var hits=idx.filter(function(e){
+        var hay=(e.t+' '+e.x).toLowerCase();
+        return words.every(function(w){return hay.indexOf(w)!==-1;});
+      }).slice(0,8);
+      if(!hits.length){res.innerHTML='<div class="site-search-none">No results for &ldquo;'+inp.value.replace(/</g,'&lt;')+'&rdquo;</div>';return;}
+      res.innerHTML=hits.map(function(e){
+        return '<a href="'+e.u+'"><div class="r-page">'+e.p+'</div><div class="r-title">'+e.t.replace(/</g,'&lt;')+'</div><div class="r-snip">'+e.x.replace(/</g,'&lt;').substring(0,140)+'&hellip;</div></a>';
+      }).join('');
+    });
+  })();
+
+  (function(){
+    // Mobile nav dropdowns
+    document.querySelectorAll('.mnav-group > .mnav-top').forEach(function(btn){
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        var group = btn.parentElement;
+        var wasOpen = group.classList.contains('open');
+        document.querySelectorAll('.mnav-group.open').forEach(function(g){
+          g.classList.remove('open');
+          g.querySelector('.mnav-drop').hidden = true;
+          g.querySelector('.mnav-top').setAttribute('aria-expanded','false');
+        });
+        if(!wasOpen){
+          group.classList.add('open');
+          group.querySelector('.mnav-drop').hidden = false;
+          btn.setAttribute('aria-expanded','true');
+        }
+      });
+    });
+    document.addEventListener('click', function(){
+      document.querySelectorAll('.mnav-group.open').forEach(function(g){
+        g.classList.remove('open');
+        g.querySelector('.mnav-drop').hidden = true;
+        g.querySelector('.mnav-top').setAttribute('aria-expanded','false');
+      });
+    });
+  })();
+
+  /* STORM TRACKER — NICHOLAS: to show "Crews are out", change CREWS_OUT below to true. Change it back to false when the run is done. That is the only line to touch. */
+  var CREWS_OUT=false;
+  /* LAST STORM RECAP — NICHOLAS: after a storm, fill these in (date / amount that fell / when clearing finished). Manual values beat the automatic estimate. Leave date as — to show "no storms yet". */
+  var LAST_STORM={date:'—',amount:'—',cleared:'—'};
+  /* SEASON TOTAL — NICHOLAS: set to the season snowfall so far in cm if you track it yourself. 0 = use the automatic estimate. */
+  var SEASON_TOTAL_CM=0;
+  (function(){
+    var stEl=document.getElementById('storm-status');
+    var fcEl=document.getElementById('storm-forecast');
+    if(!stEl)return;
+    function fmt(n){return ''+(Math.round(n*10)/10);}
+    function dayName(iso,i){
+      if(i===0)return 'Today';
+      var d=new Date(iso+'T12:00:00');
+      return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+    }
+    function setStatus(cls,icon,head,sub){
+      stEl.className='storm-status '+cls;
+      stEl.innerHTML='<div class="storm-big">'+icon+' '+head+'</div><p class="storm-sub">'+sub+'</p>';
+    }
+    function renderForecast(daily){
+      if(!fcEl||!daily||!daily.time)return;
+      var sums=daily.snowfall_sum||[];
+      var html='';
+      for(var i=0;i<3;i++){
+        var amt=(sums[i]==null)?0:sums[i];
+        var snowy=amt>=0.5;
+        html+='<div class="fc-day"><div class="fc-label">'+dayName(daily.time[i],i)+'</div>'
+          +'<div class="fc-ico">'+(snowy?'&#10052;':'&#9728;')+'</div>'
+          +'<div class="fc-amt">'+fmt(amt)+' cm</div>'
+          +'<div class="fc-cap">'+(snowy?'estimated snowfall':'little to no snow expected')+'</div></div>';
+      }
+      fcEl.innerHTML=html;
+    }
+    if(CREWS_OUT){
+      setStatus('is-active','&#128309;','Crews are out — clearing in progress','We are on route now. Every property is cleared within 12 hours of the snowfall ending.');
+    }
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=49.8951&longitude=-97.1384&current=temperature_2m,snowfall,weather_code&daily=snowfall_sum,temperature_2m_max,temperature_2m_min&timezone=America%2FWinnipeg&forecast_days=3')
+      .then(function(r){if(!r.ok)throw new Error('wx');return r.json();})
+      .then(function(d){
+        renderForecast(d.daily);
+        if(CREWS_OUT)return;
+        var cur=(d.current&&typeof d.current.snowfall==='number')?d.current.snowfall:0;
+        var sums=(d.daily&&d.daily.snowfall_sum)||[0,0,0];
+        var today=sums[0]||0;
+        if(cur>0||today>=2){
+          setStatus('is-active','&#128309;','Snowfall in progress — crews mobilizing','An estimated '+fmt(today)+' cm is expected today. Clearing starts as the snow winds down — every property within 12 hours.');
+          return;
+        }
+        var best=-1,bestDay=-1;
+        for(var i=1;i<sums.length;i++){if((sums[i]||0)>best){best=sums[i]||0;bestDay=i;}}
+        if(best>=2){
+          setStatus('is-warn','&#128993;','Snow expected — we’re watching','An estimated '+fmt(best)+' cm is forecast for '+dayName(d.daily.time[bestDay],bestDay)+'. We plan the route before it lands.');
+          return;
+        }
+        setStatus('is-ok','&#128994;','All clear','No significant snowfall in the forecast for Transcona. Check back when the sky changes.');
+      })
+      .catch(function(){});
+    var recapNone=document.getElementById('recap-none'),recapGrid=document.getElementById('recap-grid');
+    function showRecap(date,amount,cleared){
+      var rd=document.getElementById('recap-date'),ra=document.getElementById('recap-amount'),rc=document.getElementById('recap-cleared');
+      if(rd)rd.textContent=date;
+      if(ra)ra.textContent=amount;
+      if(rc)rc.textContent=cleared;
+      if(recapNone)recapNone.hidden=true;
+      if(recapGrid)recapGrid.hidden=false;
+    }
+    function setSeason(total,estimated){
+      var sf=document.getElementById('season-fill'),st=document.getElementById('season-total'),sn=document.getElementById('season-note');
+      var pct=Math.min(100,total/126*100);
+      if(sf)sf.style.width=pct+'%';
+      if(st)st.textContent=fmt(total)+' cm';
+      if(sn)sn.textContent=estimated?'(estimated from weather data)':'';
+    }
+    function setTriggers(twoDay){
+      var note=document.getElementById('trigger-note');
+      [6,4,2].forEach(function(t){
+        var b=document.getElementById('trig-'+t);
+        if(!b)return;
+        if(twoDay<0.5){b.className='trigger-badge';b.textContent='No visit needed';}
+        else if(twoDay>=t){b.className='trigger-badge on';b.textContent='Triggered ✓';}
+        else{b.className='trigger-badge';b.textContent='Not triggered';}
+      });
+      if(note)note.textContent=(twoDay<0.5)?'No snow expected in the next two days — no visit needed on any plan.':'Forecast estimate: '+fmt(twoDay)+' cm over today and tomorrow.';
+    }
+    if(LAST_STORM.date!=='—'){showRecap(LAST_STORM.date,LAST_STORM.amount,LAST_STORM.cleared);}
+    if(SEASON_TOTAL_CM>0){setSeason(SEASON_TOTAL_CM,false);}
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=49.8951&longitude=-97.1384&daily=snowfall_sum&timezone=America%2FWinnipeg&past_days=92&forecast_days=3')
+      .then(function(r){if(!r.ok)throw new Error('wx');return r.json();})
+      .then(function(d){
+        var times=(d.daily&&d.daily.time)||[], sums=(d.daily&&d.daily.snowfall_sum)||[];
+        var todayIdx=92;
+        if(!times.length||sums.length<todayIdx+2)return;
+        setTriggers((sums[todayIdx]||0)+(sums[todayIdx+1]||0));
+        var now=new Date(); var yr=now.getFullYear(); if(now.getMonth()<10)yr=yr-1;
+        var seasonStart=yr+'-11-01';
+        var total=0;
+        for(var i=0;i<todayIdx&&i<times.length;i++){if(times[i]>=seasonStart)total+=(sums[i]||0);}
+        if(SEASON_TOTAL_CM<=0&&total>0)setSeason(total,true);
+        if(LAST_STORM.date==='—'){
+          for(var j=todayIdx-1;j>=0;j--){
+            if((sums[j]||0)>=1){
+              var dt=new Date(times[j]+'T12:00:00');
+              showRecap(dt.toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'}),fmt(sums[j])+' cm','—');
+              break;
+            }
+          }
+        }
+      })
+      .catch(function(){
+        [6,4,2].forEach(function(t){var b=document.getElementById('trig-'+t);if(b)b.textContent='Forecast unavailable';});
+      });
+  })();})();
+</script>
+</body>
+</html>
