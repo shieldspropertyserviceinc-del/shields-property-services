@@ -55,13 +55,14 @@
   <main>
 <div class="page">
       <div class="page-head"><div class="wrap"><h1>STORM TRACKER.</h1><p>Live snowfall status for Transcona &mdash; and what happens next when the snow flies.</p></div></div>
+      <div class="wrap"><nav class="storm-nav" aria-label="Storm tracker sections"><a href="#sec-status">📍 Status</a><a href="#sec-forecast">❄️ 3-Day Forecast</a><a href="#sec-laststorm">📅 Last Storm</a><a href="#sec-season">📊 Season Total</a><a href="#sec-triggered">✅ Plan Triggers</a><a href="#sec-steps">🧭 How It Works</a><a href="#sec-city">🏙️ City Links</a></nav></div>
       <div class="section"><div class="wrap">
-        <h2 class="section-title">CURRENT STATUS.</h2>
+        <h2 class="section-title" id="sec-status">CURRENT STATUS.</h2>
         <div class="storm-status is-ok" id="storm-status" aria-live="polite">
           <div class="storm-big">&#128994; All clear</div>
           <p class="storm-sub">No significant snowfall in the forecast for Transcona. Check back when the sky changes.</p>
         </div>
-        <h2 class="section-title" style="margin-top:36px">3-DAY SNOWFALL FORECAST.</h2>
+        <h2 class="section-title" id="sec-forecast" style="margin-top:36px">3-DAY SNOWFALL FORECAST.</h2>
         <p class="section-intro">Estimated snowfall for Winnipeg, by day. Snowfall only &mdash; that is what this page is about.</p>
         <div class="fc-grid" id="storm-forecast">
           <div class="fc-day"><div class="fc-label">Today</div><div class="fc-ico">&#10052;</div><div class="fc-amt">&mdash; cm</div><div class="fc-cap">loading forecast&hellip;</div></div>
@@ -69,7 +70,7 @@
           <div class="fc-day"><div class="fc-label">Day after</div><div class="fc-ico">&#10052;</div><div class="fc-amt">&mdash; cm</div><div class="fc-cap">loading forecast&hellip;</div></div>
         </div>
         <p class="storm-note">Snowfall amounts are forecast estimates from Open-Meteo weather data for Winnipeg &mdash; actual amounts vary street by street. See <a href="winter-stats.html">Winnipeg winter stats</a> for the long-term picture: 126 cm of snow in an average year.</p>
-        <h2 class="section-title" style="margin-top:36px">LAST STORM RECAP.</h2>
+        <h2 class="section-title" id="sec-laststorm" style="margin-top:36px">LAST STORM RECAP.</h2>
         <div class="storm-recap" id="storm-recap">
           <div class="recap-none" id="recap-none">No storms yet this season &mdash; we're ready when it comes.</div>
           <div class="recap-grid" id="recap-grid" hidden>
@@ -78,13 +79,13 @@
             <div class="recap-item"><div class="recap-label">Clearing completed</div><div class="recap-val" id="recap-cleared">&mdash;</div></div>
           </div>
         </div>
-        <h2 class="section-title" style="margin-top:36px">SEASON SNOWFALL SO FAR.</h2>
+        <h2 class="section-title" id="sec-season" style="margin-top:36px">SEASON SNOWFALL SO FAR.</h2>
         <div class="season-wrap">
           <div class="season-head"><span id="season-total">0 cm</span> of the 126 cm Winnipeg average <span class="map-note" id="season-note"></span></div>
           <div class="season-track"><div class="season-fill" id="season-fill" style="width:0%"></div><div class="season-marker" title="126 cm average"></div></div>
           <div class="season-scale"><span>0 cm</span><span>126 cm average</span></div>
         </div>
-        <h2 class="section-title" style="margin-top:36px">IS MY PLAN TRIGGERED?</h2>
+        <h2 class="section-title" id="sec-triggered" style="margin-top:36px">IS MY PLAN TRIGGERED?</h2>
         <p class="section-intro">Based on the forecast snowfall for today and tomorrow.</p>
         <div class="trigger-box" id="trigger-box">
           <div class="trigger-row"><span class="trigger-plan">Essential <span class="map-note">6 cm trigger</span></span><span class="trigger-badge" id="trig-6">Checking forecast&hellip;</span></div>
@@ -92,7 +93,7 @@
           <div class="trigger-row"><span class="trigger-plan">Premium <span class="map-note">2 cm trigger</span></span><span class="trigger-badge" id="trig-2">Checking forecast&hellip;</span></div>
           <p class="map-note" id="trigger-note"></p>
         </div>
-        <h2 class="section-title" style="margin-top:36px">WHAT HAPPENS DURING A STORM.</h2>
+        <h2 class="section-title" id="sec-steps" style="margin-top:36px">WHAT HAPPENS DURING A STORM.</h2>
         <details class="guide" id="storm-step-watch"><summary>1. We watch the forecast</summary>
           <p>When snowfall is forecast to hit your plan&rsquo;s trigger, we plan the route in advance &mdash; streets grouped for efficiency, Premium (2 cm) customers first, then Complete (4 cm), then Essential (6 cm).</p></details>
         <details class="guide" id="storm-step-mobilize"><summary>2. We mobilize after the snowfall ends</summary>
@@ -101,14 +102,14 @@
           <p>Driveways and walkways are cleared within 12 hours of the snowfall ending. That is the guarantee on every plan &mdash; no need to call or text to check.</p></details>
         <details class="guide" id="storm-step-windrow"><summary>4. Windrows handled per your plan</summary>
           <p>The city plow ridge at the end of your driveway: included every visit on Complete and Premium, available as a $25/visit add-on on Essential. If a windrow appears after our visit, let us know and we will come back for it.</p></details>
-        <h2 class="section-title" style="margin-top:36px">DURING A STORM, YOU CAN EXPECT.</h2>
+        <h2 class="section-title" id="sec-expect" style="margin-top:36px">DURING A STORM, YOU CAN EXPECT.</h2>
         <ul class="checklist">
           <li><strong>No need to call.</strong> We track every property on our route &mdash; if you are a customer, you are on the list.</li>
           <li><strong>Driveways and walkways first.</strong> Getting you in and out safely is the priority on every visit.</li>
           <li><strong>Sanding available.</strong> $15 per application as an add-on; included on Premium.</li>
           <li><strong>Honest delays.</strong> Severe blizzards with road closures can slow us down &mdash; safety comes first, and we will always communicate if the 12-hour window is at risk.</li>
         </ul>
-        <h2 class="section-title" style="margin-top:36px">CITY OF WINNIPEG &mdash; OFFICIAL.</h2>
+        <h2 class="section-title" id="sec-city" style="margin-top:36px">CITY OF WINNIPEG &mdash; OFFICIAL.</h2>
         <p class="section-intro">City services are separate from ours. These are the official City of Winnipeg resources.</p>
         <div class="services">
           <a class="service link-card" href="https://winnipeg.ca/publicworks/snow/default.stm" target="_blank" rel="noopener"><span class="num">&#128663;</span><h3>City Snow Clearing Status</h3><p>Plow progress and snow clearing operations from the City of Winnipeg.</p></a>
