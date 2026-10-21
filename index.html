@@ -22,13 +22,13 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "Shields Property Services",
-    "description": "Residential snow clearing in Transcona, Winnipeg. Driveway and walkway cleared within 12 hours of snowfall. Season plans November through March.",
+    "description": "Residential snow clearing in Transcona, Winnipeg. Driveway and walkway cleared within 12 hours of snowfall ending. Season plans November through March.",
     "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/",
     "image": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/logo.png",
     "telephone": "+1-431-342-1575",
@@ -53,7 +53,7 @@
       "closes": "23:59"
     },
     "sameAs": [
-      "https://www.instagram.com/shieldpropertyservices/",
+      "https://www.instagram.com/shieldsspropertyservices/",
       "https://www.facebook.com/1312891705247925"
     ],
     "hasOfferCatalog": {
@@ -173,7 +173,7 @@
             <a class="button dark" href="pricing.html">Compare all plans</a>
           </div>
           <div class="promise-points">
-            <div class="promise-point"><span class="symbol">12h</span><div><strong>Timely service</strong><p>Visits completed within 12 hours after your plan's snowfall trigger is met.</p></div></div>
+            <div class="promise-point"><span class="symbol">12h</span><div><strong>Timely service</strong><p>Visits completed within 12 hours of snowfall ending.</p></div></div>
             <div class="promise-point"><span class="symbol">3×</span><div><strong>Three levels of coverage</strong><p>2 cm, 4 cm or 6 cm triggers to match your needs.</p></div></div>
             <div class="promise-point"><span class="symbol">$0</span><div><strong>Free estimate</strong><p>In-person estimates for Transcona properties, with no obligation.</p></div></div>
           </div>
@@ -191,7 +191,7 @@
     </div>
   </main>
 
-  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
+  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldsspropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mnav-grid">
@@ -288,6 +288,11 @@
       });
     });
   })();
+  (function(){
+    // B-I1: search deep-links open their target guide/Q&A on arrival
+    function openHash(){if(!location.hash)return;try{var h=document.querySelector(location.hash);if(h&&h.tagName==='DETAILS')h.open=true;}catch(e){}}
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',openHash);}else{openHash();}
+  })();
 
   if(window.matchMedia('(max-width: 820px)').matches){
     document.querySelectorAll('.section.collapsible').forEach(function(sec){
@@ -303,11 +308,11 @@
       title.appendChild(chev);
       title.classList.add('collapse-toggle');
       title.setAttribute('role','button');
-      title.setAttribute('tabindex','0');
+      title.setAttribute('tabindex','0');title.setAttribute('aria-expanded',isOpen?'true':'false');
       var isOpen=sec.hasAttribute('data-open');
       body.hidden=!isOpen;
       title.classList.toggle('open',isOpen);
-      var toggle=function(){body.hidden=!body.hidden;title.classList.toggle('open',!body.hidden);};
+      var toggle=function(){body.hidden=!body.hidden;title.classList.toggle('open',!body.hidden);title.setAttribute('aria-expanded',!body.hidden?'true':'false');};
       title.addEventListener('click',toggle);
       title.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
     });
