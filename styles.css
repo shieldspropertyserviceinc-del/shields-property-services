@@ -492,3 +492,27 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .storm-note{color:var(--muted)}
 .site-search-results a{color:#0d2d43}
 
+/* Services redesign 2026-10-20: trust strip, photo season cards, per-service rows */
+.svc-trust{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;background:#0d2d43;color:#fff;border-radius:12px;padding:14px 18px;margin:4px 0 2px}
+.svc-trust span{font-weight:700;font-size:15px}
+.svc-card{display:block;padding:0;overflow:hidden;scroll-margin-top:130px}
+.svc-photo{width:100%;aspect-ratio:1200/525;object-fit:cover;display:block}
+.svc-card .season-body{padding:18px}
+.svc-rows{margin-top:12px;border-top:1px solid var(--line)}
+.svc-row{display:flex;align-items:center;gap:12px;padding:12px 2px;border-bottom:1px solid var(--line)}
+.svc-row:last-child{border-bottom:none}
+.svc-ric{font-size:22px;line-height:1;flex:none}
+.svc-rmain{flex:1;min-width:0}
+.svc-rname{font-weight:800;color:var(--ink);font-size:16px}
+.svc-rben{color:var(--muted);font-size:14px;margin-top:1px}
+.svc-rside{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:none}
+.svc-rprice{font-weight:800;color:var(--blue);font-size:14px;text-align:right}
+.svc-qbtn{display:inline-block;background:#3A9ACD;background:linear-gradient(135deg,#1e4a6e,#3A9ACD);color:#fff;font-weight:700;font-size:13.5px;padding:7px 14px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.svc-qbtn:hover{background:#ff8c28;color:#fff}
+.svc-note{margin:10px 0 0}
+@media (max-width:640px){
+.svc-row{flex-wrap:wrap}
+.svc-rside{flex-direction:row;align-items:center;justify-content:space-between;width:100%}
+.svc-rprice{text-align:left}
+}
+
