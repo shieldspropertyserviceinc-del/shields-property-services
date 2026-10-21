@@ -22,7 +22,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Offers & Deals | Shields Property Services", "description": "Current offers from Shields Property Services, Transcona: early-bird prepay season rates, the first-customer 35% exclusive, $25 neighbour referrals, and a 10% senior discount for age 55+.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/offers.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
@@ -60,7 +60,7 @@
       <div class="section"><div class="wrap">
         <h2 class="section-title">DEALS THAT MAKE WINTER EASIER.</h2>
         <p class="section-intro">Four ways to pay less for a cleared driveway this season — early-bird prepay, a first-customer exclusive, neighbour referrals, and a standing senior discount. All for residential service right here in Transcona.</p>
-        <div class="plans">
+        <div class="plans four">
           <article class="plan">
             <span class="label">First 5 customers</span><h2>EARLY-BIRD PREPAY</h2>
             <div class="price">$675<small> and up</small></div>
@@ -70,6 +70,7 @@
               <li>Complete $875 (reg. $1,000)</li>
               <li>Premium $1,275 (reg. $1,500)</li>
               <li>Covers the full Nov&ndash;Mar season</li>
+              <li>Seniors 55+ save more: the 10% senior discount stacks on early-bird — Essential $607.50 · Complete $787.50 · Premium $1,147.50</li>
             </ul>
             <a class="button primary" href="book.html">Book early-bird</a>
           </article>
@@ -116,17 +117,17 @@
     </div>
   </main>
 
-  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
+  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldsspropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mnav-grid">
 <a class="mnav-top mnav-solo" href="index.html">Home</a>
 <a class="mnav-top mnav-solo" href="services.html">Services</a>
 <a class="mnav-top mnav-solo" href="learn.html">Tips & Info</a>
-<div class="mnav-group">
+<div class="mnav-group active">
 <button class="mnav-top" aria-expanded="false">Pricing <span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
-<a class="mnav-link" href="pricing.html">Plans & Pricing</a>
+<a class="mnav-link" href="pricing.html" aria-current="page">Plans & Pricing</a>
 <a class="mnav-link" href="referral.html">Referral Program</a>
 </div></div>
 <div class="mnav-group">
@@ -212,6 +213,11 @@
         g.querySelector('.mnav-top').setAttribute('aria-expanded','false');
       });
     });
+  })();
+  (function(){
+    // B-I1: search deep-links open their target guide/Q&A on arrival
+    function openHash(){if(!location.hash)return;try{var h=document.querySelector(location.hash);if(h&&h.tagName==='DETAILS')h.open=true;}catch(e){}}
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',openHash);}else{openHash();}
   })();
 })();
 </script>
