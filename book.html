@@ -22,7 +22,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Book | Shields Property Services", "description": "Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/book.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
@@ -113,7 +113,6 @@
               <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
               <div class="field"><label for="bk-source">How did you hear about us? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
                 <select id="bk-source" name="source"><option value="">—</option><option>Google search</option><option>Facebook</option><option>Instagram</option><option>Neighbour / word of mouth</option><option>Saw our truck or flyer</option><option>Other</option></select></div>
-              </div>
               <input type="text" id="bk-honey" aria-hidden="true" name="_honey" style="display:none!important" tabindex="-1" autocomplete="off">
               <div class="bk-nav-buttons" id="bk-step2-nav"><button class="button dark" type="button" id="bk-back">&larr; Back</button><button class="button primary" type="submit" style="flex:1">Send booking request</button></div>
               <p class="map-note">Hit send and you're done — we'll confirm your spot, and you'll get an instant email confirmation.</p>
@@ -139,7 +138,7 @@
       </div></section><section class="section"><div class="wrap"><h2 class="section-title">STILL DECIDING?</h2><p class="section-intro">Take your time — everything is one tap away.</p><div class="services"><a class="service link-card" href="pricing.html"><span class="num">&rarr;</span><h3>Plans &amp; Pricing</h3><p>Three simple plans from $150/mo.</p></a><a class="service link-card" href="services.html"><span class="num">&rarr;</span><h3>All Services</h3><p>Four seasons of property care.</p></a><a class="service link-card" href="faq.html"><span class="num">&rarr;</span><h3>Q&amp;A</h3><p>Triggers, billing, and what’s included.</p></a><a class="service link-card" href="contact.html"><span class="num">&rarr;</span><h3>Contact</h3><p>Free in-person estimates in Transcona.</p></a><a class="service link-card" href="liability-waiver.pdf"><span class="num">&darr;</span><h3>Liability Waiver</h3><p>Review and download our service waiver (PDF).</p></a></div></div></section></div>
   </main>
 
-  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
+  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldsspropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mnav-grid">
@@ -236,6 +235,11 @@
       });
     });
   })();
+  (function(){
+    // B-I1: search deep-links open their target guide/Q&A on arrival
+    function openHash(){if(!location.hash)return;try{var h=document.querySelector(location.hash);if(h&&h.tagName==='DETAILS')h.open=true;}catch(e){}}
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',openHash);}else{openHash();}
+  })();
 
   var locateBtn=document.getElementById('bk-locate');
   function setMap(q){document.getElementById('bk-map').src='https://maps.google.com/maps?q='+encodeURIComponent(q)+'&output=embed';}
@@ -316,6 +320,8 @@
       bkGpsBtn.disabled=false;bkGpsBtn.textContent='📍 Use my current location';
     },function(){
       bkGpsBtn.disabled=false;bkGpsBtn.textContent='📍 Use my current location';
+      var zel=document.getElementById('bk-zone');
+      if(zel){zel.hidden=false;zel.className='zone-status out';zel.textContent='Location unavailable — type your address instead.';}
     },{enableHighAccuracy:true,timeout:12000});
   });}
 
@@ -343,7 +349,7 @@
       method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify(payload)
     }).then(function(r){return r.json();}).then(function(j){
-      if(j&&j.success){
+      if(j&&(j.success===true||j.success==='true')){
         bookForm.hidden=true;
         var done=document.getElementById('bk-done');
         done.querySelector('.bk-done-name').textContent=firstName;
@@ -351,7 +357,7 @@
         done.scrollIntoView({behavior:'smooth',block:'center'});
       }else{throw new Error('send-failed');}
     }).catch(function(){
-      var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nPreferred visit date: '+v('bk-date')+'\nPreferred time: '+v('bk-time')+'\nNotes: '+v('bk-notes');
+      var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nPreferred visit date: '+v('bk-date')+'\nPreferred time: '+v('bk-time')+'\nNotes: '+v('bk-notes')+'\nSource: '+v('bk-source');
       location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
       btn.disabled=false;btn.textContent='Send booking request';
     });
@@ -365,8 +371,6 @@
     function showStep(n){
       step1.style.display=n===1?'block':'none';
       step2.style.display=n===2?'block':'none';
-      var nav2=document.getElementById('bk-step2-nav');
-      if(nav2){nav2.style.display=n===2?'flex':'none';}
       if(ind1&&ind2){
         ind1.className='bk-step'+(n===1?' current':' done');
         ind2.className='bk-step'+(n===2?' current':'');
