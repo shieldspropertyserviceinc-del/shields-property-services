@@ -22,7 +22,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Storm Tracker | Shields Property Services", "description": "Live Winnipeg storm tracker: current snowfall status, 3-day estimated snowfall forecast for Transcona, and what to expect during a storm.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/storm.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
@@ -61,8 +61,8 @@
       <div class="section"><div class="wrap">
         <h2 class="section-title" id="sec-status">CURRENT STATUS.</h2>
         <div class="storm-status is-ok" id="storm-status" aria-live="polite">
-          <div class="storm-big">&#128994; All clear</div>
-          <p class="storm-sub">No significant snowfall in the forecast for Transcona. Check back when the sky changes.</p>
+          <div class="storm-big">Loading live status&hellip;</div>
+          <p class="storm-sub">Checking the latest forecast for Transcona&hellip;</p>
         </div>
         <h2 class="section-title" id="sec-forecast" style="margin-top:36px">3-DAY SNOWFALL FORECAST.</h2>
         <p class="section-intro">Estimated snowfall for Winnipeg, by day. Snowfall only &mdash; that is what this page is about.</p>
@@ -114,8 +114,8 @@
         <h2 class="section-title" id="sec-city" style="margin-top:36px">CITY OF WINNIPEG &mdash; OFFICIAL.</h2>
         <p class="section-intro">City services are separate from ours. These are the official City of Winnipeg resources.</p>
         <div class="services">
-          <a class="service link-card" href="https://winnipeg.ca/publicworks/snow/default.stm" target="_blank" rel="noopener"><span class="num">&#128663;</span><h3>City Snow Clearing Status</h3><p>Plow progress and snow clearing operations from the City of Winnipeg.</p></a>
-          <a class="service link-card" href="https://winnipeg.ca/publicworks/snow/winter-parking-bans.stm" target="_blank" rel="noopener"><span class="num">&#128290;</span><h3>Parking Ban &amp; Know Your Zone</h3><p>Residential parking ban status and your snow zone.</p></a>
+          <a class="service link-card" href="https://legacy.winnipeg.ca/PublicWorks/snow/default.stm" target="_blank" rel="noopener"><span class="num">&#128663;</span><h3>City Snow Clearing Status</h3><p>Plow progress and snow clearing operations from the City of Winnipeg.</p></a>
+          <a class="service link-card" href="https://legacy.winnipeg.ca/publicworks/snow/winter-parking-bans.stm" target="_blank" rel="noopener"><span class="num">&#128290;</span><h3>Parking Ban &amp; Know Your Zone</h3><p>Residential parking ban status and your snow zone.</p></a>
           <a class="service link-card" href="tel:311"><span class="num">&#128222;</span><h3>Call 311</h3><p>City services &mdash; roads, sidewalks, and everything municipal.</p></a>
         </div>
       </div></div>
@@ -123,11 +123,11 @@
     </div>
   </main>
 
-  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
+  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldsspropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mnav-grid">
-<a class="mnav-top mnav-solo" href="index.html">Home</a>
+<a class="mnav-top mnav-solo active" href="index.html" aria-current="page">Home</a>
 <a class="mnav-top mnav-solo" href="services.html">Services</a>
 <a class="mnav-top mnav-solo" href="learn.html">Tips & Info</a>
 <div class="mnav-group">
@@ -220,6 +220,11 @@
       });
     });
   })();
+  (function(){
+    // B-I1: search deep-links open their target guide/Q&A on arrival
+    function openHash(){if(!location.hash)return;try{var h=document.querySelector(location.hash);if(h&&h.tagName==='DETAILS')h.open=true;}catch(e){}}
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',openHash);}else{openHash();}
+  })();
 
   /* STORM TRACKER — NICHOLAS: to show "Crews are out", change CREWS_OUT below to true. Change it back to false when the run is done. That is the only line to touch. */
   var CREWS_OUT=false;
@@ -258,8 +263,10 @@
     if(CREWS_OUT){
       setStatus('is-active','&#128309;','Crews are out — clearing in progress','We are on route now. Every property is cleared within 12 hours of the snowfall ending.');
     }
-    fetch('https://api.open-meteo.com/v1/forecast?latitude=49.8951&longitude=-97.1384&current=temperature_2m,snowfall,weather_code&daily=snowfall_sum,temperature_2m_max,temperature_2m_min&timezone=America%2FWinnipeg&forecast_days=3')
-      .then(function(r){if(!r.ok)throw new Error('wx');return r.json();})
+    var _wxCtl=('AbortController' in window)?new AbortController():null;
+    var _wxTimer=setTimeout(function(){if(_wxCtl)_wxCtl.abort();},10000);
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=49.8951&longitude=-97.1384&current=temperature_2m,snowfall,weather_code&daily=snowfall_sum,temperature_2m_max,temperature_2m_min&timezone=America%2FWinnipeg&forecast_days=3',_wxCtl?{signal:_wxCtl.signal}:{})
+      .then(function(r){clearTimeout(_wxTimer);if(!r.ok)throw new Error('wx');return r.json();})
       .then(function(d){
         renderForecast(d.daily);
         if(CREWS_OUT)return;
@@ -278,7 +285,7 @@
         }
         setStatus('is-ok','&#128994;','All clear','No significant snowfall in the forecast for Transcona. Check back when the sky changes.');
       })
-      .catch(function(){
+      .catch(function(){clearTimeout(_wxTimer);
         if(!CREWS_OUT)setStatus('is-warn','&#9888;&#65039;','Weather data unavailable','We could not load the live forecast just now. If it is snowing, assume we are on it — every property is cleared within 12 hours of the snowfall ending.');
         if(fcEl)fcEl.innerHTML='<p class="map-note" style="text-align:center">Forecast unavailable right now — try refreshing in a few minutes.</p>';
       });
