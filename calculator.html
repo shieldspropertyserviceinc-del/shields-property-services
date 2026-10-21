@@ -22,7 +22,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Cost Calculator | Shields Property Services", "description": "Snow clearing cost calculator: compare Essential, Complete, Premium and per-visit pricing with early-bird and senior discounts. Transcona, Winnipeg.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/calculator.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
@@ -73,6 +73,7 @@
             <label class="calc-toggle"><input type="checkbox" id="calc-earlybird"> Early-bird prepay <span class="map-note">First 5 prepaid seasons: $675 / $875 / $1,275</span></label>
             <label class="calc-toggle"><input type="checkbox" id="calc-senior"> Senior discount <span class="map-note">10% off</span></label>
           </div>
+          <p class="map-note" style="margin-top:10px">Seniors 55+: the 10% senior discount also applies on top of early-bird prepaid rates — tick both boxes to see the combined season price.</p>
           <div class="calc-results" id="calc-results" aria-live="polite"></div>
           <div class="actions" style="margin-top:20px"><a class="button primary" id="calc-book" href="book.html">Book this plan</a></div>
         </div>
@@ -81,17 +82,17 @@
     </div>
   </main>
 
-  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
+  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldsspropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mnav-grid">
 <a class="mnav-top mnav-solo" href="index.html">Home</a>
 <a class="mnav-top mnav-solo" href="services.html">Services</a>
 <a class="mnav-top mnav-solo" href="learn.html">Tips & Info</a>
-<div class="mnav-group">
+<div class="mnav-group active">
 <button class="mnav-top" aria-expanded="false">Pricing <span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
-<a class="mnav-link" href="pricing.html">Plans & Pricing</a>
+<a class="mnav-link" href="pricing.html" aria-current="page">Plans & Pricing</a>
 <a class="mnav-link" href="referral.html">Referral Program</a>
 </div></div>
 <div class="mnav-group">
@@ -178,6 +179,11 @@
       });
     });
   })();
+  (function(){
+    // B-I1: search deep-links open their target guide/Q&A on arrival
+    function openHash(){if(!location.hash)return;try{var h=document.querySelector(location.hash);if(h&&h.tagName==='DETAILS')h.open=true;}catch(e){}}
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',openHash);}else{openHash();}
+  })();
 
   var cp=document.getElementById('calc-plan'),cv=document.getElementById('calc-visits'),
       ce=document.getElementById('calc-earlybird'),cs=document.getElementById('calc-senior'),
@@ -187,7 +193,7 @@
   function money(n){return '$'+n.toFixed(2).replace(/\.00$/,'');}
   function calc(){
     if(!cp||!cr)return;
-    var plan=parseFloat(cp.value),visits=Math.max(1,parseInt(cv.value)||20);
+    var plan=parseFloat(cp.value),visits=Math.min(60,Math.max(1,parseInt(cv.value)||20));
     var eb=ce&&ce.checked,sr=cs&&cs.checked;
     var seasonal,perVisit=visits*45,note='';
     if(plan===45){seasonal=perVisit;}
