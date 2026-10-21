@@ -22,7 +22,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Winnipeg Snow Bylaws | Shields Property Services", "description": "Winnipeg snow bylaws explained: what the city clears, what homeowners handle, the Neighbourhood Liveability By-law, and how a snow service helps.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/bylaws.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
@@ -89,7 +89,7 @@
     </div>
   </main>
 
-  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldpropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
+  <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldsspropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
 
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mnav-grid">
@@ -108,10 +108,10 @@
 <a class="mnav-link" href="book.html">Book Now</a>
 <a class="mnav-link" href="contact.html">Contact</a>
 </div></div>
-<div class="mnav-group">
+<div class="mnav-group active">
 <button class="mnav-top" aria-expanded="false">About <span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
-<a class="mnav-link" href="about.html">About Us</a>
+<a class="mnav-link" href="about.html" aria-current="page">About Us</a>
 <a class="mnav-link" href="faq.html">Q&A</a>
 <a class="mnav-link" href="social.html">Social</a>
 </div></div>
@@ -185,6 +185,11 @@
         g.querySelector('.mnav-top').setAttribute('aria-expanded','false');
       });
     });
+  })();
+  (function(){
+    // B-I1: search deep-links open their target guide/Q&A on arrival
+    function openHash(){if(!location.hash)return;try{var h=document.querySelector(location.hash);if(h&&h.tagName==='DETAILS')h.open=true;}catch(e){}}
+    if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',openHash);}else{openHash();}
   })();
 })();
 </script>
