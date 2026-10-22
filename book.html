@@ -117,6 +117,7 @@
               <div class="bk-nav-buttons" id="bk-step2-nav"><button class="button dark" type="button" id="bk-back">&larr; Back</button><button class="button primary" type="submit" style="flex:1">Send booking request</button></div>
               <p class="map-note">Hit send and you're done — we'll confirm your spot, and you'll get an instant email confirmation.</p>
               <p class="map-note">Your details are only used to arrange your booking — never shared or sold.</p>
+              </div>
             </form>
             <div id="bk-done" hidden>
               <h2>Request received!</h2>
@@ -353,6 +354,7 @@
         bookForm.hidden=true;bookForm.style.display='none';
         var done=document.getElementById('bk-done');
         if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will call you within 24 hours to confirm your free in-person consultation, and a confirmation email is headed to your inbox now.</p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
+        if(done.parentNode!==bookForm.parentNode){bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         var dn=done.querySelector('.bk-done-name');if(dn)dn.textContent=firstName;
         done.hidden=false;done.removeAttribute('hidden');done.style.display='block';
         done.scrollIntoView({behavior:'smooth',block:'center'});
