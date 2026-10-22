@@ -350,10 +350,11 @@
       body:JSON.stringify(payload)
     }).then(function(r){return r.json();}).then(function(j){
       if(j&&(j.success===true||j.success==='true')){
-        bookForm.hidden=true;
+        bookForm.hidden=true;bookForm.style.display='none';
         var done=document.getElementById('bk-done');
-        done.querySelector('.bk-done-name').textContent=firstName;
-        done.hidden=false;
+        if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will call you within 24 hours to confirm your free in-person consultation, and a confirmation email is headed to your inbox now.</p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
+        var dn=done.querySelector('.bk-done-name');if(dn)dn.textContent=firstName;
+        done.hidden=false;done.removeAttribute('hidden');done.style.display='block';
         done.scrollIntoView({behavior:'smooth',block:'center'});
       }else{throw new Error('send-failed');}
     }).catch(function(){
