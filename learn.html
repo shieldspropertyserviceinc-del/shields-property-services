@@ -22,7 +22,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Tips & Info | Shields Property Services", "description": "36 practical guides and checklists for Winnipeg homeowners: winter prep, ice dams, pet-safe melt, fall cleanup, gutters, snow mold, aeration, overseeding, clay soil and more.", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/learn.html", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyserviceinc-del.github.io/shields-property-services/"}} 
   </script>
@@ -662,7 +662,40 @@
       shown+=cs;
     });
     gsN.hidden=shown>0;
-  });}})();
+  });}
+  // Tips & Info reading aids: read times, deep-link auto-open, expand/collapse all, back to top
+  (function(){
+    var guides=[].slice.call(document.querySelectorAll('details.guide'));
+    guides.forEach(function(g){
+      var s=g.querySelector('summary'); if(!s) return;
+      var words=(g.textContent||'').trim().split(/\s+/).length;
+      var mins=Math.max(1,Math.round(words/180));
+      var m=document.createElement('span'); m.className='guide-meta'; m.textContent=' · '+mins+' min read';
+      s.appendChild(m);
+    });
+    function openFromHash(){
+      var id=(location.hash||'').replace('#',''); if(!id) return;
+      var el=document.getElementById(id);
+      if(el&&el.tagName==='DETAILS'){ el.open=true; }
+    }
+    openFromHash();
+    window.addEventListener('hashchange',openFromHash);
+    var nav=document.querySelector('.storm-nav');
+    if(nav){
+      var tools=document.createElement('span'); tools.className='guide-tools';
+      var b1=document.createElement('button'); b1.type='button'; b1.textContent='Expand all';
+      var b2=document.createElement('button'); b2.type='button'; b2.textContent='Collapse all';
+      b1.addEventListener('click',function(){ guides.forEach(function(g){ if(g.offsetParent!==null) g.open=true; }); });
+      b2.addEventListener('click',function(){ guides.forEach(function(g){ g.open=false; }); });
+      tools.appendChild(b1); tools.appendChild(b2); nav.appendChild(tools);
+    }
+    var topBtn=document.createElement('button');
+    topBtn.id='to-top'; topBtn.type='button'; topBtn.textContent='↑ Top';
+    topBtn.setAttribute('aria-label','Back to top');
+    topBtn.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+    document.body.appendChild(topBtn);
+    window.addEventListener('scroll',function(){ topBtn.classList.toggle('show',window.scrollY>700); },{passive:true});
+  })();})();
 </script>
 </body>
 </html>
