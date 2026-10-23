@@ -1,4 +1,5 @@
 User-agent: *
+
 Allow: /
 
-Sitemap: https://shieldspropertyserviceinc-del.github.io/shields-property-services/sitemap.xml
+Sitemap: https://shieldspropertyservices.ca/sitemap.xml
