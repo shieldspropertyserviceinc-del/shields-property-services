@@ -532,9 +532,17 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .svc-note{margin:10px 0 0}
 @media (max-width:640px){
 .svc-row{flex-wrap:wrap}
-.svc-rside{flex-direction:row;align-items:center;justify-content:space-between;width:100%}
+.svc-rside{flex-direction:row;align-items:center;justify-content:space-between;width:100%;max-width:none}
 .svc-rprice{text-align:left}
 }
+/* Services rows fix 2026-10-25: season cards are ~340px wide on desktop, and the
+   price column never shrank, so benefit text collapsed to one word per line and
+   the price overlapped it. Rows now wrap: on narrow cards the price/button block
+   drops to its own right-aligned line; long prices wrap instead of overflowing. */
+.svc-row{flex-wrap:wrap}
+.svc-rmain{flex:1 1 160px}
+.svc-rside{flex:none;max-width:240px;margin-left:auto}
+.svc-rprice{overflow-wrap:anywhere}
 
 /* AUDIT FIXES 2026-10-20 (evening): legibility pass 2 */
 :root{--blue:#3A9ACD}
