@@ -55,7 +55,7 @@
 
   <main>
     <div class="page">
-      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR SERVICE.</h1><p>Pick a service for any season, pin your address on the map, and send your booking request.</p></div></div>
+      <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR SERVICE.</h1><p>Pick a service for any season, pin your address on the map, and send your booking request. Snow plans include our 12-hour guarantee — cleared within 12 hours of snowfall ending.</p></div></div>
       <div class="section"><div class="wrap">
 <div class="book-grid">
           <article class="book-card">
@@ -98,8 +98,8 @@
                 <p class="zone-status" id="bk-zone" hidden></p>
                 <button class="link-button" type="button" id="bk-gps">📍 Use my current location</button>
               </div>
-              <h3 style="margin:18px 0 4px">Free in-person consultation</h3>
-              <p class="map-note" style="margin-top:0">Pick when you'd like us to stop by — we'll confirm by phone.</p>
+              <h3 style="margin:18px 0 4px">Free estimate — your choice</h3>
+              <p class="map-note" style="margin-top:0">Choose an online estimate or an in-person visit, and pick a time that works — we'll confirm by phone.</p>
               <div class="field-row">
                 <div class="field"><label for="bk-date">Preferred date</label><input id="bk-date" name="preferred_date" type="date" required></div>
                 <div class="field"><label for="bk-time">Preferred time</label>
@@ -120,7 +120,7 @@
             </form>
             <div id="bk-done" hidden>
               <h2>Request received!</h2>
-              <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll call you within 24 hours to confirm your free in-person consultation, and a confirmation email is headed to your inbox now.</p>
+              <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll call you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p>
               <p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>
             </div>
           </article>
@@ -339,7 +339,7 @@
       _subject:'New booking request — '+v('bk-name'),
       _template:'table',
       _captcha:'false',
-      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will call you within 24 hours to confirm your free in-person consultation.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
+      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will call you within 24 hours to arrange your free estimate — online or in-person, your choice.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
       name:v('bk-name'),email:v('bk-email'),phone:v('bk-phone'),
       plan:v('bk-plan'),address:v('bk-address'),
       preferred_date:v('bk-date'),preferred_time:v('bk-time'),
@@ -352,7 +352,7 @@
       if(j&&(j.success===true||j.success==='true')){
         bookForm.hidden=true;bookForm.style.display='none';
         var done=document.getElementById('bk-done');
-        if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will call you within 24 hours to confirm your free in-person consultation, and a confirmation email is headed to your inbox now.</p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
+        if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will call you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         if(done.parentNode!==bookForm.parentNode){bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         var dn=done.querySelector('.bk-done-name');if(dn)dn.textContent=firstName;
         done.hidden=false;done.removeAttribute('hidden');done.style.display='block';
