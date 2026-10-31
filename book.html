@@ -248,11 +248,6 @@
     if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',openHash);}else{openHash();}
   })();
 
-    var titles={home:'Shields Property Services | Snow Clearing in Transcona',pricing:'Pricing | Shields Property Services',about:'About | Shields Property Services',faq:'FAQ | Shields Property Services',book:'Book | Shields Property Services',contact:'Contact | Shields Property Services'};
-    document.title=titles[name];
-  }
-  window.addEventListener('hashchange',showRoute);
-  showRoute();
   var locateBtn=document.getElementById('bk-locate');
   function setMap(q){document.getElementById('bk-map').src='https://maps.google.com/maps?q='+encodeURIComponent(q)+'&output=embed';}
   if(locateBtn){locateBtn.addEventListener('click',function(){
@@ -285,6 +280,11 @@
             });
             suggestBox.hidden=false;
           })
+          .catch(function(){suggestBox.hidden=true;});
+      },350);
+    });
+    document.addEventListener('click',function(e){if(!e.target.closest('.addr-wrap')){suggestBox.hidden=true;}});
+  }
   (function(){
     try{
       var plan=new URLSearchParams(location.search).get('plan');
@@ -332,11 +332,6 @@
     },{enableHighAccuracy:true,timeout:12000});
   });}
 
-    }).catch(function(){
-      location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Website message — '+v('msg-name'))+'&body='+encodeURIComponent('From: '+v('msg-name')+' ('+v('msg-contact')+')\n\n'+v('msg-text'));
-      btn.disabled=false;btn.textContent='Send message';
-    });
-  });}
   var bookForm=document.getElementById('book-form');
   if(bookForm){
     var dateInput=document.getElementById('bk-date');
@@ -351,10 +346,11 @@
       _subject:'New booking request — '+v('bk-name'),
       _template:'table',
       _captcha:'false',
-      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will call you within 24 hours to arrange your free estimate — online or in-person, your choice.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
+      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will call you within 24 hours to arrange your free estimate — online or in-person, your choice.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\nEstimate: '+v('bk-esttype')+'\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
       name:v('bk-name'),email:v('bk-email'),phone:v('bk-phone'),
       plan:v('bk-plan'),address:v('bk-address'),
       preferred_date:v('bk-date'),preferred_time:v('bk-time'),
+      estimate_type:v('bk-esttype'),
       notes:v('bk-notes'),source:v('bk-source'),_honey:v('bk-honey')
     };
     fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
@@ -371,6 +367,11 @@
         done.scrollIntoView({behavior:'smooth',block:'center'});
       }else{throw new Error('send-failed');}
     }).catch(function(){
+      var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nPreferred visit date: '+v('bk-date')+'\nPreferred time: '+v('bk-time')+'\nEstimate type: '+v('bk-esttype')+'\nNotes: '+v('bk-notes')+'\nSource: '+v('bk-source');
+      location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
+      btn.disabled=false;btn.textContent='Send booking request';
+    });
+  });}
 
   (function(){
     var step1=document.getElementById('bk-step-1'),step2=document.getElementById('bk-step-2');
