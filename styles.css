@@ -57,7 +57,8 @@
     .trust span { display:flex; align-items:center; gap:8px; }
     .trust i { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--orange); }
     .hero-mark { display:flex; justify-content:center; align-items:center; }
-    .hero-mark img { width:min(100%,390px); filter:drop-shadow(0 28px 42px rgba(0,0,0,.26)); }
+    .hero-mark img, .hero-mark video { width:min(100%,390px); filter:drop-shadow(0 28px 42px rgba(0,0,0,.26)); }
+    .hero-mark video { border-radius:18px; }
     .section { padding:88px 0; }
     .section.tint { background:var(--surface-soft); }
     .section-title { font-size:clamp(42px,5vw,66px); letter-spacing:-.015em; max-width:760px; }
@@ -161,7 +162,8 @@
       .topbar { display:none; }
       .hero { background:var(--sky); }
       .hero-grid { min-height:auto; grid-template-columns:1fr; padding:52px 0 58px; gap:40px; }
-      .hero-mark { display:none; }
+      .hero-mark { display:flex; margin-top:8px; }
+      .hero-mark video { width:min(100%,320px); }
       .hero h1 { font-size:clamp(58px,18vw,78px); }
       .hero h1 em { color:var(--navy); }
       .services, .plans, .pricing-notes, .about-grid, .contact-grid, .book-grid, .field-row, .promise { grid-template-columns:1fr; }
