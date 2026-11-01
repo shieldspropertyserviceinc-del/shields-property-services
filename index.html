@@ -160,6 +160,19 @@
         </div>
       </div></section>
 
+<section class="section"><div class="wrap">
+        <div class="area-checker">
+          <div><h2>ARE WE IN YOUR AREA?</h2>
+          <p class="sub">Type your postal code for an instant answer. Our core area is Transcona — outside it? Ask us anyway; we take outside bookings on request.</p></div>
+          <form id="area-form" novalidate>
+            <label for="area-postal" class="sr-only">Postal code</label>
+            <input id="area-postal" name="postal" autocomplete="postal-code" placeholder="R2C 1A1" maxlength="7" aria-describedby="area-result">
+            <button class="button dark" type="submit">Check</button>
+          </form>
+          <p id="area-result" role="status" aria-live="polite" hidden></p>
+        </div>
+      </div></section>
+
 
 
       
@@ -335,6 +348,32 @@
     closeBtn.addEventListener('click',function(){
       banner.style.display='none';
       try{localStorage.setItem('sps-earlybird-dismissed','1');}catch(e){}
+    });
+  })();
+
+  (function(){
+    var form=document.getElementById('area-form');
+    if(!form)return;
+    var input=document.getElementById('area-postal');
+    var result=document.getElementById('area-result');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var raw=(input.value||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+      var show=function(html,ok){
+        result.hidden=false;
+        result.innerHTML=html;
+      };
+      if(!/^[A-Z][0-9][A-Z][0-9][A-Z][0-9]$/.test(raw)){
+        show('Please enter a valid postal code, e.g. R2C 1A1.');
+        input.focus();
+        return;
+      }
+      var pretty=raw.slice(0,3)+' '+raw.slice(3);
+      if(raw.slice(0,3)==='R2C'){
+        show('<span class="ok">✓ Yes</span> — <strong>'+pretty+'</strong> is in our core Transcona service area. <a href="book.html">Book your free estimate</a>.');
+      }else{
+        show('<strong>'+pretty+'</strong> is outside our core Transcona area — but we take outside bookings on request. <a href="contact.html">Contact us</a> for a quote.');
+      }
     });
   })();
 })();

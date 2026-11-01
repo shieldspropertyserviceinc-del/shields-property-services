@@ -153,10 +153,20 @@
     .book-cta h2 { font-family:"Barlow Condensed",sans-serif; font-weight:800; font-size:clamp(38px,4.6vw,58px); line-height:.95; margin:0 0 10px; color:#fff; }
     .book-cta p { color:#d8e8ef; margin:0; font-size:19px; max-width:560px; }
     .book-cta .button { flex:none; font-size:20px; padding:16px 36px; }
+    /* Service area checker */
+    .area-checker { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:44px 48px; box-shadow:var(--shadow); }
+    .area-checker h2 { font-family:"Barlow Condensed",sans-serif; font-weight:800; font-size:clamp(34px,4.4vw,54px); line-height:.95; letter-spacing:-.015em; margin:0 0 10px; }
+    .area-checker .sub { color:var(--muted); margin:0 0 22px; font-size:18px; max-width:620px; }
+    #area-form { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    #area-postal { font-size:19px; padding:14px 18px; border:2px solid var(--line); border-radius:10px; max-width:210px; text-transform:uppercase; letter-spacing:.06em; font-weight:700; background:var(--surface); color:var(--ink); }
+    #area-postal:focus { outline:none; border-color:var(--sky); }
+    #area-result { margin:20px 0 0; font-size:19px; max-width:660px; }
+    #area-result .ok { color:var(--sky-deep); font-weight:800; }
     .faq { display:grid; gap:12px; margin-top:28px; max-width:860px; }
     .faq details { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
     .faq summary { font-weight:800; font-size:19px; cursor:pointer; }
     .faq details p { color:var(--muted); margin:10px 0 0; font-size:17px; }
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
     .mobile-nav { display:none; }
     @media (max-width:820px) {
       .topbar { display:none; }
