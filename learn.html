@@ -914,7 +914,7 @@
     if(bar&&tw){
       // Track the header height continuously (it changes with width, search
       // state and wrapping) and keep anchor jumps clear of header + bar.
-      var heads=document.querySelectorAll('.guide-cat-title, #sec-reference');
+      var heads=document.querySelectorAll('.guide-cat-title, #sec-reference, p[id$="-short"]');
       var setTop=function(){
         var hh=tw.offsetHeight, nh=bar.offsetHeight;
         bar.style.top=hh+'px';
