@@ -167,7 +167,7 @@
   })();
   (function(){
     // Scroll-reveal animations
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.1});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px 12% 0px'});
     document.querySelectorAll('.guide-cat,.faq-cat,.season,.service.link-card,.section').forEach(function(el){el.classList.add('reveal');io.observe(el);});
   })();
   (function(){
