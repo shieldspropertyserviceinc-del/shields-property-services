@@ -21,7 +21,7 @@
   <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="EBgiOJaCCciSYty30Zm_ixcreuAOL33PM0lvIVma5tA" />
   <meta name="msvalidate.01" content="0E5F9478C879FA4EEBAF99309BD17904" />
-  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="stylesheet" href="styles.css?v=11" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Tips & Info | Shields Property Services", "description": "43 practical guides and checklists for Winnipeg homeowners: winter prep, ice dams, pet-safe melt, fall cleanup, gutters, snow mold, aeration, overseeding, clay soil and more.", "url": "https://shieldspropertyservices.ca/learn", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyservices.ca/"}} 
   </script>
@@ -817,10 +817,15 @@
     var fWrap=document.querySelector('.featured-guides'); if(fWrap){ fWrap.style.display=fShow?'':'none'; }
     var rTitle=document.getElementById('sec-reference');
     if(rTitle){
-      var rSec=rTitle.closest('.section');
-      var rShown=cardFilter([].slice.call(rSec.querySelectorAll('a.service.link-card')));
+      // Hide only the reference heading/intro/grid — never the whole .section,
+      // which also contains the search box and every guide (Nov 12 fix).
+      var rEls=[rTitle], sib=rTitle.nextElementSibling, rCards=[];
+      if(sib&&sib.classList.contains('section-intro')){ rEls.push(sib); sib=sib.nextElementSibling; }
+      if(sib&&sib.classList.contains('services')){ rEls.push(sib); rCards=[].slice.call(sib.querySelectorAll('a.service.link-card')); }
+      var rShown=cardFilter(rCards);
       shown+=rShown;
-      rSec.style.display=(!q||rShown>0)?'':'none';
+      var rShow=!q||rShown>0;
+      rEls.forEach(function(el){ el.style.display=rShow?'':'none'; });
     }
     gsN.hidden=shown>0;
   });}
@@ -879,9 +884,18 @@
   (function(){
     var bar=document.querySelector('.learn-sticky'), tw=document.querySelector('.top-wrap'), lnav=document.querySelector('.learn-nav');
     if(bar&&tw){
-      var setTop=function(){ bar.style.top=tw.offsetHeight+'px'; };
+      // Track the header height continuously (it changes with width, search
+      // state and wrapping) and keep anchor jumps clear of header + bar.
+      var heads=document.querySelectorAll('.guide-cat-title, #sec-reference');
+      var setTop=function(){
+        var hh=tw.offsetHeight, nh=bar.offsetHeight;
+        bar.style.top=hh+'px';
+        heads.forEach(function(el){ el.style.scrollMarginTop=(hh+nh+14)+'px'; });
+      };
       setTop();
       window.addEventListener('resize',setTop);
+      window.addEventListener('load',setTop);
+      if('ResizeObserver' in window){ new ResizeObserver(setTop).observe(tw); }
     }
     if(lnav&&'IntersectionObserver' in window){
       var links={};

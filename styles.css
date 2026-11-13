@@ -584,15 +584,18 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .faq details summary{padding-top:18px}
 
 /* LEARN NAV UPGRADE 2026-11-12: sticky category bar + scroll-spy, New badges, alt-bg mobile fix */
-.learn-sticky{position:sticky;top:60px;z-index:90}
+.learn-sticky{position:sticky;top:160px;z-index:90}
 .learn-nav{margin:0;padding:10px 4px;background:color-mix(in srgb, var(--paper) 94%, transparent);backdrop-filter:blur(12px);border-radius:0 0 14px 14px}
 .learn-nav a.active{background:var(--blue);color:#fff}
 .guide-new{display:inline-block;background:var(--orange);color:#102b3d;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:2px}
 .guide-cat-title{scroll-margin-top:175px}
 #sec-reference{scroll-margin-top:175px}
-@media (max-width:820px){
+@media (max-width:1100px){
+.learn-sticky{top:206px}
 .learn-nav{flex-wrap:nowrap;overflow-x:auto}
 .learn-nav a{white-space:nowrap}
+}
+@media (max-width:820px){
 .guide-cat.alt-bg{margin-left:0;margin-right:0}
 .guide-cat-title{scroll-margin-top:160px}
 #sec-reference{scroll-margin-top:160px}
