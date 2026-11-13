@@ -563,6 +563,37 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .svc-rside{flex:none;max-width:240px;margin-left:auto}
 .svc-rprice{overflow-wrap:anywhere}
 
+/* Services card grid 2026-11-13 (Nicholas's pick): seasons become full-width
+   chapters; each service is its own card in a 2-column grid */
+.seasons{grid-template-columns:1fr}
+.svc-photo{aspect-ratio:1200/400}
+.svc-rows{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:16px;border-top:none}
+.svc-row{flex-direction:column;align-items:stretch;gap:10px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:0 6px 18px rgba(13,45,67,.06)}
+.svc-row:last-child{border-bottom:1px solid var(--line)}
+.svc-rows>.svc-row:only-child{grid-column:1/-1}
+.svc-ric{font-size:26px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--surface-soft);border-radius:12px}
+.svc-rmain{flex:1 1 auto}
+.svc-rname{font-size:17px}
+.svc-rside{flex-direction:row;align-items:center;justify-content:space-between;gap:10px;width:100%;max-width:none;margin-left:0;margin-top:auto}
+.svc-rprice{background:var(--surface-soft);padding:6px 12px;border-radius:999px;text-align:left}
+@media (max-width:700px){
+.svc-rows{grid-template-columns:1fr}
+.svc-photo{aspect-ratio:1200/525}
+}
+/* Services sticky season nav 2026-11-13: mirrors the learn bar (sticky under
+   header, scroll-spy highlight); top is set by JS to the live header height */
+.svc-sticky{position:sticky;top:160px;z-index:90}
+.svc-nav{margin:0;padding:10px 4px;background:color-mix(in srgb, var(--paper) 94%, transparent);backdrop-filter:blur(12px);border-radius:0 0 14px 14px}
+.svc-nav a.active{background:var(--blue);color:#fff}
+@media (max-width:1100px){
+.svc-sticky{top:206px}
+.svc-nav{gap:8px}
+.svc-nav a{padding:8px 13px;font-size:14px}
+}
+@media (max-width:480px){
+.svc-nav a{padding:7px 11px;font-size:13.5px}
+}
+
 /* AUDIT FIXES 2026-10-20 (evening): legibility pass 2 */
 :root{--blue:#3A9ACD}
 @media (prefers-color-scheme:dark){
