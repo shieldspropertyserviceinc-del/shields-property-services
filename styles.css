@@ -576,6 +576,8 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .svc-rname{font-size:17px}
 .svc-rside{flex-direction:row;align-items:center;justify-content:space-between;gap:10px;width:100%;max-width:none;margin-left:0;margin-top:auto}
 .svc-rprice{background:var(--surface-soft);padding:6px 12px;border-radius:999px;text-align:left}
+@media (prefers-color-scheme:light){.svc-rprice{color:var(--navy)}}
+/* ^ audit fix 2026-11-13: sky-deep on the soft chip bg was 4.19:1 in light mode; navy is 13.5:1. Dark mode keeps the light sky (7.54:1). */
 @media (max-width:700px){
 .svc-rows{grid-template-columns:1fr}
 .svc-photo{aspect-ratio:1200/525}
