@@ -38,6 +38,7 @@
     .nav-link:hover, .nav-link[aria-current="page"] { color:var(--ink); background:var(--surface-soft); }
     .nav-link.cta { background:var(--orange); color:#102b3d; margin-left:8px; }
     main { overflow:hidden; }
+    @supports (overflow:clip) { main { overflow:clip; } } /* Nov 12, 2026: overflow:hidden makes main a scroll container, which silently disables position:sticky for everything inside it (learn category bar). overflow:clip clips the same way but creates no scroll container, so sticky works; older browsers keep the hidden fallback. */
     .page { min-height:calc(100vh - 67px); }
     @keyframes reveal { from { opacity:.35; } to { opacity:1; } }
     @media (prefers-reduced-motion: reduce) { * { scroll-behavior:auto!important; animation:none!important; transition:none!important; } }
