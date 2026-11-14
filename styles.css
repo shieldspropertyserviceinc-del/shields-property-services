@@ -640,3 +640,21 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .storm-nav a:hover{background:var(--sky-deep)}
 .learn-nav a.active,.svc-nav a.active{background:var(--sky-deep)}
 
+/* OUR WORK GALLERY + PRIORITY BAND 2026-11-13 */
+.work-job{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow);margin:0 0 26px}
+.work-job h3{margin:0 0 4px}
+.work-meta{color:var(--muted);font-weight:700;margin:0 0 6px}
+.work-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+.work-pair figure{margin:0;position:relative}
+.work-pair img{width:100%;height:100%;object-fit:cover;border-radius:14px;display:block;aspect-ratio:3/4}
+.work-tag{position:absolute;top:10px;left:10px;background:#0d2d43;color:#fff;font-weight:800;font-size:12px;letter-spacing:.08em;padding:4px 10px;border-radius:999px;text-transform:uppercase}
+.work-tag.after{background:var(--sky-deep)}
+.work-soon{border-style:dashed;box-shadow:none}
+.prio-band{background:#0d2d43;background:linear-gradient(135deg,#0d2d43 0%,#1e4a6e 55%,#247ba9 100%);color:#fff;padding:52px 0}
+.prio-band .section-title{color:#fff}
+.prio-band p{color:#d8e8ef;max-width:640px}
+.prio-flex{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.prio-flex .prio-main{flex:1 1 420px}
+.prio-price{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);font-weight:800;padding:8px 16px;border-radius:999px;white-space:nowrap}
+@media (max-width:560px){.work-pair{gap:8px}.work-job{padding:18px}}
+
