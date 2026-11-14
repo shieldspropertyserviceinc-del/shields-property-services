@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=22" />
+  <link rel="stylesheet" href="styles.css?v=23" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Contact | Shields Property Services", "description": "Contact Shields Property Services for a free snow clearing estimate in Transcona, Winnipeg. Call (431) 342-1575.", "url": "https://shieldspropertyservices.ca/contact", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyservices.ca/"}} 
   </script>
@@ -174,12 +174,22 @@
   (function(){
     var tgl=document.getElementById('nav-toggle');
     var mnav=document.querySelector('.mobile-nav');
+    // The toggle rides the panel's top edge at any height (accordion changes it).
+    window.__placeNavToggle=function(){
+      if(!tgl||!mnav) return;
+      if(mnav.classList.contains('collapsed')){ tgl.style.bottom='76px'; return; }
+      tgl.style.bottom=(64 + mnav.offsetHeight - 24)+'px';
+    };
     if(tgl&&mnav){tgl.addEventListener('click',function(){
       var expanded=tgl.getAttribute('aria-expanded')==='true';
       tgl.setAttribute('aria-expanded', expanded?'false':'true');
       tgl.setAttribute('aria-label', expanded?'Expand navigation':'Collapse navigation');
       mnav.classList.toggle('collapsed', expanded);
-    });}
+      window.__placeNavToggle();
+    });
+    window.__placeNavToggle();
+    window.addEventListener('resize', window.__placeNavToggle);
+    window.addEventListener('load', window.__placeNavToggle);}
   })();
   (function(){
     // Scroll-reveal animations
@@ -225,6 +235,7 @@
           group.querySelector('.mnav-drop').hidden = false;
           btn.setAttribute('aria-expanded','true');
         }
+        if(window.__placeNavToggle) window.__placeNavToggle();
       });
     });
     document.addEventListener('click', function(){
@@ -233,6 +244,7 @@
         g.querySelector('.mnav-drop').hidden = true;
         g.querySelector('.mnav-exp').setAttribute('aria-expanded','false');
       });
+      if(window.__placeNavToggle) window.__placeNavToggle();
     });
   })();
   (function(){

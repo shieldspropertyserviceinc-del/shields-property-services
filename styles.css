@@ -710,4 +710,10 @@ footer{padding-bottom:170px}
 .mnav-group.open{grid-column:1/-1}
 .mnav-drop{position:static;max-height:none;overflow:visible;box-shadow:none;margin-top:6px}
 .mobile-nav{max-height:82dvh;overflow-y:auto!important}
+/* Layering (Nov 14, 2026): page sticky bars are z-90 and the top wrap is z-100,
+   so the menu panel sits between them at 95 and the toggle above it at 96.
+   The toggle's vertical position is set in JS (it rides the panel's top edge
+   at any panel height, accordion open or closed). */
+.mobile-nav{z-index:95}
+.nav-toggle{z-index:96}
 
