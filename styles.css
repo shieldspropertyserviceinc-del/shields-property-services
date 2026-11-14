@@ -670,3 +670,33 @@ input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(58,154,205,.15
 .guide summary::after{position:absolute;right:18px;top:16px;float:none}
 .guide-desc{display:block;font-weight:600;font-size:14.5px;color:var(--muted);margin-top:3px;padding-right:26px;line-height:1.45}
 
+/* --- navigation round Nov 14, 2026 --- */
+.top-actions{display:flex;align-items:center;gap:16px}
+.top-phone{font-weight:700;color:var(--navy);text-decoration:none;white-space:nowrap;font-size:15.5px}
+.top-phone:hover{color:var(--sky-deep);text-decoration:underline}
+.top-book{background:var(--orange);color:#102b3d;font-weight:800;padding:9px 20px;border-radius:999px;text-decoration:none;white-space:nowrap;font-size:15.5px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.top-book:hover{background:#ff8c28}
+.nav-drop{position:relative;display:inline-block}
+.nav-chev{font-size:11px}
+.nav-panel{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:230px;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 34px rgba(0,0,0,.18);padding:8px;display:none;z-index:120}
+.nav-drop:hover .nav-panel,.nav-drop:focus-within .nav-panel{display:block}
+.nav-panel-link{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap}
+.nav-panel-link:hover{background:#eaf4f8;color:var(--navy)}
+.crumbs{padding:10px 0;font-size:13.5px;color:var(--muted);background:var(--surface);border-bottom:1px solid var(--line)}
+.crumbs a{color:var(--sky-deep);font-weight:600;text-decoration:none}
+.crumbs a:hover{text-decoration:underline}
+.crumbs .crumb-sep{margin:0 2px;color:var(--muted)}
+.crumbs [aria-current="page"]{color:var(--ink);font-weight:600}
+.mobile-bar{display:none}
+@media (max-width:820px){
+.mobile-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--paper);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.14);padding-bottom:env(safe-area-inset-bottom)}
+.mobile-bar a{flex:1;text-align:center;padding:13px 4px;font-weight:700;font-size:15px;color:var(--navy);text-decoration:none}
+.mobile-bar a + a{border-left:1px solid var(--line)}
+.mobile-bar .mbar-book{background:var(--orange);color:#102b3d;font-weight:800}
+.mobile-nav{bottom:calc(58px + env(safe-area-inset-bottom))!important}
+.call-fab{display:none!important}
+.mobile-nav.collapsed ~ #nav-toggle{bottom:76px!important}
+footer{padding-bottom:170px}
+}
+@media print{.mobile-bar,.crumbs{display:none!important}}
+

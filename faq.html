@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=19" />
+  <link rel="stylesheet" href="styles.css?v=20" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -103,20 +103,20 @@
   <header class="topbar">
     <nav aria-label="Main navigation">
       <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link" href="services.html">Services</a>
+      <span class="nav-drop"><a class="nav-link" href="services.html">Services <span class="nav-chev" aria-hidden="true">▾</span></a><span class="nav-panel"><a class="nav-panel-link" href="services.html">All services</a><a class="nav-panel-link" href="services.html#season-winter">Snow clearing</a><a class="nav-panel-link" href="businesses.html">Storefront walkways</a><a class="nav-panel-link" href="seniors.html">For seniors</a><a class="nav-panel-link" href="landlords.html">For landlords</a><a class="nav-panel-link" href="work.html">Our work</a></span></span>
       <a class="nav-link" href="pricing.html">Pricing</a>
       <a class="nav-link" href="about.html">About</a>
       <a class="nav-link" href="faq.html" aria-current="page">Q&A</a>
       <a class="nav-link" href="learn.html">Tips & Info</a>
-      <a class="nav-link" href="book.html">Book</a>
       <a class="nav-link" href="referral.html">Referral</a>
-      <a class="nav-link" href="social.html">Social</a>
       <a class="nav-link cta" href="contact.html">Free estimate</a>
     </nav>
+    <div class="top-actions"><a class="top-phone" href="tel:+14313421575" aria-label="Call Shields Property Services at (431) 342-1575">(431) 342-1575</a><a class="top-book" href="book.html">Book now</a></div>
   </header>
   </div>
 
   <main>
+<nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a> <span class="crumb-sep" aria-hidden="true">›</span> <a href="learn.html">Tips & Info</a> <span class="crumb-sep" aria-hidden="true">›</span> <span aria-current="page">Q&A</span></div></nav>
     <div class="page">
       <div class="page-head"><div class="wrap"><h1 id="faq-title">QUESTIONS, ANSWERED.</h1><p>The stuff Transcona neighbours ask us most.</p></div></div>
       <div class="section"><div class="wrap">
@@ -191,33 +191,50 @@
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <div class="mnav-grid">
 <a class="mnav-top mnav-solo" href="index.html">Home</a>
-<a class="mnav-top mnav-solo" href="services.html">Services</a>
-<a class="mnav-top mnav-solo" href="learn.html">Tips & Info</a>
+<a class="mnav-top mnav-solo" href="book.html">Book</a>
 <div class="mnav-group">
-<button class="mnav-top" aria-expanded="false">Pricing <span class="mnav-chev">▾</span></button>
+<button class="mnav-top" aria-expanded="false">Services <span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
-<a class="mnav-link" href="pricing.html">Plans & Pricing</a>
-<a class="mnav-link" href="referral.html">Referral Program</a>
-<a class="mnav-link" href="landlords.html">For Landlords</a>
+<a class="mnav-link" href="services.html">All services</a>
+<a class="mnav-link" href="services.html#season-winter">Snow clearing</a>
+<a class="mnav-link" href="businesses.html">Storefront walkways</a>
+<a class="mnav-link" href="seniors.html">For seniors</a>
+<a class="mnav-link" href="landlords.html">For landlords</a>
+<a class="mnav-link" href="work.html">Our work</a>
 </div></div>
 <div class="mnav-group">
-<button class="mnav-top" aria-expanded="false">Book <span class="mnav-chev">▾</span></button>
+<button class="mnav-top" aria-expanded="false">Year-round <span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
-<a class="mnav-link" href="book.html">Book Now</a>
-<a class="mnav-link" href="contact.html">Contact</a>
+<a class="mnav-link" href="services.html#season-spring">Spring services</a>
+<a class="mnav-link" href="services.html#season-summer">Summer services</a>
+<a class="mnav-link" href="services.html#season-fall">Fall services</a>
+<a class="mnav-link" href="services.html#season-year-round">Year-round services</a>
+<a class="mnav-link" href="pricing.html">Plans & pricing</a>
 </div></div>
 <div class="mnav-group active">
-<button class="mnav-top" aria-expanded="false">About <span class="mnav-chev">▾</span></button>
+<button class="mnav-top" aria-expanded="false">Learn <span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
-<a class="mnav-link" href="about.html">About Us</a>
-<a class="mnav-link" href="work.html">Our Work</a>
+<a class="mnav-link" href="learn.html">Tips & Info</a>
 <a class="mnav-link" href="faq.html" aria-current="page">Q&A</a>
+<a class="mnav-link" href="calculator.html">Cost calculator</a>
+<a class="mnav-link" href="neighborhoods.html">Service area</a>
+<a class="mnav-link" href="storm.html">Storm updates</a>
+</div></div>
+<div class="mnav-group">
+<button class="mnav-top" aria-expanded="false">Company <span class="mnav-chev">▾</span></button>
+<div class="mnav-drop" hidden>
+<a class="mnav-link" href="about.html">About us</a>
+<a class="mnav-link" href="offers.html">Offers & deals</a>
+<a class="mnav-link" href="referral.html">Referral program</a>
+<a class="mnav-link" href="gift-a-season.html">Gift a season</a>
 <a class="mnav-link" href="social.html">Social</a>
+<a class="mnav-link" href="contact.html">Contact</a>
 </div></div>
 </div>
   </nav>
   <a class="call-fab" href="tel:+14313421575" aria-label="Call Shields Property Services now"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.53 15.53 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.36 11.36 0 0 0 3.56.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.56 1 1 0 0 1-.25 1.02l-2.2 2.21z"/></svg></a>
 <button class="nav-toggle" id="nav-toggle" aria-label="Collapse navigation" aria-expanded="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg></button>
+  <nav class="mobile-bar" aria-label="Quick actions"><a href="tel:+14313421575">📞 Call</a><a href="sms:+14313421575">💬 Text</a><a class="mbar-book" href="book.html">Book now</a></nav>
 </div>
 <script>
 (function(){
