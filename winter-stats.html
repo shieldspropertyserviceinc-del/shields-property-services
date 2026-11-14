@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=20" />
+  <link rel="stylesheet" href="styles.css?v=21" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Winnipeg Winter Stats | Shields Property Services", "description": "Winnipeg winters by the numbers: 126 cm average snowfall, monthly breakdowns, record cold and snow days. Environment Canada data.", "url": "https://shieldspropertyservices.ca/winter-stats", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyservices.ca/"}} 
   </script>
@@ -114,7 +114,8 @@
 <a class="mnav-top mnav-solo" href="index.html">Home</a>
 <a class="mnav-top mnav-solo" href="book.html">Book</a>
 <div class="mnav-group">
-<button class="mnav-top" aria-expanded="false">Services <span class="mnav-chev">▾</span></button>
+<a class="mnav-top mnav-mainlink" href="services.html">Services</a>
+<button class="mnav-exp" aria-expanded="false" aria-label="Show more pages under Services"><span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
 <a class="mnav-link" href="services.html">All services</a>
 <a class="mnav-link" href="services.html#season-winter">Snow clearing</a>
@@ -124,7 +125,8 @@
 <a class="mnav-link" href="work.html">Our work</a>
 </div></div>
 <div class="mnav-group">
-<button class="mnav-top" aria-expanded="false">Year-round <span class="mnav-chev">▾</span></button>
+<a class="mnav-top mnav-mainlink" href="services.html">Year-round</a>
+<button class="mnav-exp" aria-expanded="false" aria-label="Show more pages under Year-round"><span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
 <a class="mnav-link" href="services.html#season-spring">Spring services</a>
 <a class="mnav-link" href="services.html#season-summer">Summer services</a>
@@ -133,7 +135,8 @@
 <a class="mnav-link" href="pricing.html">Plans & pricing</a>
 </div></div>
 <div class="mnav-group active">
-<button class="mnav-top" aria-expanded="false">Learn <span class="mnav-chev">▾</span></button>
+<a class="mnav-top mnav-mainlink" href="learn.html" aria-current="page">Learn</a>
+<button class="mnav-exp" aria-expanded="false" aria-label="Show more pages under Learn"><span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
 <a class="mnav-link" href="learn.html" aria-current="page">Tips & Info</a>
 <a class="mnav-link" href="faq.html">Q&A</a>
@@ -142,7 +145,8 @@
 <a class="mnav-link" href="storm.html">Storm updates</a>
 </div></div>
 <div class="mnav-group">
-<button class="mnav-top" aria-expanded="false">Company <span class="mnav-chev">▾</span></button>
+<a class="mnav-top mnav-mainlink" href="about.html">Company</a>
+<button class="mnav-exp" aria-expanded="false" aria-label="Show more pages under Company"><span class="mnav-chev">▾</span></button>
 <div class="mnav-drop" hidden>
 <a class="mnav-link" href="about.html">About us</a>
 <a class="mnav-link" href="offers.html">Offers & deals</a>
@@ -197,8 +201,8 @@
   })();
 
   (function(){
-    // Mobile nav dropdowns
-    document.querySelectorAll('.mnav-group > .mnav-top').forEach(function(btn){
+    // Mobile nav dropdowns (chevron button toggles; the tile itself is a link)
+    document.querySelectorAll('.mnav-group > .mnav-exp').forEach(function(btn){
       btn.addEventListener('click', function(e){
         e.stopPropagation();
         var group = btn.parentElement;
@@ -206,7 +210,7 @@
         document.querySelectorAll('.mnav-group.open').forEach(function(g){
           g.classList.remove('open');
           g.querySelector('.mnav-drop').hidden = true;
-          g.querySelector('.mnav-top').setAttribute('aria-expanded','false');
+          g.querySelector('.mnav-exp').setAttribute('aria-expanded','false');
         });
         if(!wasOpen){
           group.classList.add('open');
@@ -219,7 +223,7 @@
       document.querySelectorAll('.mnav-group.open').forEach(function(g){
         g.classList.remove('open');
         g.querySelector('.mnav-drop').hidden = true;
-        g.querySelector('.mnav-top').setAttribute('aria-expanded','false');
+        g.querySelector('.mnav-exp').setAttribute('aria-expanded','false');
       });
     });
   })();
