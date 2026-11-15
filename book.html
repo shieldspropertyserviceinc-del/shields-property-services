@@ -89,6 +89,10 @@
                   <optgroup label="Fall services">
                   <option>Fall cleanup — from $50</option>
                   </optgroup>
+                  <optgroup label="Year-round">
+                  <option>Small repairs — free estimate</option>
+                  <option>Painting &amp; staining — free estimate</option>
+                  </optgroup>
                 </select></div>
               <div class="field-row">
                 <div class="field"><label for="bk-name">Name</label><input id="bk-name" name="name" type="text" autocomplete="name" required></div>
@@ -130,7 +134,7 @@
             </form>
             <div id="bk-done" hidden>
               <h2>Request received!</h2>
-              <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll call you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p>
+              <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll text or email you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p>
               <p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>
             </div>
           </article>
@@ -384,7 +388,7 @@
       _subject:'New booking request — '+v('bk-name'),
       _template:'table',
       _captcha:'false',
-      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will call you within 24 hours to arrange your free estimate — online or in-person, your choice.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\nEstimate: '+v('bk-esttype')+'\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
+      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will text or email you within 24 hours to arrange your free estimate — online or in-person, your choice.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\nEstimate: '+v('bk-esttype')+'\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
       name:v('bk-name'),email:v('bk-email'),phone:v('bk-phone'),
       plan:v('bk-plan'),address:v('bk-address'),
       preferred_date:v('bk-date'),preferred_time:v('bk-time'),
@@ -398,7 +402,7 @@
       if(j&&(j.success===true||j.success==='true')){
         bookForm.hidden=true;bookForm.style.display='none';
         var done=document.getElementById('bk-done');
-        if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will call you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
+        if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will text or email you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         if(done.parentNode!==bookForm.parentNode){bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         var dn=done.querySelector('.bk-done-name');if(dn)dn.textContent=firstName;
         done.hidden=false;done.removeAttribute('hidden');done.style.display='block';
