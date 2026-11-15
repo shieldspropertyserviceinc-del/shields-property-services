@@ -725,3 +725,39 @@ footer{padding-bottom:170px}
 .proof-card .actions{justify-content:center}
 .proof-note{color:var(--muted);font-size:14px;margin:14px 0 0}
 
+/* MOBILE-FIRST REFINEMENT (Nicholas pick #1, 2026-11-14): phone-only design pass —
+   bigger type, roomier cards, one-thumb buttons. Content layout only: nav positioning,
+   z-indexes and the bottom bar height are deliberately untouched (hard-won Nov 14). */
+@media (max-width:820px){
+  body{font-size:17px;line-height:1.6}
+  .section{padding:60px 0}
+  .section-title{font-size:32px;line-height:1.12}
+  .section-intro{font-size:17.5px;line-height:1.6}
+  .lead{font-size:19px;line-height:1.55}
+  .button{min-height:54px;font-size:17px;padding:14px 24px;border-radius:14px}
+  .hero .actions{flex-direction:column;align-items:stretch;gap:12px}
+  .hero .actions .button{width:100%}
+  .hero-mark video{width:min(100%,340px)}
+  .services{gap:14px}
+  .service{padding:22px;border-radius:18px}
+  .service h3{font-size:20px}
+  .plans{gap:16px}
+  .plan{padding:28px 22px;border-radius:20px}
+  .plan .price{font-size:46px}
+  .how-grid{gap:14px}
+  .how-step{padding:22px;border-radius:18px}
+  .proof-card{padding:32px 20px}
+  .proof-stars{font-size:30px}
+  .book-cta{padding:40px 24px;border-radius:20px}
+  .book-cta h2{font-size:28px}
+  .svc-nav a,.learn-nav a{padding:10px 15px;font-size:15px}
+  details.guide summary{padding:17px 18px;font-size:17px}
+  .field input,.field select,.field textarea{padding:14px 16px;border-radius:12px}
+  .page-head h1{font-size:36px}
+  .page-head p{font-size:17.5px}
+}
+@media (max-width:560px){
+  .offer{grid-template-columns:1fr;padding:20px}
+  .offer img{width:100%;height:auto;max-height:180px;object-fit:cover;border-radius:12px}
+}
+
