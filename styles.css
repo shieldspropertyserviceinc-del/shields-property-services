@@ -717,3 +717,11 @@ footer{padding-bottom:170px}
 .mobile-nav{z-index:95}
 .nav-toggle{z-index:96}
 
+/* REVIEWS STRIP (proof band) 2026-11-14 */
+.proof-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:36px 28px;text-align:center;max-width:760px;margin:0 auto}
+.proof-stars{color:var(--orange);font-size:34px;letter-spacing:6px;line-height:1;margin-bottom:10px}
+.proof-card .section-title{margin-bottom:8px}
+.proof-card .section-intro{margin:0 auto 18px}
+.proof-card .actions{justify-content:center}
+.proof-note{color:var(--muted);font-size:14px;margin:14px 0 0}
+
