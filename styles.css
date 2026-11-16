@@ -325,6 +325,11 @@
 #bk-step-2{display:none}
 .bk-nav-buttons{display:flex;gap:12px;margin-top:16px}
 .bk-nav-buttons .button{flex:1}
+.bk-addons{display:grid;gap:10px;margin-top:8px}
+.bk-addon{display:flex;gap:10px;align-items:flex-start;font-weight:400;cursor:pointer;line-height:1.45}
+.bk-addon input{width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--sky-deep)}
+.bk-addon-note{color:var(--muted)}
+.bk-summary{background:#eef7fc;border:1px solid #cfe8f5;border-radius:12px;padding:12px 14px;font-weight:600}
 .mnav-top .mnav-chev{font-size:12px;transition:transform .2s ease}
 .mnav-group.open .mnav-chev{transform:rotate(180deg)}
 .mnav-drop{color:#0d2d43;position:absolute;bottom:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 -4px 20px rgba(0,0,0,.15);overflow:hidden;z-index:50;min-width:140px}
