@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=26" />
+  <link rel="stylesheet" href="styles.css?v=27" />
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "WebPage", "name": "Book | Shields Property Services", "description": "Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time.", "url": "https://shieldspropertyservices.ca/book", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyservices.ca/"}} 
   </script>
@@ -63,7 +63,7 @@
 <div class="book-grid">
           <article class="book-card">
             <h2>Booking request</h2>
-            <p>Fill this in and we'll confirm your spot by phone or email.</p>
+            <p>Fill this in and we'll confirm your spot by text or email.</p>
             <form id="book-form">
 <div class="bk-steps"><div class="bk-step current" id="bk-step-ind-1">Step 1 of 2: Your details</div><div class="bk-step" id="bk-step-ind-2">Step 2 of 2: Property & visit</div></div><div id="bk-step-1">
               <div class="field"><label for="bk-plan">Service or plan</label>
@@ -104,11 +104,13 @@
                 <div class="addr-wrap"><input id="bk-address" name="address" type="text" placeholder="Start typing your address…" autocomplete="off" required>
                 <div class="addr-suggest" id="bk-suggest" hidden></div></div>
                 <div class="attrib">Address search by <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors.</div>
+                <p class="map-note" style="margin:6px 0 0">Type your full address (house number + street), then tap Locate my address on the map so we can confirm you are in our service zone.</p>
                 <p class="zone-status" id="bk-zone" hidden></p>
                 <button class="link-button" type="button" id="bk-gps">📍 Use my current location</button>
+                <div class="field" style="margin-top:14px;max-width:240px"><label for="bk-postal">Postal code <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input id="bk-postal" name="postal_code" type="text" autocomplete="postal-code" placeholder="R2C 0J1" style="text-transform:uppercase"></div>
               </div>
               <h3 style="margin:18px 0 4px">Free estimate — your choice</h3>
-              <p class="map-note" style="margin-top:0">Pick the estimate type and a time that works — we'll confirm by phone.</p>
+              <p class="map-note" style="margin-top:0">Pick the estimate type and a time that works — we'll confirm by text or email.</p>
               <div class="field"><label for="bk-esttype">Estimate type</label>
                 <select id="bk-esttype" name="estimate_type">
                   <option>Online estimate</option>
@@ -123,6 +125,13 @@
                     <option>Evening (5 – 8pm)</option>
                   </select></div>
               </div>
+              <div class="field"><span style="font-weight:700">Add-ons <span style="font-weight:400;color:var(--muted)">(optional — tick any you would like)</span></span>
+                <div class="bk-addons">
+                  <label class="bk-addon"><input type="checkbox" id="bk-addon-windrow" value="Windrow clearing — $25/visit"> <span>Windrow clearing — $25/visit <span class="bk-addon-note">(included with Complete &amp; Premium)</span></span></label>
+                  <label class="bk-addon"><input type="checkbox" id="bk-addon-sanding" value="Sanding — $15/application"> <span>Sanding — $15/application <span class="bk-addon-note">(included with Premium)</span></span></label>
+                  <label class="bk-addon"><input type="checkbox" id="bk-addon-roof" value="Roof-edge clearing — $50/visit on a plan ($75 standalone)"> <span>Roof-edge clearing — $50/visit on a plan · $75 standalone</span></label>
+                  <label class="bk-addon"><input type="checkbox" id="bk-addon-vehicle" value="Vehicle snow brushing — complimentary"> <span>Vehicle snow brushing — complimentary</span></label>
+                </div></div>
               <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
               <div class="field"><label for="bk-source">How did you hear about us? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
                 <select id="bk-source" name="source"><option value="">—</option><option>Google search</option><option>Facebook</option><option>Instagram</option><option>Neighbour / word of mouth</option><option>Saw our truck or flyer</option><option>Other</option></select></div>
@@ -135,6 +144,7 @@
             <div id="bk-done" hidden>
               <h2>Request received!</h2>
               <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll text or email you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p>
+              <p class="bk-summary" id="bk-summary"></p>
               <p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>
             </div>
           </article>
@@ -384,16 +394,18 @@
     var btn=bookForm.querySelector('button[type="submit"]');
     btn.disabled=true;btn.textContent='Sending…';
     var firstName=(v('bk-name').split(' ')[0]||'there');
+    var addons=[];['bk-addon-windrow','bk-addon-sanding','bk-addon-roof','bk-addon-vehicle'].forEach(function(id){var c=document.getElementById(id);if(c&&c.checked){addons.push(c.value);}});
+    var planSummary=function(p){if(p.indexOf('Essential')===0){return 'Essential — $135/mo · clears at 6 cm of snow · within 15 hours of snowfall ending';}if(p.indexOf('Complete')===0){return 'Complete — $180/mo · clears at 4 cm · windrow clearing + ice scraping included · within 15 hours of snowfall ending';}if(p.indexOf('Premium')===0){return 'Premium — $270/mo · clears at 2 cm · windrow clearing, ice scraping + sanding included · within 15 hours of snowfall ending';}if(p.indexOf('Per visit')===0){return 'Per-visit clearing — $45/visit · within 12 hours of your request';}return p+' — free estimate; we will confirm the details when we contact you';};
     var payload={
       _subject:'New booking request — '+v('bk-name'),
       _template:'table',
       _captcha:'false',
-      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will text or email you within 24 hours to arrange your free estimate — online or in-person, your choice.\n\nYour request:\nPlan: '+v('bk-plan')+'\nAddress: '+v('bk-address')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\nEstimate: '+v('bk-esttype')+'\n\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
+      _autoresponse:'Hi '+firstName+',\n\nThanks for your booking request with Shields Property Services! We have received it and will text or email you within 24 hours to arrange your free estimate — online or in-person, your choice.\n\nYour booking:\n'+planSummary(v('bk-plan'))+'\nAddress: '+v('bk-address')+(v('bk-postal')?', '+v('bk-postal'):'')+'\nPreferred visit: '+v('bk-date')+' ('+v('bk-time')+')\nEstimate: '+v('bk-esttype')+'\n'+(addons.length?('Add-ons: '+addons.join('; ')+'\n'):'')+'\nNeed us sooner? Call or text (431) 342-1575.\n\n— Nicholas Shields, Shields Property Services',
       name:v('bk-name'),email:v('bk-email'),phone:v('bk-phone'),
       plan:v('bk-plan'),address:v('bk-address'),
       preferred_date:v('bk-date'),preferred_time:v('bk-time'),
       estimate_type:v('bk-esttype'),
-      notes:v('bk-notes'),source:v('bk-source'),_honey:v('bk-honey')
+      notes:v('bk-notes'),source:v('bk-source'),postal_code:v('bk-postal'),addons:addons.join('; ')||'None selected',_honey:v('bk-honey')
     };
     fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
       method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
@@ -402,14 +414,15 @@
       if(j&&(j.success===true||j.success==='true')){
         bookForm.hidden=true;bookForm.style.display='none';
         var done=document.getElementById('bk-done');
-        if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will text or email you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
+        if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will text or email you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p><p class="bk-summary" id="bk-summary"></p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         if(done.parentNode!==bookForm.parentNode){bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         var dn=done.querySelector('.bk-done-name');if(dn)dn.textContent=firstName;
+        var sumEl=document.getElementById('bk-summary');if(sumEl){sumEl.textContent='Your booking: '+planSummary(v('bk-plan'))+(addons.length?'. Add-ons: '+addons.join('; '):'');}
         done.hidden=false;done.removeAttribute('hidden');done.style.display='block';
         done.scrollIntoView({behavior:'smooth',block:'center'});
       }else{throw new Error('send-failed');}
     }).catch(function(){
-      var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nPreferred visit date: '+v('bk-date')+'\nPreferred time: '+v('bk-time')+'\nEstimate type: '+v('bk-esttype')+'\nNotes: '+v('bk-notes')+'\nSource: '+v('bk-source');
+      var body='Name: '+v('bk-name')+'\nPhone: '+v('bk-phone')+'\nEmail: '+v('bk-email')+'\nPlan: '+v('bk-plan')+'\nAddress to clear: '+v('bk-address')+'\nPreferred visit date: '+v('bk-date')+'\nPreferred time: '+v('bk-time')+'\nEstimate type: '+v('bk-esttype')+'\nPostal code: '+v('bk-postal')+'\nAdd-ons: '+(addons.join('; ')||'None selected')+'\nNotes: '+v('bk-notes')+'\nSource: '+v('bk-source');
       location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Booking request — '+v('bk-name'))+'&body='+encodeURIComponent(body);
       btn.disabled=false;btn.textContent='Send booking request';
     });
