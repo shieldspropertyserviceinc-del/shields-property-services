@@ -81,8 +81,8 @@
     .promise-point strong { font-size:21px; display:block; }
     .promise-point p { color:var(--muted); margin:4px 0 0; }
     .symbol { width:50px; height:50px; background:var(--sky); color:#fff; display:grid; place-items:center; border-radius:50%; font-family:"Barlow Condensed"; font-size:24px; font-weight:800; }
-    .offer { background:var(--navy); color:#fff; padding:34px; display:grid; grid-template-columns:180px 1fr auto; align-items:center; gap:30px; }
-    .offer img { width:180px; aspect-ratio:1; object-fit:cover; }
+    .offer { background:var(--navy); color:#fff; padding:34px; display:grid; grid-template-columns:200px 1fr; align-items:center; gap:30px; }
+    .offer img { width:200px; aspect-ratio:1; object-fit:cover; }
     .offer h2 { font-family:"Barlow Condensed"; font-size:40px; margin:0 0 8px; }
     .offer p { color:#dcecf3; margin:0; }
     
