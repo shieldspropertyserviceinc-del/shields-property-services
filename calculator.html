@@ -64,15 +64,15 @@
           <div class="field"><label for="calc-plan">Choose a plan</label>
             <select id="calc-plan">
               <option value="120">Essential — $120/mo (6 cm trigger)</option>
-              <option value="160" selected>Complete — $160/mo (4 cm trigger, windrow included)</option>
-              <option value="240">Premium — $240/mo (2 cm trigger, windrow + sanding)</option>
+              <option value="150" selected>Complete — $150/mo (4 cm trigger, windrow included)</option>
+              <option value="200">Premium — $200/mo (2 cm trigger, windrow + sanding)</option>
               <option value="45">Per-visit — $45/visit</option>
             </select></div>
           <div class="field"><label for="calc-visits">Estimated qualifying snowfalls this season</label>
             <input id="calc-visits" type="number" min="1" max="60" value="20">
             <p class="map-note">Your best guess — Winnipeg averages about 20–25 trigger-worthy snowfalls a season. Adjust it and watch the math change.</p></div>
           <div class="calc-toggles">
-            <label class="calc-toggle"><input type="checkbox" id="calc-earlybird"> Early-bird prepay <span class="map-note">First 5 prepaid seasons: $540 / $700 / $1,020</span></label>
+            <label class="calc-toggle"><input type="checkbox" id="calc-earlybird"> Early-bird prepay <span class="map-note">First 5 prepaid seasons: $540 / $650 / $850</span></label>
             <label class="calc-toggle"><input type="checkbox" id="calc-senior"> Senior discount <span class="map-note">10% off</span></label>
           </div>
           <p class="map-note" style="margin-top:10px">Seniors 55+: the 10% senior discount also applies on top of early-bird prepaid rates — tick both boxes to see the combined season price.</p>
@@ -225,8 +225,8 @@
   var cp=document.getElementById('calc-plan'),cv=document.getElementById('calc-visits'),
       ce=document.getElementById('calc-earlybird'),cs=document.getElementById('calc-senior'),
       cr=document.getElementById('calc-results'),cb=document.getElementById('calc-book');
-  var EB={120:540,160:700,240:1020};
-  var PN={120:'Essential',160:'Complete',240:'Premium',45:'Per-visit'};
+  var EB={120:540,150:650,200:850};
+  var PN={120:'Essential',150:'Complete',200:'Premium',45:'Per-visit'};
   function money(n){return '$'+n.toFixed(2).replace(/\.00$/,'');}
   function calc(){
     if(!cp||!cr)return;
