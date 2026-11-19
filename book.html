@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#3A9ACD" />
-  <meta name="description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time." />
+  <meta name="description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pin your address and pick a time." />
   <link rel="icon" type="image/png" sizes="192x192" href="favicon.png" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Shields Property Services" />
   <meta property="og:title" content="Book | Shields Property Services" />
-  <meta property="og:description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time." />
+  <meta property="og:description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pin your address and pick a time." />
   <meta property="og:url" content="https://shieldspropertyservices.ca/book" />
   <meta property="og:image" content="https://shieldspropertyservices.ca/og-share.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Book | Shields Property Services" />
-  <meta name="twitter:description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time." />
+  <meta name="twitter:description" content="Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pin your address and pick a time." />
   <meta name="twitter:image" content="https://shieldspropertyservices.ca/og-share.jpg" />
   <link rel="canonical" href="https://shieldspropertyservices.ca/book" />
   <meta name="robots" content="index, follow" />
@@ -24,13 +24,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=28" />
+  <link rel="stylesheet" href="styles.css?v=29" />
   <script type="application/ld+json">
-  {"@context": "https://schema.org", "@type": "WebPage", "name": "Book | Shields Property Services", "description": "Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pick a service, pin your address, choose a consultation time.", "url": "https://shieldspropertyservices.ca/book", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyservices.ca/"}} 
+  {"@context": "https://schema.org", "@type": "WebPage", "name": "Book | Shields Property Services", "description": "Book any service in Transcona, Winnipeg — snow clearing, spring/fall cleanups, mowing, aeration and landscaping. Pin your address and pick a time.", "url": "https://shieldspropertyservices.ca/book", "isPartOf": {"@type": "WebSite", "name": "Shields Property Services", "url": "https://shieldspropertyservices.ca/"}} 
   </script>
   <title>Book | Shields Property Services</title>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="site-shell">
   <div class="top-wrap">
   <div class="site-search" id="site-search">
@@ -55,7 +56,7 @@
   </header>
   </div>
 
-  <main>
+  <main id="main">
 <nav class="crumbs" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a> <span class="crumb-sep" aria-hidden="true">›</span> <span aria-current="page">Book</span></div></nav>
     <div class="page">
       <div class="page-head"><div class="wrap"><h1 id="book-title">BOOK YOUR SERVICE.</h1><p>Pick a service for any season, pin your address on the map, and send your booking request. Snow plans include our 15-hour guarantee — cleared within 15 hours of snowfall ending.</p></div></div>
@@ -144,7 +145,7 @@
             <div id="bk-done" hidden>
               <h2>Request received!</h2>
               <p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We'll text or email you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p>
-              <p class="bk-summary" id="bk-summary"></p>
+              <p class="bk-summary"></p>
               <p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>
             </div>
           </article>
@@ -417,7 +418,7 @@
         if(!done){done=document.createElement('div');done.id='bk-done';done.innerHTML='<h2>Request received!</h2><p>Thanks, <span class="bk-done-name">there</span> — your booking request is on its way. We will text or email you within 24 hours to arrange your free estimate — online or in-person, your choice, and a confirmation email is headed to your inbox now.</p><p class="bk-summary" id="bk-summary"></p><p class="map-note">Need us sooner? Call or text <a href="tel:+14313421575">(431) 342-1575</a>.</p>';bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         if(done.parentNode!==bookForm.parentNode){bookForm.parentNode.insertBefore(done,bookForm.nextSibling);}
         var dn=done.querySelector('.bk-done-name');if(dn)dn.textContent=firstName;
-        var sumEl=document.getElementById('bk-summary');if(sumEl){sumEl.textContent='Your booking: '+planSummary(v('bk-plan'))+(addons.length?'. Add-ons: '+addons.join('; '):'');}
+        var sumEl=done.querySelector('.bk-summary');if(sumEl){sumEl.textContent='Your booking: '+planSummary(v('bk-plan'))+(addons.length?'. Add-ons: '+addons.join('; '):'');}
         done.hidden=false;done.removeAttribute('hidden');done.style.display='block';
         done.scrollIntoView({behavior:'smooth',block:'center'});
       }else{throw new Error('send-failed');}
