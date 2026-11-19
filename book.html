@@ -70,9 +70,9 @@
                 <select id="bk-plan" name="plan">
                   <option>Not sure yet</option>
                   <optgroup label="Snow clearing">
-                  <option>Essential — $135/mo</option>
-                  <option selected>Complete — $180/mo</option>
-                  <option>Premium — $270/mo</option>
+                  <option>Essential — $120/mo</option>
+                  <option selected>Complete — $160/mo</option>
+                  <option>Premium — $240/mo</option>
                   <option>Per visit — $45/visit</option>
                   <option>Priority clearing — free estimate</option>
                   <option>Roof-edge clearing — $50 add-on / $75</option>
@@ -159,7 +159,7 @@
         <h2 class="section-title">WHERE WE SERVE.</h2>
         <p class="section-intro">We guarantee service across Transcona — between Gunn Road, Dugald Road, Plessis Road, and the Perimeter Highway. Outside the zone? We take bookings on request.</p>
         <div class="map-wrap"><img src="service-area-map.webp" alt="Map of the guaranteed service area in Transcona, Winnipeg" loading="lazy"></div>
-      </div></section><section class="section"><div class="wrap"><h2 class="section-title">STILL DECIDING?</h2><p class="section-intro">Take your time — everything is one tap away.</p><div class="services"><a class="service link-card" href="pricing.html"><span class="num">&rarr;</span><h3>Plans &amp; Pricing</h3><p>Three simple plans from $135/mo.</p></a><a class="service link-card" href="services.html"><span class="num">&rarr;</span><h3>All Services</h3><p>Four seasons of property care.</p></a><a class="service link-card" href="faq.html"><span class="num">&rarr;</span><h3>Q&amp;A</h3><p>Triggers, billing, and what’s included.</p></a><a class="service link-card" href="contact.html"><span class="num">&rarr;</span><h3>Contact</h3><p>Free estimates in Transcona — online or in-person.</p></a><a class="service link-card" href="liability-waiver.pdf"><span class="num">&darr;</span><h3>Liability Waiver</h3><p>Review and download our service waiver (PDF).</p></a></div></div></section></div>
+      </div></section><section class="section"><div class="wrap"><h2 class="section-title">STILL DECIDING?</h2><p class="section-intro">Take your time — everything is one tap away.</p><div class="services"><a class="service link-card" href="pricing.html"><span class="num">&rarr;</span><h3>Plans &amp; Pricing</h3><p>Three simple plans from $120/mo.</p></a><a class="service link-card" href="services.html"><span class="num">&rarr;</span><h3>All Services</h3><p>Four seasons of property care.</p></a><a class="service link-card" href="faq.html"><span class="num">&rarr;</span><h3>Q&amp;A</h3><p>Triggers, billing, and what’s included.</p></a><a class="service link-card" href="contact.html"><span class="num">&rarr;</span><h3>Contact</h3><p>Free estimates in Transcona — online or in-person.</p></a><a class="service link-card" href="liability-waiver.pdf"><span class="num">&darr;</span><h3>Liability Waiver</h3><p>Review and download our service waiver (PDF).</p></a></div></div></section></div>
   </main>
 
   <footer><div class="wrap footer-row"><nav class="footer-nav" aria-label="Footer"><a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Our Work</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="faq.html">Q&A</a><a href="learn.html">Tips & Info</a><a href="book.html" class="book-link">Book now</a><a href="referral.html">Referral</a><a href="contact.html">Contact</a></nav><div><b>Shields Property Services</b><br>Professional. Reliable. Damage-Free.</div><span class="footer-socials"><a class="footer-social" href="https://www.instagram.com/shieldsspropertyservices" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Instagram">Follow us on Instagram</a><a class="footer-social" href="https://www.facebook.com/1312891705247925" target="_blank" rel="noopener noreferrer" aria-label="Follow Shields Property Services on Facebook">Facebook</a></span><div>Transcona, Winnipeg · <a href="tel:+14313421575">(431) 342-1575</a></div></div></footer>
@@ -395,7 +395,7 @@
     btn.disabled=true;btn.textContent='Sending…';
     var firstName=(v('bk-name').split(' ')[0]||'there');
     var addons=[];['bk-addon-windrow','bk-addon-sanding','bk-addon-roof','bk-addon-vehicle'].forEach(function(id){var c=document.getElementById(id);if(c&&c.checked){addons.push(c.value);}});
-    var planSummary=function(p){if(p.indexOf('Essential')===0){return 'Essential — $135/mo · clears at 6 cm of snow · within 15 hours of snowfall ending';}if(p.indexOf('Complete')===0){return 'Complete — $180/mo · clears at 4 cm · windrow clearing + ice scraping included · within 15 hours of snowfall ending';}if(p.indexOf('Premium')===0){return 'Premium — $270/mo · clears at 2 cm · windrow clearing, ice scraping + sanding included · within 15 hours of snowfall ending';}if(p.indexOf('Per visit')===0){return 'Per-visit clearing — $45/visit · within 12 hours of your request';}return p+' — free estimate; we will confirm the details when we contact you';};
+    var planSummary=function(p){if(p.indexOf('Essential')===0){return 'Essential — $120/mo · clears at 6 cm of snow · within 15 hours of snowfall ending';}if(p.indexOf('Complete')===0){return 'Complete — $160/mo · clears at 4 cm · windrow clearing + ice scraping included · within 15 hours of snowfall ending';}if(p.indexOf('Premium')===0){return 'Premium — $240/mo · clears at 2 cm · windrow clearing, ice scraping + sanding included · within 15 hours of snowfall ending';}if(p.indexOf('Per visit')===0){return 'Per-visit clearing — $45/visit · within 12 hours of your request';}return p+' — free estimate; we will confirm the details when we contact you';};
     var payload={
       _subject:'New booking request — '+v('bk-name'),
       _template:'table',
