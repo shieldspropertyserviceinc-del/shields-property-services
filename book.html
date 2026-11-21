@@ -134,10 +134,26 @@
               </div>
               <div class="field"><span style="font-weight:700">Add-ons <span style="font-weight:400;color:var(--muted)">(optional — tick any you would like)</span></span>
                 <div class="bk-addons">
-                  <label class="bk-addon"><input type="checkbox" id="bk-addon-windrow" value="Windrow clearing — $25/visit"> <span>Windrow clearing — $25/visit <span class="bk-addon-note">(included with Complete &amp; Premium)</span></span></label>
-                  <label class="bk-addon"><input type="checkbox" id="bk-addon-sanding" value="Sanding — $15/application"> <span>Sanding — $15/application <span class="bk-addon-note">(included with Premium)</span></span></label>
-                  <label class="bk-addon"><input type="checkbox" id="bk-addon-roof" value="Roof-edge clearing — $50/visit on a plan ($75 standalone)"> <span>Roof-edge clearing — $50/visit on a plan · $75 standalone</span></label>
-                  <label class="bk-addon"><input type="checkbox" id="bk-addon-vehicle" value="Vehicle snow brushing — complimentary"> <span>Vehicle snow brushing — complimentary</span></label>
+                  <div class="bk-choice">
+                    <p style="font-weight:700;margin:12px 0 6px">Windrow clearing <span style="font-weight:400;color:var(--muted)">— the ridge the city plow leaves at the end of your driveway</span></p>
+                    <label class="bk-addon"><input type="radio" name="addon-windrow" id="bk-addon-windrow" value="Windrow clearing — $25/visit"> <span>Add it — $25/visit <span class="bk-addon-note">(included with Complete &amp; Premium)</span></span></label>
+                    <label class="bk-addon"><input type="radio" name="addon-windrow" id="bk-addon-windrow-no"> <span>No windrow clearing</span></label>
+                  </div>
+                  <div class="bk-choice">
+                    <p style="font-weight:700;margin:12px 0 6px">Sanding <span style="font-weight:400;color:var(--muted)">— for icy patches on the driveway and walkway</span></p>
+                    <label class="bk-addon"><input type="radio" name="addon-sanding" id="bk-addon-sanding" value="Sanding — $15/application"> <span>Add it — $15/application <span class="bk-addon-note">(included with Premium)</span></span></label>
+                    <label class="bk-addon"><input type="radio" name="addon-sanding" id="bk-addon-sanding-no"> <span>No sanding</span></label>
+                  </div>
+                  <div class="bk-choice">
+                    <p style="font-weight:700;margin:12px 0 6px">Roof-edge clearing <span style="font-weight:400;color:var(--muted)">— the bottom 3-4 ft of the roof edge, cleared from the ground with a roof rake</span></p>
+                    <label class="bk-addon"><input type="radio" name="addon-roof" id="bk-addon-roof" value="Roof-edge clearing — $50/visit on a plan ($75 standalone)"> <span>Add it — $50/visit on a plan · $75 standalone</span></label>
+                    <label class="bk-addon"><input type="radio" name="addon-roof" id="bk-addon-roof-no"> <span>No roof-edge clearing</span></label>
+                  </div>
+                  <div class="bk-choice">
+                    <p style="font-weight:700;margin:12px 0 6px">Vehicle snow brushing <span style="font-weight:400;color:var(--muted)">— we brush the snow off vehicles in the driveway, only when you ask</span></p>
+                    <label class="bk-addon"><input type="radio" name="addon-vehicle" id="bk-addon-vehicle" value="Vehicle snow brushing — complimentary"> <span>Yes, brush my vehicle(s) — complimentary</span></label>
+                    <label class="bk-addon"><input type="radio" name="addon-vehicle" id="bk-addon-vehicle-no"> <span>No vehicle brushing</span></label>
+                  </div>
                 </div></div>
               <div class="field"><label for="bk-notes">Anything we should know? <span style="font-weight:400;color:var(--muted)">(optional)</span></label><textarea id="bk-notes" name="notes" placeholder="Gate codes, parking notes, pets, preferred start date…"></textarea></div>
               <div class="field"><label for="bk-source">How did you hear about us? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>

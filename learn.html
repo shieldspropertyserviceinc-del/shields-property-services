@@ -73,6 +73,19 @@
           <a class="featured-guide" href="guides/storm-protocol.html"><span class="fg-emoji">⛈️</span><h3>Storm day protocol</h3><p>What happens on our end when the snow flies.</p></a>
         </div>
       </div></div>
+      <div class="section" style="padding-top:4px;padding-bottom:4px"><div class="wrap">
+        <div class="checklist-band" style="background:linear-gradient(135deg,#3A9ACD,#1f6f9f);border-radius:14px;padding:22px;margin:28px 0 8px;color:#fff">
+          <h2 style="margin:0 0 6px;color:#fff;font-size:24px">FREE: THE TRANSCONA WINTER-READY CHECKLIST.</h2>
+          <p style="margin:0 0 14px">The one-page version of everything in these guides — what to do before the first storm, while it snows, and after it ends. We email it to you free.</p>
+          <form id="checklist-form">
+            <div class="field"><label for="ck-email" style="color:#fff">Email address</label><input id="ck-email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+            <label class="bk-addon" style="color:#fff"><input type="checkbox" id="ck-consent" required> <span>Send me the checklist, and occasional winter tips and offers from Shields Property Services. I can unsubscribe anytime.</span></label>
+            <div class="actions" style="margin-top:12px"><button class="button primary" type="submit">Email me the checklist</button></div>
+          </form>
+          <div id="checklist-done" hidden><p style="margin:0"><strong>You are on the list!</strong> The checklist is on its way from Shields Property Services, Transcona, Winnipeg.</p></div>
+          <p style="margin:12px 0 0;font-size:13px;opacity:.85">From Shields Property Services, Transcona, Winnipeg · shieldspropertyserviceinc@gmail.com · Unsubscribe anytime with one reply.</p>
+        </div>
+      </div></div>
       <div class="section"><div class="wrap">
         <section class="guide-cat" data-cat="customers">
           <h2 class="guide-cat-title" id="sec-customers"><span class="cat-icon">🤝</span> For Customers <span class="cat-count">5 guides</span></h2>
@@ -362,6 +375,34 @@
       var rb=document.getElementById('reference-block'); if(rb){ spy.observe(rb); }
     }
   })();
+
+  /* Winter-Ready Checklist capture */
+  var ckForm=document.getElementById('checklist-form');
+  if(ckForm){ckForm.addEventListener('submit',function(e){
+    e.preventDefault();
+    var email=document.getElementById('ck-email').value.trim();
+    var btn=ckForm.querySelector('button[type="submit"]');
+    btn.disabled=true;btn.textContent='Sending…';
+    fetch('https://formsubmit.co/ajax/shieldspropertyserviceinc@gmail.com',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'Winter-Ready Checklist signup — '+email,
+        _template:'table',
+        _captcha:'false',
+        email:email,source:'Winter-Ready Checklist (Tips & Info page)',consent:'Express consent given on the Tips & Info page form'
+      })
+    }).then(function(r){return r.json();}).then(function(j){
+      if(j&&j.success){
+        ckForm.hidden=true;
+        var done=document.getElementById('checklist-done');
+        done.hidden=false;
+        done.scrollIntoView({behavior:'smooth',block:'center'});
+      }else{throw new Error('send-failed');}
+    }).catch(function(){
+      location.href='mailto:shieldspropertyserviceinc@gmail.com?subject='+encodeURIComponent('Winter-Ready Checklist signup')+'&body='+encodeURIComponent('Please send the Winter-Ready Checklist to: '+email);
+      btn.disabled=false;btn.textContent='Email me the checklist';
+    });
+  });}
 })();
 </script>
 </body>
