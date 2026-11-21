@@ -104,7 +104,7 @@
         <details class="guide" id="storm-step-mobilize"><summary>2. We mobilize after the snowfall ends</summary>
           <p>Clearing starts as the snow winds down, so you get one clean pass instead of chasing a moving storm. In multi-day storms we may do a mid-storm pass to keep driveways passable, then a final clear when it ends.</p></details>
         <details class="guide" id="storm-step-cleared"><summary>3. Every property cleared within 15 hours</summary>
-          <p>Driveways and walkways are cleared within 15 hours of the snowfall ending. That is the guarantee on every plan &mdash; no need to call or text to check.</p></details>
+          <p>Driveways and walkways are cleared within 15 hours of the snowfall ending. That is the guarantee on every plan: if we ever miss the window, that clearing is free &mdash; no need to call or text to check.</p></details>
         <details class="guide" id="storm-step-windrow"><summary>4. Windrows handled per your plan</summary>
           <p>The city plow ridge at the end of your driveway: included every visit on Complete and Premium, available as a $25/visit add-on on Essential. If a windrow appears after our visit, let us know and we will come back for it.</p></details>
         <h2 class="section-title" id="sec-expect" style="margin-top:36px">DURING A STORM, YOU CAN EXPECT.</h2>
@@ -299,7 +299,7 @@
       fcEl.innerHTML=html;
     }
     if(CREWS_OUT){
-      setStatus('is-active','&#128309;','Crews are out — clearing in progress','We are on route now. Every property is cleared within 15 hours of the snowfall ending.');
+      setStatus('is-active','&#128309;','Crews are out — clearing in progress','We are on route now. Every property is cleared within 15 hours of the snowfall ending — guaranteed, or that clearing is free.');
     }
     var _wxCtl=('AbortController' in window)?new AbortController():null;
     var _wxTimer=setTimeout(function(){if(_wxCtl)_wxCtl.abort();},10000);
@@ -312,7 +312,7 @@
         var sums=(d.daily&&d.daily.snowfall_sum)||[0,0,0];
         var today=sums[0]||0;
         if(cur>0||today>=2){
-          setStatus('is-active','&#128309;','Snowfall in progress — crews mobilizing','An estimated '+fmt(today)+' cm is expected today. Clearing starts as the snow winds down — every property within 15 hours.');
+          setStatus('is-active','&#128309;','Snowfall in progress — crews mobilizing','An estimated '+fmt(today)+' cm is expected today. Clearing starts as the snow winds down — every property within 15 hours — guaranteed.');
           return;
         }
         var best=-1,bestDay=-1;
@@ -324,7 +324,7 @@
         setStatus('is-ok','&#128994;','All clear','No significant snowfall in the forecast for Transcona. Check back when the sky changes.');
       })
       .catch(function(){clearTimeout(_wxTimer);
-        if(!CREWS_OUT)setStatus('is-warn','&#9888;&#65039;','Weather data unavailable','We could not load the live forecast just now. If it is snowing, assume we are on it — every property is cleared within 15 hours of the snowfall ending.');
+        if(!CREWS_OUT)setStatus('is-warn','&#9888;&#65039;','Weather data unavailable','We could not load the live forecast just now. If it is snowing, assume we are on it — every property is cleared within 15 hours of the snowfall ending — guaranteed, or that clearing is free.');
         if(fcEl)fcEl.innerHTML='<p class="map-note" style="text-align:center">Forecast unavailable right now — try refreshing in a few minutes.</p>';
       });
     var recapNone=document.getElementById('recap-none'),recapGrid=document.getElementById('recap-grid');
