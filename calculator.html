@@ -73,14 +73,14 @@
             <input id="calc-visits" type="number" min="1" max="60" value="20">
             <p class="map-note">Your best guess — Winnipeg averages about 20–25 trigger-worthy snowfalls a season. Adjust it and watch the math change.</p></div>
           <div class="calc-toggles">
-            <label class="calc-toggle"><input type="checkbox" id="calc-earlybird"> Early-bird prepay <span class="map-note">First 5 prepaid seasons: $540 / $650 / $850</span></label>
+            <label class="calc-toggle"><input type="checkbox" id="calc-earlybird"> Early-bird prepay <span class="map-note">First 5 prepaid seasons: $432 / $525 / $680</span></label>
             <label class="calc-toggle"><input type="checkbox" id="calc-senior"> Senior discount <span class="map-note">10% off</span></label>
           </div>
           <p class="map-note" style="margin-top:10px">Seniors 55+: the 10% senior discount also applies on top of early-bird prepaid rates — tick both boxes to see the combined season price.</p>
           <div class="calc-results" id="calc-results" aria-live="polite"></div>
           <div class="actions" style="margin-top:20px"><a class="button primary" id="calc-book" href="book.html">Book this plan</a></div>
         </div>
-        <p class="sources">Season runs November–March (5 months). Per-visit comparison uses your estimated visit count. Early-bird rates apply to the first 5 prepaid full-season customers; the first-customer 35% bonus is not included in this estimate — <a href="contact.html">ask us</a> if it is still available. Final price confirmed at your free estimate — online or in-person.</p>
+        <p class="sources">Season runs December–March (4 months). Per-visit comparison uses your estimated visit count. Early-bird rates apply to the first 5 prepaid full-season customers; the first-customer 35% bonus is not included in this estimate — <a href="contact.html">ask us</a> if it is still available. Final price confirmed at your free estimate — online or in-person.</p>
       </div></div>
     </div>
   </main>
@@ -226,7 +226,7 @@
   var cp=document.getElementById('calc-plan'),cv=document.getElementById('calc-visits'),
       ce=document.getElementById('calc-earlybird'),cs=document.getElementById('calc-senior'),
       cr=document.getElementById('calc-results'),cb=document.getElementById('calc-book');
-  var EB={120:540,150:650,200:850};
+  var EB={120:432,150:525,200:680};
   var PN={120:'Essential',150:'Complete',200:'Premium',45:'Per-visit'};
   function money(n){return '$'+n.toFixed(2).replace(/\.00$/,'');}
   function calc(){
